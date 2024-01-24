@@ -1,0 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap");
+
+.xd {
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 19px;
+  text-shadow: 1px 1px #000000ee;
+  font-weight: 400;
+}
