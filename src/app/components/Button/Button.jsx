@@ -1,8 +1,8 @@
 import React, { Children } from "react";
 import Text from "../Text/Text";
-
+// CSS file for the specific shadow I want on the buttons... yes, the class is called "lmaoo"
 import "./Button.css";
-
+// Buttons... idk what you expected, really
 export const Button = ({ children, variant = "btn1" }) => {
   return (
     <div>

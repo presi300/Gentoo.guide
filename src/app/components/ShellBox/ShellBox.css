@@ -6,3 +6,18 @@
   text-shadow: 1px 1px #000000ee;
   font-weight: 400;
 }
+
+samp {
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 18px;
+  font-weight: 800;
+  color: white;
+}
+
+pre {
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 18px;
+  font-weight: 400;
+  color: white;
+  line-height: 20px;
+}

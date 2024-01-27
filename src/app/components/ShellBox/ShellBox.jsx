@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import "./ShellBox.css";
 
@@ -6,6 +7,7 @@ let ShellBox = ({
   dir = "/home/lmao",
   variant = "regular",
 }) => {
+  // The logic behind the copy button
   const copy = async () => {
     await navigator.clipboard.writeText(command);
   };

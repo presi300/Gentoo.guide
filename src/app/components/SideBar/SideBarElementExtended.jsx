@@ -1,17 +1,15 @@
 import React from "react";
 import Text from "../Text/Text";
 import SideBarElement from "./SideBarElement";
-
+// Content needs to be an array of strings with all of the things that you want to appear as  sub-elements in the sidebar
 let SideBarElementExtended = ({ text = "XD", content }) => {
   let ContentElement = () => {
     return (
       <div>
         {content.map((content) => {
           return (
-            <li className=" my-3">
-              <Text variant="xs" key={content}>
-                {content}
-              </Text>
+            <li key={content} className=" my-3">
+              <Text variant="xs">{content}</Text>
             </li>
           );
         })}
