@@ -7,6 +7,13 @@
   font-weight: 400;
 }
 
+.xd-sm {
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 16px;
+  text-shadow: 1px 1px #000000ee;
+  font-weight: 400;
+}
+
 samp {
   font-family: "Ubuntu Mono", monospace;
   font-size: 18px;

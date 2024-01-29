@@ -20,7 +20,9 @@ let Text = ({ children, variant = "sm", color = "#EBE9FC" }) => {
         </div>
       )}
       {variant === "heading" && (
-        <div className={`font-['Comfortaa'] text-[60px] text-[#EBE9FC] lmao `}>
+        <div
+          className={`font-['Comfortaa'] text-[45px] sm:text-[60px] text-[#EBE9FC] lmao `}
+        >
           {children}
         </div>
       )}
