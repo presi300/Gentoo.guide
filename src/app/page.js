@@ -16,16 +16,21 @@ import AttentionBox from "./components/AttentionBox/AttentionBox";
 import Skeleton from "./components/Skeleton/Skeleton";
 import IMGBox from "./components/IMGBox/IMGBox";
 import LoadText from "./components/Text/Loader";
+import { sLangFunc } from "./components/LangSwitcher/LangSwitcher";
 
 export default function Home() {
   // Check Text/Loader.js for more info on this function
   let text = LoadText(1, tl);
 
+  let lId = sLangFunc;
+
   return (
     <div>
       <div className="flex w-full items-center justify-center mt-32 px-3 lg:px-0">
         <div className="w-[1000px]">
-          <button className="text-white">treenis</button>
+          <button className="text-white" onClick={() => console.log(lId)}>
+            treenis
+          </button>
           <Text>{text.sec1.content}</Text>
           <Text variant="heading">Lorem Ipsum</Text>
           <Text variant="sm">{tl.lang.defLang}</Text>

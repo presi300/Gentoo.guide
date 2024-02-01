@@ -5,6 +5,7 @@ import { Children } from "react";
 import { useState } from "react";
 import HamburgerBtn from "../TopBar/HamburgerBtn";
 import { motion, AnimatePresence } from "framer-motion";
+import LangSwitcher from "../LangSwitcher/LangSwitcher";
 // This needs to be put at the BOTTOM of all pages, the name is kinda counter-intuitive, but it's basically the sidebar + topbar combined for less writing
 // The only reason for it to exist is so that I can move all this sidebar animation, logic crap to a separate component...
 export default function Skeleton({
@@ -18,6 +19,11 @@ export default function Skeleton({
       <TopBar variant={topBarVariant}>
         <div onClick={() => stateHandler((state) => !state)}>
           <HamburgerBtn></HamburgerBtn>
+        </div>
+        <div className="absolute z-50 right-[170px] text-white">
+          <LangSwitcher
+            langs={["English", "Bulgarian", "German"]}
+          ></LangSwitcher>
         </div>
       </TopBar>
       <AnimatePresence>

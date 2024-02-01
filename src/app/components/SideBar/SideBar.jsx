@@ -1,10 +1,12 @@
 import React, { Children } from "react";
+import { Comfortaa } from "next/font/google";
+const comfortaa = Comfortaa({ subsets: ["latin"] });
 
 let SideBar = ({ children }) => {
   return (
     <div className="w-[345px] absolute left-0 top-0 bottom-0 px-5 pt-[13px] pb-5 bg-zinc-950 rounded-tr-[10px] rounded-br-[10px] shadow flex-col justify-start items-center gap-2.5 inline-flex z-40">
       <div className="w-full h-[46px] justify-center items-center inline-flex">
-        <div className="w-full h-[46px] text-center text-violet-100 text-[26px] font-medium font-['Comfortaa']">
+        <div className={`w-full h-[46px] text-center text-violet-100 text-[26px] font-medium ${comfortaa.className}`}>
           Sections
         </div>
       </div>
