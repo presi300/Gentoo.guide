@@ -23,7 +23,7 @@ export default function Skeleton({
       <AnimatePresence>
         {state && (
           <motion.div
-            initial={{ x: -200 }}
+            initial={{ x: -400 }}
             animate={{ x: 0 }}
             exit={{ x: -400 }}
             transition={{ ease: "linear", x: { duration: 0.2 } }}
@@ -54,7 +54,22 @@ export default function Skeleton({
                 />
               </svg>
             </button>
-            <SideBar>{children}</SideBar>
+            <SideBar>
+              {state && (
+                <motion.div
+                  initial={{ x: -300, opacity: 0 }}
+                  animate={{ x: 0, opacity: 100 }}
+                  transition={{
+                    x: { duration: 0.23 },
+                    opacity: { duration: 0.2 },
+                    delay: 30,
+                  }}
+                  className="flex flex-col gap-3"
+                >
+                  {children}
+                </motion.div>
+              )}
+            </SideBar>
             {/* A really dumb way to make clicking off the sidebar close it */}
             <div
               className="bg-zinc-950 bg-opacity-0 w-screen h-screen z-10"

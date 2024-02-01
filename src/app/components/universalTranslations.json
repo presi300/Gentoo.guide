@@ -1,0 +1,20 @@
+{
+    "lang": {
+        "enUS": {
+            "id": "0",
+            "components": {
+                "button": "Test",
+                "content": "Test"
+            }
+        },
+        "bg": {
+            "id": "1",
+            "sec1": {
+                "title": "Тест",
+                "content": "Тест",
+                "FILE": "PLACEHOLDER"
+            }
+        }
+    }
+
+}

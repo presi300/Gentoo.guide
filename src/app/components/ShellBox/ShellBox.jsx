@@ -55,16 +55,18 @@ let ShellBox = ({
             {dir} <p className="text-[#E79696]">#</p>
           </div>
           <div className="w-full h-[60px] px-5 bg-[#0A090E] bg-opacity-70 rounded-b-[15px] sm:rounded-[15px] border border-[#2A2738] border-opacity-75 backdrop-blur-[10px] justify-start items-center gap-1 inline-flex">
-            <div>
-              <span className="text-[#E79696] text-lg font-normal xd ">
-                root
-              </span>
-              <span className="text-violet-100 text-lg font-normal xd"> </span>
+            <div className="sm:flex hidden gap-1 ">
+              <div>
+                <span className="text-[#E79696] text-lg font-normal xd ">
+                  sm:{" "}
+                </span>
+              </div>
+              <div className="text-blue-400 text-lg font-normal xd">{dir}</div>
+              <div className="w-[11px] text-[#E79696] text-lg font-normal xd">
+                #
+              </div>
             </div>
-            <div className="text-blue-400 text-lg font-normal xd">{dir}</div>
-            <div className="w-[11px] text-[#E79696] text-lg font-normal xd">
-              #
-            </div>
+
             <div className="text-violet-100 text-lg font-normal xd">
               {command}
             </div>

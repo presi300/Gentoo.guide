@@ -1,0 +1,19 @@
+{
+    "lang": {
+        "enUS": {
+            "id": "0",
+            "sec1": {
+                "title": "Test",
+                "content": "Test"
+            }
+        },
+        "bg": {
+            "id": "1",
+            "sec1": {
+                "title": "Тест",
+                "content": "Тест"
+            }
+        }
+    }
+
+}
