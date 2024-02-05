@@ -1,11 +1,15 @@
 "use client";
+import LoadText from "./Loader.server";
 import react, { useEffect } from "react";
 import { GrLanguage } from "react-icons/gr";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 const LangSwitcher = ({ langs }) => {
   const [state, stateHandler] = useState(false);
+  const tl = undefined;
+  const router = useRouter();
 
   return (
     <div className="overflow-hidden">
@@ -27,13 +31,16 @@ const LangSwitcher = ({ langs }) => {
                   key={key}
                   className="w-full px-3 py-2 rounded-[15px] border-opacity-30 hover:bg-[#23202e] transition-colors"
                   //A very complicated language switcher, indeed
-                  onClick={() => sLangFunc(key)}
+                  onClick={() => {
+                    {
+                      LoadText(tl, key), router.refresh();
+                    }
+                  }}
                 >
                   {langs}
                 </button>
               );
               key++;
-              const [dynamicValue, setDynamicValue] = useState(0);
             })}
           </motion.div>
         )}
@@ -42,8 +49,3 @@ const LangSwitcher = ({ langs }) => {
   );
 };
 export default LangSwitcher;
-
-const sLangFunc = (id) => {
-  let xd = id;
-  return xd;
-};

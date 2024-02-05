@@ -3,15 +3,22 @@
         "enUS": {
             "id": "0",
             "sec1": {
-                "title": "Test",
-                "content": "Test"
+                "title": "Hello, this is a test of the text loading system which has taken me way too long to implement!",
+                "content": "I wanna die :D"
             }
         },
         "bg": {
             "id": "1",
             "sec1": {
-                "title": "Тест",
-                "content": "Тест"
+                "title": "Здравей, това е тест на системата за зареждане на текст, чиято направа ми отне твърде много време!",
+                "content": "Умира ми се :D"
+            }
+        },
+        "de": {
+            "id": "2",
+            "sec1": {
+                "title": "Hallo, dies ist ein Test des Textladesystems, dessen Implementierung viel zu lange gedauert hat!",
+                "content": "Ich möchte sterben :D"
             }
         }
     }
