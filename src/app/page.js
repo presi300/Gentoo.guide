@@ -13,6 +13,7 @@ import ShellBoxOutput from "./components/ShellBox/ShellBoxOutput";
 import AttentionBox from "./components/AttentionBox/AttentionBox";
 import Skeleton from "./components/Skeleton/Skeleton";
 import LoadText from "./components/LangSwitcher/Loader.server";
+import IMGBox from "./components/IMGBox/IMGBox";
 
 export default function Home() {
   // Check Text/Loader.js for more info on this function
@@ -23,6 +24,10 @@ export default function Home() {
     <div>
       <div className="flex w-full items-center justify-center mt-32 px-3 lg:px-0">
         <div className="w-[1000px]">
+          <div>
+            <IMGBox></IMGBox>
+          </div>
+
           <Text variant="md">{text.sec1.title}</Text>
           <Text>{text.sec1.content}</Text>
 
