@@ -25,12 +25,24 @@ export default function Home() {
       <div className="flex w-full items-center justify-center mt-32 px-3 lg:px-0">
         <div className="w-[1000px]">
           <div>
-            <IMGBox></IMGBox>
+            <IMGBox IMG1="/xd.jpg" IMG2="/lmao.jpg"></IMGBox>
           </div>
-
           <Text variant="md">{text.sec1.title}</Text>
           <Text>{text.sec1.content}</Text>
-
+          <Text variant="md">{text.sec1.title}</Text>
+          <Text>{text.sec1.content}</Text>{" "}
+          <Text variant="md">{text.sec1.title}</Text>
+          <Text>{text.sec1.content}</Text>{" "}
+          <Text variant="md">{text.sec1.title}</Text>
+          <Text>{text.sec1.content}</Text>{" "}
+          <Text variant="md">{text.sec1.title}</Text>
+          <Text>{text.sec1.content}</Text>{" "}
+          <Text variant="md">{text.sec1.title}</Text>
+          <Text>{text.sec1.content}</Text>{" "}
+          <div id="Test" className="my-12">
+            <Text variant="md">{text.sec1.title}</Text>
+          </div>
+          <Text>{text.sec1.content}</Text>
           {/* <IMGBox img={"mefr.jpg"}></IMGBox> */}
         </div>{" "}
       </div>

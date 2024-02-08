@@ -70,7 +70,7 @@ export default function Skeleton({
                     opacity: { duration: 0.2 },
                     delay: 30,
                   }}
-                  className="flex flex-col gap-3"
+                  className="flex flex-col gap-3 w-full"
                 >
                   {children}
                 </motion.div>

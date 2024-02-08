@@ -1,41 +1,50 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { IoIosResize } from "react-icons/io";
-// This entire element has been shamelessly cloned from upscayl.org
-const IMGBox = () => {
-  const IMGWidth = 800;
-  const IMGHeight = 600;
-  const [sliderValue, setSliderValue] = useState(50); // Initial value (In %)
 
+// This entire element has been shamelessly cloned from upscayl.org
+const IMGBox = ({
+  IMG1 = "/xd.jpg",
+  IMG2 = "/lmao.jpg",
+  IMGWidth = 800,
+  IMGHeight = 600,
+  IMGResX = 1920,
+  IMGResY = 1080,
+}) => {
+  const [sliderValue, setSliderValue] = useState(50); // Initial value (In %)
+  const xd = IMG1;
+  const lmao = IMG2;
   const handleSliderChange = (event) => {
     setSliderValue(event.target.value);
   };
 
   return (
     <div style={{ width: `${IMGWidth}px`, height: `${IMGHeight}px` }}>
-      <div className="relative top-0 left-0">
+      <div className="rounded-xl relative top-0 left-0">
         <Image
           style={{
             objectFit: "cover",
             width: `${IMGWidth}px`,
             height: `${IMGHeight}px`,
           }}
-          src="/xd.jpg"
-          width={IMGWidth}
-          height={IMGHeight}
-          className="relative left-0 top-0"
+          alt="Yeah, you're not supposed to see me"
+          src={IMG1}
+          width={IMGResX}
+          height={IMGResY}
+          className="relative left-0 top-0 rounded-xl"
         ></Image>
         <Image
+          alt="Yeah, you're not supposed to see me"
           style={{
             objectFit: "cover",
             width: `${(IMGWidth * sliderValue) / 100}px`,
             height: `${IMGHeight}px`,
             objectPosition: "bottom left",
           }}
-          src="/lmao.jpg"
-          width={IMGWidth}
-          height={IMGHeight}
-          className="absolute top-0 left-0 w-full bottom-0"
+          src={IMG2}
+          width={IMGResX}
+          height={IMGResY}
+          className="absolute top-0 left-0 w-full bottom-0 rounded-l-xl"
         ></Image>
         <input
           type="range"
