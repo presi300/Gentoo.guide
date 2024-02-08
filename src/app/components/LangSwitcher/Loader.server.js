@@ -7,16 +7,13 @@ let varLang = null;
 let defLang = 0;
 let selLang = null;
 let selID = localStorage.getItem("languageID");
-const Reload = () => {
-  const router = useRouter();
-  router.refresh();
-};
 
 export default function LoadText(tl, langID) {
+  selID = localStorage.getItem("languageID");
+  // I am a gebius, prevent returning undefined on 1st load
   if (selID == (undefined || null)) {
     localStorage.setItem("languageID", defLang);
-    console.log(selID);
-    Reload();
+    LoadText(tl, defLang);
   }
   // 1. Language loaded initially (tl = lang, langID = undefined)
   if (tl != (undefined || null) && langID == (undefined || null)) {
