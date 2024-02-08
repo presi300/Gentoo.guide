@@ -16,10 +16,9 @@ import LoadText from "./components/LangSwitcher/Loader.server";
 import IMGBox from "./components/IMGBox/IMGBox";
 
 export default function Home() {
-  // Check Text/Loader.js for more info on this function
-
+  // Check Text/Loader.js for more info on this f  console.log(text);
   const text = LoadText(tl);
-  console.log(text);
+
   return (
     <div>
       <div className="flex w-full items-center justify-center mt-32 px-3 lg:px-0">
