@@ -48,6 +48,30 @@
                 "Title": "Кара те да се чустваш като хакер",
                 "SubTitle": "Понякога е готино, просто да се облегнеш на стола и да гледаш как текста се скролва"
             }
+        },
+        "loading": {
+            "id": "0",
+            "bigTitle": "Loading...",
+            "subBigTitle": "Loading...",
+            "TitleButton": {
+                "Text": "Loading...",
+                "ClickText": "Loading..."
+            },
+            "secondTitle": "Loading...",
+            "secondSubTitle": "Loading...",
+            "Card1": {
+                "Title": "Loading...",
+                "SubTitle": "Loading..."
+            },
+            
+            "Card2": {
+                "Title": "Loading...",
+                "SubTitle": "Loading..."
+            },
+            "Card3": {
+                "Title": "Loading...",
+                "SubTitle": "Loading..."
+            }
         }
     }
 

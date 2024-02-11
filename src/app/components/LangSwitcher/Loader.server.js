@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import { useRouter } from "next/navigation";
 
@@ -6,7 +5,8 @@ let tlL = null;
 let varLang = null;
 let defLang = 0;
 let selLang = null;
-let selID = localStorage.getItem("languageID");
+
+let selID = "";
 
 export default function LoadText(tl, langID) {
   selID = localStorage.getItem("languageID");
