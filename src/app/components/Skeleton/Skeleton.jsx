@@ -17,14 +17,21 @@ export default function Skeleton({
   return (
     <div>
       <TopBar variant={topBarVariant}>
-        <div onClick={() => stateHandler((state) => !state)}>
-          <HamburgerBtn></HamburgerBtn>
-        </div>
-        <div className="absolute z-50 right-[170px] text-white">
-          <LangSwitcher
-            langs={["English", "Bulgarian", "German"]}
-          ></LangSwitcher>
-        </div>
+        {topBarVariant === "hamburger" && (
+          <div onClick={() => stateHandler((state) => !state)}>
+            <HamburgerBtn></HamburgerBtn>
+          </div>
+        )}
+        {topBarVariant === "hamburger" && (
+          <div className="absolute z-50 right-[170px] text-white">
+            <LangSwitcher langs={["English", "Български"]}></LangSwitcher>
+          </div>
+        )}
+        {topBarVariant === "noHamburger :(" && (
+          <div className="absolute z-50 right-[200px] top-[25px] text-white">
+            <LangSwitcher langs={["English", "Български"]}></LangSwitcher>
+          </div>
+        )}
       </TopBar>
       <AnimatePresence>
         {state && (
@@ -60,6 +67,7 @@ export default function Skeleton({
                 />
               </svg>
             </button>
+
             <SideBar>
               {state && (
                 <motion.div

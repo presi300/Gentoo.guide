@@ -11,8 +11,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en-US">
-      <body className={comfortaa.className}>{children}</body>
+    <html lang="en-US" className="scroll-smooth">
+      <body className={`${comfortaa.className} overflow-x-hidden`}>
+        {children}
+      </body>
     </html>
   );
 }

@@ -18,4 +18,19 @@
 
 body {
   background-color: #010104;
+  overflow-x: hidden;
+}
+
+.sec2 {
+  background: #010104;
+  background: linear-gradient(180deg, #010104, #0a090e);
+}
+
+.squares {
+  background-image: repeating-linear-gradient(
+      #3a3a3a 0 0px,
+      transparent 1px 100%
+    ),
+    repeating-linear-gradient(90deg, #3a3a3a 0 0px, transparent 1px 100%);
+  background-size: 150px 150px;
 }

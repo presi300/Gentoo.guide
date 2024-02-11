@@ -18,12 +18,14 @@ export const TopBar = ({ variant = "hamburger", children }) => {
         </div>
       )}
       {variant === "noHamburger :(" && (
-        <div className="absolute top-2 left-2 right-2 bg-[#0A090E] rounded-[10px] h-[72px] ">
+        <div className="fixed top-2 left-2 right-2 bg-[#0A090E] rounded-[10px] h-[72px] ">
           <div className="flex w-full h-full mx-4 items-center">
             <div className="justify-end flex ml-3">
               <Image src={"/logo.png"} width={120} height={42}></Image>
             </div>
+
             <div className="flex h-full w-full itemse-center justify-end gap-8">
+              {children}
               <button>
                 <Text variant="md">Info</Text>
               </button>

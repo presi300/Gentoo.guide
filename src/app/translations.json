@@ -2,23 +2,51 @@
     "lang": {
         "enUS": {
             "id": "0",
-            "sec1": {
-                "title": "Hello, this is a test of the text loading system which has taken me way too long to implement!",
-                "content": "I wanna die :D"
+            "bigTitle": "Gentoo Linux",
+            "subBigTitle": "Simplified",
+            "TitleButton": {
+                "Text": "This intro peaked your interest?",
+                "ClickText": "Click Here!"
+            },
+            "secondTitle": "Why gentoo linux?",
+            "secondSubTitle": "Gentoo offers something for everyone, willing to spend a bit of time figuring out how it works.",
+            "Card1": {
+                "Title": "The best possible performance for linux gaming",
+                "SubTitle": "Everything is tuned for your specific hardware after all"
+            },
+            
+            "Card2": {
+                "Title": "Extremely light if needed",
+                "SubTitle": "You can remove any and all parts of the OS to make it run on any hardware configuration imaginable"
+            },
+            "Card3": {
+                "Title": "Makes you feel like a hacker",
+                "SubTitle": "Nothing more to it, sometimes it's just cool to sit back and watch the text scroll"
             }
+            
         },
         "bg": {
-            "id": "1",
-            "sec1": {
-                "title": "Здравей, това е тест на системата за зареждане на текст, чиято направа ми отне твърде много време!",
-                "content": "Умира ми се :D"
-            }
-        },
-        "de": {
-            "id": "2",
-            "sec1": {
-                "title": "Hallo, dies ist ein Test des Textladesystems, dessen Implementierung viel zu lange gedauert hat!",
-                "content": "Ich möchte sterben :D"
+            "id": "0",
+            "bigTitle": "Gentoo Линукс",
+            "subBigTitle": "Улеснен",
+            "TitleButton": {
+                "Text": "Интрото ти хвана интереса?",
+                "ClickText": "Кликни тук!"
+            },
+            "secondTitle": "Защо Gentoo Линукс?",
+            "secondSubTitle": "Gentoo предлага нещо на всички, искащи да разберат как работи.",
+            "Card1": {
+                "Title": "Най-високата производителност за Линукс гейминг",
+                "SubTitle": "Всичко е настроено точно за твоя специфичен хардуер, все пак"
+            },
+            
+            "Card2": {
+                "Title": "Изключително лек",
+                "SubTitle": "Можеш да премахнеш и промениш всяка една част от системата, за да я накараш да работи на всяка възможна хардуерна конфигурация"
+            },
+            "Card3": {
+                "Title": "Кара те да се чустваш като хакер",
+                "SubTitle": "Понякога е готино, просто да се облегнеш на стола и да гледаш как текста се скролва"
             }
         }
     }
