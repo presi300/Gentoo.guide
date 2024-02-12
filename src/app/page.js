@@ -18,6 +18,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import Modal from "./components/Modal/Modal";
+import AnimaetedBackground from "./components/Background/Background";
 
 export default function Home() {
   let [lmao, lmaoHandler] = useState(tl.lang.loading);
@@ -29,9 +31,12 @@ export default function Home() {
   return (
     <div>
       <div className="overflow-x-hidden">
-        <div className=" mt-[18vh] tall:mt-[30vh] short:bg-white  w-full">
+        <div className=" absolute top-0 right-0 left-0 bottom-0 z-0 overflow-hidden ">
+          <AnimaetedBackground></AnimaetedBackground>
+        </div>
+        <div className=" mt-[18vh] tall:mt-[24vh] short:bg-white  w-full ">
           {/* Logo and punchline... god, I'm so creative */}
-          <div className="w-full flex justify-center items-center gap-28 tall:gap-32 flex-col px-5 sm:px-0">
+          <div className="w-full flex justify-center items-center gap-28 tall:gap-32 flex-col px-5 sm:px-0 ">
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -46,7 +51,7 @@ export default function Home() {
             </motion.div>
 
             <motion.div
-              className="w-full text-center flex justify-center"
+              className="w-full text-center flex justify-center z-20"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 3, delay: 1.5 }}
@@ -64,16 +69,17 @@ export default function Home() {
               </Text>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, background: "$FFFFFF05" }}
+              initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 2, delay: 2.5 }}
+              className="z-20"
             >
               <Link href="#1">
-                <div className="bg-white bg-opacity-[3%] p-3 rounded-full text-center border-white border-opacity-5 border-[1px] hover:bg-opacity-[5%] transition-all">
-                  <Text variant="xs">{lmao.TitleButton.Text}</Text>
+                <div className="bg-[#18171b]  p-3 rounded-full text-center border-[#34323b]  border-[3px] hover:b transition-all">
+                  <Text variant="sm">{lmao.TitleButton.Text}</Text>
                   <div className="w-full flex justify-center">
                     <div className="bg-white bg-opacity-5 rounded-full px-2">
-                      <Text variant="xs">{lmao.TitleButton.ClickText}</Text>
+                      <Text variant="sm">{lmao.TitleButton.ClickText}</Text>
                     </div>
                   </div>
                 </div>
@@ -83,7 +89,7 @@ export default function Home() {
 
           {/* I know I can make these into react components, I just don't wanna bother */}
           {/* Flying text/image cards */}
-          <div className="pt-[50vh] w-full sec2 pb-24 overflox-x-hidden">
+          <div className="pt-[20vh] w-full sec2 pb-24 overflox-x-hidden bg-blue-50">
             <div id="1" className="relative w-[100] h-[50px] top-[-5vh]"></div>
             <div className="md:ml-12 text-center px-2 md:text-start md:px-0">
               <Text variant="heading">{lmao.secondTitle}</Text>
@@ -150,11 +156,9 @@ export default function Home() {
               </div>
             </motion.div>
             <div className="w-full flex justify-center mt-24">
-              <Link href="StartPage">
-                <div>
-                  <Text variant="heading">Ready to begin?</Text>
-                </div>
-              </Link>
+              <Modal
+                btn={<Text variant="heading">Ready to begin?</Text>}
+              ></Modal>
             </div>
           </div>
         </div>

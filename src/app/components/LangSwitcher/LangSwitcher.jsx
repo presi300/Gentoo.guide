@@ -23,7 +23,7 @@ const LangSwitcher = ({ langs }) => {
             animate={{ opacity: 100, y: 5 }}
             exit={{ opacity: 0, y: 0 }}
             transition={{ opacity: { duration: 0.2 } }}
-            className="absolute w-[150px]  left-[-63px] rounded-[15px] border-[#2A2738] border-opacity-30 border-2 bg-[#0A090E]"
+            className="absolute w-[150px]  left-[-63px] rounded-[15px] border-[#2A2738] border-opacity-30 border-2 bg-[#111114]"
           >
             {langs.map((langs, key) => {
               return (
