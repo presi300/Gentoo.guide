@@ -23,7 +23,7 @@ export default function Modal({
             initial={{ scale: 0 }}
             animate={{ scale: "100%" }}
             exit={{ scale: 0 }}
-            className="fixed top-7 bottom-7 right-7 left-7 z-50 rounded-[15px] bg-opacity-80 backdrop-blur-xl bg-[#201e22]  shadow-black"
+            className="fixed top-4 bottom-4 right-4 left-4 z-[60] rounded-[15px] bg-opacity-80 backdrop-blur-xl bg-[#201e22]  shadow-black"
           >
             <button
               onClick={() => stateHandler(!state)}

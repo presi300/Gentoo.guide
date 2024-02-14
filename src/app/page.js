@@ -20,6 +20,7 @@ import Link from "next/link";
 import { useState } from "react";
 import Modal from "./components/Modal/Modal";
 import AnimaetedBackground from "./components/Background/Background";
+import { VscFoldDown } from "react-icons/vsc";
 
 export default function Home() {
   let [lmao, lmaoHandler] = useState(tl.lang.loading);
@@ -36,7 +37,7 @@ export default function Home() {
         </div>
         <div className=" mt-[18vh] tall:mt-[24vh] short:bg-white  w-full ">
           {/* Logo and punchline... god, I'm so creative */}
-          <div className="w-full flex justify-center items-center gap-28 tall:gap-32 flex-col px-5 sm:px-0 ">
+          <div className="w-full flex justify-center items-center gap-28 tall:gap-32 flex-col px-5  sm:px-0 ">
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -71,25 +72,31 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ duration: 2, delay: 2.5 }}
+              transition={{ duration: 2, delay: 3 }}
               className="z-20"
             >
               <Link href="#1">
-                <div className="bg-[#18171b]  p-3 rounded-full text-center border-[#34323b]  border-[3px] hover:b transition-all">
-                  <Text variant="sm">{lmao.TitleButton.Text}</Text>
-                  <div className="w-full flex justify-center">
-                    <div className="bg-white bg-opacity-5 rounded-full px-2">
-                      <Text variant="sm">{lmao.TitleButton.ClickText}</Text>
-                    </div>
-                  </div>
-                </div>
+                <motion.div
+                  initial={{ y: "-7vh" }}
+                  animate={{ y: "7vh" }}
+                  transition={{
+                    duration: 1,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                  className="  p-3 rounded-[25px] text-center border-[#16161a]   hover:b transition-all"
+                >
+                  <Text variant="sm">
+                    <VscFoldDown size={35} />
+                  </Text>
+                </motion.div>
               </Link>
             </motion.div>
           </div>
 
           {/* I know I can make these into react components, I just don't wanna bother */}
           {/* Flying text/image cards */}
-          <div className="pt-[20vh] w-full sec2 pb-24 overflox-x-hidden bg-blue-50">
+          <div className="pt-[20vh] w-full sec2 pb-24 overflox-x-hidden ">
             <div id="1" className="relative w-[100] h-[50px] top-[-5vh]"></div>
             <div className="md:ml-12 text-center px-2 md:text-start md:px-0">
               <Text variant="heading">{lmao.secondTitle}</Text>

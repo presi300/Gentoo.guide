@@ -38,7 +38,7 @@ export default function AnimaetedBackground({}) {
         className="w-[17vw] h-[17vw] bg-purple-500 rounded-full absolute bottom-28 left-[34rem]"
       ></motion.div>
 
-      <div className="w-screen h-screen  bg-[#000001] absolute z-0 bg-opacity-70 backdrop-blur-3xl top-0 bottom-0"></div>
+      <div className="w-screen h-screen  bg-[#000001] absolute z-0 bg-opacity-50 backdrop-blur-3xl top-0 bottom-0"></div>
 
       {/* 
       <div className="w-[300px] h-[300px] bg-yellow-500 rounded-full"></div>
