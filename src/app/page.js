@@ -97,7 +97,10 @@ export default function Home() {
           {/* I know I can make these into react components, I just don't wanna bother */}
           {/* Flying text/image cards */}
           <div className="pt-[20vh] w-full sec2 pb-24 overflox-x-hidden ">
-            <div id="1" className="relative w-[100] h-[50px] top-[-5vh]"></div>
+            <div
+              id="1"
+              className="relative w-[100px] h-[50px] top-[-5vh]"
+            ></div>
             <div className="md:ml-12 text-center px-2 md:text-start md:px-0">
               <Text variant="heading">{lmao.secondTitle}</Text>
               <div className="flex flex-col gap-1 ">
@@ -109,7 +112,7 @@ export default function Home() {
               initial={{ opacity: 0, x: -300 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
-              className=" mt-24 h-[35rem] lg:h-[28rem] 3xl:h-[32rem] rounded-[15px] border-white border-[1px] border-opacity-5 md:mx-12 grid md:grid-rows-none grid-rows-2 md:grid-cols-2 place-items-center bg-white bg-opacity-[2%]"
+              className=" mt-24 h-[35rem] lg:h-[28rem] 3xl:h-[32rem] rounded-[15px] border-white border-[1px] border-opacity-5 md:mx-12 grid md:grid-rows-none grid-rows-2 md:grid-cols-2 place-items-center bg-[#0c0c0e]"
             >
               <div className="flex px-3 sm:px-0 items-center justify-start w-full h-full">
                 <Image
@@ -128,7 +131,7 @@ export default function Home() {
               initial={{ opacity: 0, x: 300 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className=" mt-24 h-[35rem] lg:h-[28rem] 3xl:h-[32rem] rounded-[15px] border-white border-[1px] border-opacity-5 md:mx-12 grid md:grid-rows-none grid-rows-2 md:grid-cols-2 place-items-center bg-white bg-opacity-[2%]"
+              className=" mt-24 h-[35rem] lg:h-[28rem] 3xl:h-[32rem] rounded-[15px] border-white border-[1px] border-opacity-5 md:mx-12 grid md:grid-rows-none grid-rows-2 md:grid-cols-2 place-items-center bg-[#0c0c0e]"
             >
               <div className="flex w-full flex-col pl-12 pr-12">
                 <Text variant="md">{lmao.Card2.Title}</Text>
@@ -147,7 +150,7 @@ export default function Home() {
               initial={{ opacity: 0, x: -300 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className=" mt-24 h-[35rem] lg:h-[28rem] 3xl:h-[32rem] rounded-[15px] border-white border-[1px] border-opacity-5 md:mx-12 grid md:grid-rows-none grid-rows-2 md:grid-cols-2 place-items-center bg-white bg-opacity-[2%]"
+              className=" mt-24 h-[35rem] lg:h-[28rem] 3xl:h-[32rem] rounded-[15px] border-white border-[1px] border-opacity-5 md:mx-12 grid md:grid-rows-none grid-rows-2 md:grid-cols-2 place-items-center bg-[#0c0c0e] "
             >
               <div className="flex px-3 sm:px-0 items-center justify-start w-full h-full">
                 <Image
@@ -163,9 +166,9 @@ export default function Home() {
               </div>
             </motion.div>
             <div className="w-full flex justify-center mt-24">
-              <Modal
-                btn={<Text variant="heading">Ready to begin?</Text>}
-              ></Modal>
+              <Link href="/StartPage" replace>
+                <Text variant="heading">Ready to begin?</Text>
+              </Link>
             </div>
           </div>
         </div>
