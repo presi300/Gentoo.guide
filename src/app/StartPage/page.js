@@ -13,7 +13,7 @@ import Image from "next/image";
 export default function StarPage() {
   return (
     // FFS, vercel
-    <div className="scroll-smooth">
+    <div>
       <div className="flex w-full justify-center">
         <div className="w-[1200px] mt-24 px-4">
           <div className="flex flex-col ">
@@ -59,6 +59,7 @@ export default function StarPage() {
                   <div className="grid w-full place-items-center">
                     <Image
                       className="rounded-[15px] border-[1px] border-[#AAA1CC] my-3 mb-12"
+                      alt="You really should not be seeing this..."
                       src={"/LanguageSw.png"}
                       width={200}
                       height={100}
@@ -80,6 +81,7 @@ export default function StarPage() {
                   <div className="grid place-items-center my-12  ">
                     <Image
                       src="/SkipBtn.png"
+                      alt="You really should not be seeing this..."
                       width={100}
                       height={100}
                       className="border-[#AAA1CC] border-[1px] rounded-[15px]"
