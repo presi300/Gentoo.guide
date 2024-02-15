@@ -23,12 +23,12 @@ export default function Skeleton({
           </div>
         )}
         {topBarVariant === "hamburger" && (
-          <div className="absolute z-50 right-[170px] text-white">
+          <div className="absolute z-50 right-[170px] top-[25px] text-white">
             <LangSwitcher langs={["English", "Български"]}></LangSwitcher>
           </div>
         )}
         {topBarVariant === "noHamburger :(" && (
-          <div className="absolute z-50 right-[200px] top-[25px] text-white">
+          <div className="absolute z-50 right-[190px] top-[25px] text-white">
             <LangSwitcher langs={["English", "Български"]}></LangSwitcher>
           </div>
         )}
