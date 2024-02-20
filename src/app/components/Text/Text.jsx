@@ -3,7 +3,7 @@ import { Comfortaa } from "next/font/google";
 const comfortaa = Comfortaa({ subsets: ["latin"] });
 
 import "./Text.css";
-// 4 standard text sizes... I use other text styles wherever necessary (e.g. ShellBoxes and other things I haven't added yet)
+// 6 standard text sizes... I use other text styles wherever necessary (e.g. ShellBoxes and other things I haven't added yet)
 let Text = ({
   children,
   variant = "sm",

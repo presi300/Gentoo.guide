@@ -1,3 +1,6 @@
+"use client";
+import LoadText from "../components/LangSwitcher/Loader.server";
+import { useState, useEffect } from "react";
 import React from "react";
 import Text from "../components/Text/Text";
 import Skeleton from "../components/Skeleton/Skeleton";
@@ -11,40 +14,42 @@ import AttentionBox from "../components/AttentionBox/AttentionBox";
 import { Button } from "../components/Button/Button";
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa6";
+import TextFileBox from "../components/TextFileBox/TextFileBox";
+import tl from "./translations.json";
 
 export default function StarPage() {
+  let [lmao, lmaoHandler] = useState(tl.lang.enUS);
+
+  useEffect(() => {
+    window.onload = lmaoHandler(LoadText(tl));
+  });
   return (
     // FFS, vercel
     <div>
+      {/* Welcome */}
       <div className="flex w-full justify-center">
         <div className="w-[1200px] mt-24 px-4">
           <div className="flex flex-col ">
             <Text variant="bigHeading">
               <p className="text-center md:text-start">
-                Welcome to gentoo.guide!
+                {lmao.Welcome.mainTitle}
               </p>{" "}
             </Text>
             <Spacer variant="sm"></Spacer>
-            <Text variant="md">
-              This is a short page to get you up-to speed on how this site
-              works.
-            </Text>
-            <div id="Site Navigation"></div>
+            <Text variant="md">{lmao.Welcome.mainSubTitle}</Text>
+            <div id={lmao.SideBar.Content.El1.e1}></div>
             <div className="mt-24 ml-3">
-              <Text variant="lg">Site Navigation</Text>
+              {/* Navigation */}
+              <Text variant="lg">{lmao.Welcome.Navigation.mainTitle}</Text>
               <Spacer variant="sm"></Spacer>
-              <Text variant="md">
-                Gentoo.guide is quite different from other wikis... As it's not
-                really a wiki in the regular sense.
-              </Text>
+              <Text variant="md">{lmao.Welcome.Navigation.mainSubTitle}</Text>
               <div className="my-6">
                 <Text variant="md">
-                  Most of the site navigation is done through the sidebar. It's
-                  simple, click on the thing you want to see... <br /> Clicking
-                  on a sidebar element expands it, showing smaller sub-elements.
-                  Clicking on a big element brings you to a major (big) heading
-                  and clicking on a sub-element brings you to a sub (small)
-                  heading.
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: lmao.Welcome.Navigation.sec1.HTMLcontent,
+                    }}
+                  ></div>
                 </Text>
               </div>
 
@@ -53,10 +58,7 @@ export default function StarPage() {
               </div>
 
               <div className="my-6">
-                <Text variant="md">
-                  You can also change the language to your preferred one from
-                  the globe icon in the top bar, if it's supported of course
-                </Text>
+                <Text variant="md">{lmao.Welcome.Navigation.sec2}</Text>
                 <div className="my-6">
                   <div className="grid w-full place-items-center">
                     <Image
@@ -70,16 +72,11 @@ export default function StarPage() {
 
                   <AttentionBox
                     variant="note"
-                    text=" Note: The language switcher does not have an indicator for the
-                  currently selected language"
+                    text={lmao.HowGentooWork.AttentionBox1}
                   ></AttentionBox>
                 </div>
                 <div className="mt-12">
-                  <Text variant="md">
-                    If you do not care about any of the information on a certain
-                    page, you can click the "Skip the entire page" button to go
-                    all the way down to the bottom of the page
-                  </Text>
+                  <Text variant="md">{lmao.Welcome.Navigation.sec3}</Text>
                   <div className="grid place-items-center my-12  ">
                     <Image
                       src="/SkipBtn.png"
@@ -93,81 +90,274 @@ export default function StarPage() {
                     <Text>TODO: Add a chapter selector</Text>
                   </div>
                   <div className="mt-24">
-                    <div id="What is Gentoo.guide?"></div>
+                    {/* What is Gentoo.guide */}
+                    <div id={lmao.SideBar.Content.El1.e2}></div>
                     <Text variant="lg">
-                      What is gentoo.guide, exactly and why does it exist?
+                      {lmao.Welcome.Navigation.secondaryTitle1}
                     </Text>
                     <Spacer variant="sm"></Spacer>
                     <Text variant="md">
-                      Gentoo.guide is an attempt to condense the (in my opinion)
-                      most useful information from the gentoo AMD64 handbook and
-                      the gentoo wiki into one well-ish* written guide. <br />{" "}
-                      <br />
-                      It is also a learning excersise for me, trying to learn
-                      React with NextJS. <br /> <br />
-                      It is also, also the project I'm doing as my final, trying
-                      to graduate 12th grade.
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: lmao.Welcome.Navigation.sec4.HTMLcontent,
+                        }}
+                      ></div>
                     </Text>
                   </div>
                   <div className="mt-24">
-                    <div id="I wanna help, how?"></div>
+                    <div id={lmao.SideBar.Content.El1.e3}></div>
                     <Text variant="lg">
-                      I found something wrong/wanna help translate the site,
-                      how?
+                      {lmao.Welcome.Navigation.secondaryTitle2}
                     </Text>
                     <Spacer variant="sm"></Spacer>
                     <Text variant="md">
-                      For the former, submit either an issue on my
-                      codeberg/github (preferably codeberg), or if you've
-                      already figured out a fix for it, submit a pull request.{" "}
-                      <br /> <br />
-                      As for translations, check out the README for more
-                      information on that.
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: lmao.Welcome.Navigation.sec5.HTMLcontent,
+                        }}
+                      ></div>
                     </Text>
-                  </div>
-                  <div className="mt-20">
-                    <div className="mb-12">
-                      <Spacer variant="sm"></Spacer>
-                    </div>
-                    <div className="text-center">
-                      <Text variant="lg">
-                        Alright, with all that out of the way
-                      </Text>
-                      <Text variant="md">Let's start with</Text>
-                      <div className="grid place-items-center">
-                        <div className="my-5 p-3 bg-[#41366C] transition-all rounded-full bg-opacity-35 hover:bg-opacity-50 max-w-[700px]">
-                          <Link
-                            href="InstallEnvSetup"
-                            className="flex items-center gap-5"
-                          >
-                            <Text>
-                              Downloading and setting up the installation
-                              environment
-                            </Text>
-                            <Text>
-                              {" "}
-                              <FaArrowRight />
-                            </Text>
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          {/* Why gentoo linux */}
+          <div id={lmao.SideBar.Text.e2}></div>
+          <div className="mt-28 mb-20">
+            <Text variant="bigHeading">
+              <p className="text-center md:text-start">
+                {lmao.HowGentooWork.mainTitle}
+              </p>{" "}
+            </Text>
+            <Spacer variant="sm"></Spacer>
+            <Text variant="md">{lmao.HowGentooWork.mainSubTitle}</Text>
+          </div>
+          {/* Source based... */}
+          <div className="ml-3">
+            <div id={lmao.SideBar.Content.El2.e1}></div>
+            <Text variant="lg">{lmao.HowGentooWork.mainSubTitle}</Text>
+            <Spacer variant="sm"></Spacer>
+            <Text variant="md">
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: lmao.HowGentooWork.sec1.HTMLcontent,
+                }}
+              ></div>
+            </Text>
+            {/* Portage and emerge */}
+            <div className="mt-28" id={lmao.SideBar.Content.El2.e2}></div>
+            <Text variant="lg">{lmao.HowGentooWork.secondaryTitle2}</Text>
+            <Spacer variant="sm"></Spacer>
+            <Text variant="md">
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: lmao.HowGentooWork.sec2.HTMLcontent,
+                }}
+              ></div>
+            </Text>
+            <div className="mt-2 mb-9">
+              <ShellBox
+                dir="~"
+                variant="root"
+                command="emerge <package>"
+              ></ShellBox>
+            </div>
+            <Text variant="md">{lmao.HowGentooWork.Label1}</Text>
+            <div className="mt-3 mb-9">
+              <ShellBox
+                dir="~"
+                variant="root"
+                command="emerge --unmerge <package>"
+              ></ShellBox>
+            </div>
+            <Text variant="md">{lmao.HowGentooWork.Label2}</Text>
+            <div className="mt-3 mb-9">
+              <ShellBox
+                dir="~"
+                variant="root"
+                command="emerge --sync"
+              ></ShellBox>
+            </div>
+            <Text variant="md">{lmao.HowGentooWork.Label3}</Text>
+            <div className="mt-3 mb-9">
+              <ShellBox
+                dir="~"
+                variant="root"
+                command="emerge -NuD @world"
+              ></ShellBox>
+            </div>
+            <Text variant="md">{lmao.HowGentooWork.Label4}</Text>
+            <div className="mt-3 mb-9">
+              <ShellBox
+                dir="~"
+                variant="root"
+                command="emerge --ask --depclean"
+              ></ShellBox>
+            </div>
+            <div>
+              <Text variant="md">
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: lmao.HowGentooWork.sec3.HTMLcontent,
+                  }}
+                ></div>
+              </Text>
+            </div>
+            <div className="mt-3 mb-9">
+              <ShellBox
+                dir="~"
+                variant="root"
+                command="emerge --autounmask=y --autounmask-write <package>"
+              ></ShellBox>
+            </div>
+            <Text variant="md">
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: lmao.HowGentooWork.Label5.HTMLcontent,
+                }}
+              ></div>
+            </Text>
+
+            <div className="my-3">
+              {/* prettier-ignore*/}
+              <ShellBoxOutput
+              variant="root"
+              dir="~"
+              command="dispatch-conf"
+              output={
+                <div className="my-3">
+
+                  -- (1 of 1) -- /etc/portage/package.accept_keywords/lmao <br />
+                  -- q quit, h help, n next, e edit-new, z zap-new, u use-new <br />
+                  <idk className="mx-3"></idk> m merge, t toggle-merge, l look-merge: <b>u</b>
+                </div>
+              }
+              ></ShellBoxOutput>
+              <div className="ml-8 mt-2">
+                <Text variant="sm">
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: lmao.HowGentooWork.Label6.HTMLcontent,
+                    }}
+                  ></div>
+                </Text>
+              </div>
+            </div>
+            <div className="my-9">
+              <AttentionBox
+                variant="attention"
+                text={lmao.HowGentooWork.AttentionBox2}
+              ></AttentionBox>
+            </div>
+          </div>
+          <div id={lmao.SideBar.Content.El2.e3}></div>
+          <div className="mt-28"></div>
+          <Text variant="lg">{lmao.HowGentooWork.secondaryTitle3}</Text>
+          <Spacer variant="sm"></Spacer>
+          <div>
+            <Text variant="md">
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: lmao.HowGentooWork.sec4.HTMLcontent,
+                }}
+              ></div>
+
+              <Text variant="sm">
+                {lmao.HowGentooWork.TFBox1.Label}
+                <b>ACCEPT_LICENSE</b>
+              </Text>
+            </Text>
+            <div className="my-5">
+              <TextFileBox>
+                <div className="flex flex-col gap-2">
+                  <div className="text-zinc-700 ">
+                    {lmao.HowGentooWork.TFBox1.comment}
+                  </div>
+                  <div>ACCEPT_LICENSE="*"</div>
+                </div>
+              </TextFileBox>
+            </div>
+            <div className="my-12">
+              <div className="my-5">
+                <Text variant="md">
+                  <b>MAKEOPTS</b> <br />
+                  <Text variant="sm">{lmao.HowGentooWork.TFBox2.Label}</Text>
+                </Text>
+              </div>
+              <div>
+                <TextFileBox>
+                  <div className="flex flex-col gap-2">
+                    <div className="text-zinc-700">
+                      {lmao.HowGentooWork.TFBox2.comment}
+                    </div>
+                    <div>MAKEOPTS="-j8 -l8"</div>
+                  </div>
+                </TextFileBox>
+                <div className="my-3">
+                  <AttentionBox
+                    variant="note"
+                    text={lmao.HowGentooWork.AttentionBox3}
+                  ></AttentionBox>
+                </div>
+              </div>
+            </div>
+            <div className="mb-12">
+              <Text variant="md">
+                <b>USE</b>
+                <Text variant="sm">{lmao.HowGentooWork.TFBox3.Label}</Text>
+              </Text>
+              <div className="my-3">
+                <TextFileBox>
+                  <div className="flex flex-col gap-2">
+                    <div className="text-zinc-700">
+                      {lmao.HowGentooWork.TFBox3.Comment}
+                    </div>
+                    <div>USE="wayland vulkan pipewire"</div>
+                  </div>
+                </TextFileBox>
+              </div>
+            </div>
+          </div>
+          <div className="text-center">
+            {/* Next page */}
+            <Text variant="lg">{lmao.HowGentooWork.EndTitle}</Text>
+            <Text variant="md">{lmao.HowGentooWork.EndSubTitle}</Text>
+            <div className="grid place-items-center">
+              <div className="my-5 p-3 bg-[#41366C] transition-all rounded-full bg-opacity-35 hover:bg-opacity-50 max-w-[700px]">
+                <Link
+                  href="InstallEnvSetup"
+                  className="flex items-center gap-5"
+                >
+                  <Text>{lmao.HowGentooWork.EndButtonTxt}</Text>
+                  <Text>
+                    {" "}
+                    <FaArrowRight />
+                  </Text>
+                </Link>
+              </div>
+            </div>
+          </div>
+
           <div id="end"></div>
         </div>
       </div>
 
       <Skeleton topBarVariant="hamburger">
         <SideBarElementExtended
-          text="Welcome!"
+          text={lmao.SideBar.Text.e1}
           content={[
-            "Site Navigation",
-            "What is Gentoo.guide?",
-            "I wanna help, how?",
+            `${lmao.SideBar.Content.El1.e1}`,
+            `${lmao.SideBar.Content.El1.e2}`,
+            `${lmao.SideBar.Content.El1.e3}`,
+          ]}
+        ></SideBarElementExtended>
+        <SideBarElementExtended
+          text={lmao.SideBar.Text.e2}
+          content={[
+            `${lmao.SideBar.Content.El2.e1}`,
+            `${lmao.SideBar.Content.El2.e2}`,
+            `${lmao.SideBar.Content.El2.e3}`,
           ]}
         ></SideBarElementExtended>
       </Skeleton>

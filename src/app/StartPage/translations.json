@@ -1,0 +1,109 @@
+{
+  "lang": {
+    "enUS": {
+      "id": "0",
+      "Welcome": {
+        "mainTitle": "Welcome to gentoo.guide!",
+        "mainSubTitle": "This is a page to get you up-to speed on how this site and gentoo itself works.",
+        "Navigation": {
+          "mainTitle": "Site Navigation",
+          "mainSubTitle": "Gentoo.guide is quite different from other wikis... As it's not really a wiki in the regular sense.",
+          "sec1": {
+            "HTMLcontent": "Most of the site navigation is done through the sidebar. It's simple, click on the thing you want to see... <br /> Clicking on a sidebar element expands it, showing smaller sub-elements. Clicking on a big element brings you to a major (big) heading and clicking on a sub-element brings you to a sub (small) heading.",
+            "Warning": "The DOM will read this and dangerouslySetInnerHTML"
+          },
+          "sec2": "You can also change the language to your preferred one from the globe icon in the top bar, if it's supported of course",
+          "sec3": "If you do not care about any of the information on a certain page, you can click the 'Skip the entire page' button to go all the way down to the bottom of the page",
+          "secondaryTitle1": "What is gentoo.guide, exactly and why does it exist?",
+          "sec4": {
+            "HTMLcontent": "Gentoo.guide is an attempt to condense the (in my opinion) most useful information from the gentoo AMD64 handbook and the gentoo wiki into one well-ish* written guide. <br /> <br /> It is also a learning excersise for me, trying to learn React with NextJS. <br /> <br /> It is also, also the project I'm doing as my final, trying to graduate 12th grade.",
+            "Warning": "The DOM will read this and dangerouslySetInnerHTML"
+          },
+          "secondaryTitle2": "I found something wrong/wanna help translate the site, how?",
+          "sec5": {
+            "HTMLcontent": " For the former, submit either an issue on my codeberg/github (preferably codeberg), or if you've already figured out a fix for it, submit a pull request. <br /> <br /> As for translations, check out the README for more information on that.",
+            "Warning": "The DOM will read this and dangerouslySetInnerHTML"
+          }
+        }
+      },
+      "HowGentooWork": {
+        "mainTitle": "How does gentoo linux work?",
+        "mainSubTitle": "Gentoo works similarly to other linux distributions, it just has a few basic concepts that you need to grasp for it to make sense.",
+        "secondaryTitle1": "Source based... What does it mean?",
+        "sec1": {
+          "HTMLcontent": "Source based means that every package you install is compiled on your system, using the flags and optimizations that you have set. <br /> This differes from most other distros, which have all the packages pre-compiled and ready to install. <br /> <br /> Compiling your own packages has some unique advantages like a better performance, higher level of customizability and the ability to run programs on otherwise unsupported platforms. <br /> <br /> However it has one major disadvantage... Some packages can take REALLY long to install, depending on your how fast your CPU is.",
+          "Warning": "The DOM will read this and dangerouslySetInnerHTML"
+        },
+        "secondaryTitle2": "Portage... What is it?",
+        "sec2": {
+          "HTMLcontent": "<b>Portage</b> is the package manager and hearth of gentoo. It provides various tools for installing, updating and otherwise managing packages as well as the system itself. <br /> <br /> <b>Emerge </b> is the tool you'll be interacting with the most, as it's what does actual package management. It's syntax isn't as intuitive as something like <b>apt</b>, however it's not that bad once you get used to it. <br /> <br /> Here is how to do some common actions with <b>emerge</b>: <br /> <br /> Install a package:",
+          "Warning": "The DOM will read this and dangerouslySetInnerHTML"
+        },
+        "Label1": "Uninstall a package:",
+        "Label2": "Sync repositories:",
+        "Label3": "Update the whole system:",
+        "Label4": "Remove unneeded packages:",
+        "sec3": {
+          "HTMLcontent": "A roadblock you are certain to hit at some point while using gentoo are <b>masked packages</b>. <br /> <br />A package can be <b>masked</b> for various reasons including but not limited to: <div className='ml-5 mt-3'> - Being in testing <br />- Being deprecated <br /> - Coming from an external source (<b>overlay</b>) </div> <br /> There are a few ways you can go about unmasking a package with the most straight forward one being doing it through <b>emerge</b> via <b>autounmask</b>:",
+          "Warning": "The DOM will read this and dangerouslySetInnerHTML"
+        },
+        "Label5": {
+          "HTMLcontent": "After this you can use <b>dispatch-conf</b> to apply the changes, made by autounmask:",
+          "Warning": "The DOM will read this and dangerouslySetInnerHTML"
+        },
+        "Label6": {
+          "HTMLcontent": "(Select <b>u</b> and press <b>Enter</b>)",
+          "Warning": "The DOM will read this and dangerouslySetInnerHTML"
+        },
+        "AttentionBox1": "The language switcher does not have an indicator for the currently selected language",
+        "AttentionBox2": "Pay close attention to the file dispatch-conf is about to update, as it can and will nuke your system if you aren't careful with it.",
+        "secondaryTitle3": "Make.conf, the most important file",
+        "sec4": {
+          "HTMLcontent": "<b>Make.conf</b> or <b>/etc/portage/make.conf</b> is probably the most important file in gentoo linux. It is the main portage config file. It dictates how packages are installed and the features they are installed with, as well as what packages <b>can</b> be installed in the 1st place. <br /> <br /> You can configure A LOT in <b>make.conf</b>, however gentoo doesn't require that you fully understand it and ships somewhat sane defaults. <br /> <br /> Still, there are things you have to understand and configure yourself: <br /> <br /> ",
+          "Warning": "The DOM will read this and dangerouslySetInnerHTML"
+        },
+
+        "TFBox1": {
+          "Label": "Dictates the license that a package has to use to be eligible for installation",
+          "Comment": "#Enable installing packages, regardless of their license"
+        },
+        "TFBox2": {
+          "Label": "Enables the use of more than 1 CPU core when compiling packages, which can significantly speed up their compilation",
+          "Comment": "#Enable compiling packages with 8 CPU cores"
+        },
+        "AttentionBox3": "As a general rule of thumb, your RAM should be twice as much as your MAKEOPTS (e.g. you should have at least 16GB ram to use MAKEOPTS='-j8 -l8')",
+        "TFBox3": {
+          "Label": "USE, also referred to as 'USE flags' dictate what features and dependencies packages get compiled with",
+          "Comment": "#Will tell the system to compile packages with wayland, vulkan and pipewire support, wherever applicable"
+        },
+        "EndTitle": "Alright, with all that out of the way",
+        "EndSubTitle": "Let's start with",
+        "EndButtonTxt": "Downloading and setting up the installation environment"
+      },
+      "SideBar": {
+        "Text": {
+          "e1": "Welcome!",
+          "e2": "How does gentoo work?"
+        },
+        "Content": {
+          "El1": {
+            "e1": "Site Navigation",
+            "e2": "What is Gentoo.guide?",
+            "e3": "I wanna help, how?"
+          },
+          "El2": {
+            "e1": "Source based?",
+            "e2": "Portage... What is it?",
+            "e3": "Make.conf, the most important file"
+          }
+        }
+      }
+    },
+    "bg": {
+      "id": "1"
+    }
+  },
+  "loading": {
+    "id": "loading"
+  }
+}

@@ -12,7 +12,7 @@ let ShellBoxOutput = ({
     <div className="bg-[#0A090E] bg-opacity-60 border-[1px] border-[#2A2738] backdrop-blur-[8px] rounded-[15px]">
       <ShellBox variant={variant} dir={dir} command={command}></ShellBox>
       <div className="ml-4">
-        <samp className="flex gap-2">{output}</samp>
+        <samp className="flex gap-2 text-[12px] sm:text-lg">{output}</samp>
       </div>
     </div>
   );

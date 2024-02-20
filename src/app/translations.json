@@ -26,7 +26,7 @@
             
         },
         "bg": {
-            "id": "0",
+            "id": "1",
             "bigTitle": "Gentoo Линукс",
             "subBigTitle": "Улеснен",
             "TitleButton": {
@@ -50,7 +50,7 @@
             }
         },
         "loading": {
-            "id": "0",
+            "id": "loading",
             "bigTitle": "Loading...",
             "subBigTitle": "Loading...",
             "TitleButton": {
