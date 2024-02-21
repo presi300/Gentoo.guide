@@ -4,16 +4,18 @@
       "id": "0",
       "Welcome": {
         "mainTitle": "Welcome to gentoo.guide!",
-        "mainSubTitle": "This is a page to get you up-to speed on how this site and gentoo itself works.",
+        "mainSubTitle": "This is a page to get you up-to speed on how this site and Gentoo itself works.",
         "Navigation": {
           "mainTitle": "Site Navigation",
           "mainSubTitle": "Gentoo.guide is quite different from other wikis... As it's not really a wiki in the regular sense.",
           "sec1": {
-            "HTMLcontent": "Most of the site navigation is done through the sidebar. It's simple, click on the thing you want to see... <br /> Clicking on a sidebar element expands it, showing smaller sub-elements. Clicking on a big element brings you to a major (big) heading and clicking on a sub-element brings you to a sub (small) heading.",
+            "HTMLcontent": "Most of the site navigation is done through the sidebar. It's simple. Click on the information you want to see... <br /><br />Clicking on a sidebar element expands it, showing smaller sub-elements. Clicking on a big element brings you to a major (big) heading and clicking on a sub-element brings you to a sub (small) heading.",
             "Warning": "The DOM will read this and dangerouslySetInnerHTML"
           },
-          "sec2": "You can also change the language to your preferred one from the globe icon in the top bar, if it's supported of course",
-          "sec3": "If you do not care about any of the information on a certain page, you can click the 'Skip the entire page' button to go all the way down to the bottom of the page",
+          "AttentionBox1": "The language switcher does not have an indicator for the currently selected language.",
+
+          "sec2": "You can also change the language to your preferred one from the globe icon in the top bar, as long as it's supported of course.",
+          "sec3": "If you do not care about any of the information on a certain page, you can click the 'Skip the entire page' button to go all the way down to the bottom of the page.",
           "secondaryTitle1": "What is gentoo.guide, exactly and why does it exist?",
           "sec4": {
             "HTMLcontent": "Gentoo.guide is an attempt to condense the (in my opinion) most useful information from the gentoo AMD64 handbook and the gentoo wiki into one well-ish* written guide. <br /> <br /> It is also a learning excersise for me, trying to learn React with NextJS. <br /> <br /> It is also, also the project I'm doing as my final, trying to graduate 12th grade.",
@@ -55,7 +57,6 @@
           "HTMLcontent": "(Select <b>u</b> and press <b>Enter</b>)",
           "Warning": "The DOM will read this and dangerouslySetInnerHTML"
         },
-        "AttentionBox1": "The language switcher does not have an indicator for the currently selected language",
         "AttentionBox2": "Pay close attention to the file dispatch-conf is about to update, as it can and will nuke your system if you aren't careful with it.",
         "secondaryTitle3": "Make.conf, the most important file",
         "sec4": {
@@ -105,46 +106,46 @@
         "mainTitle": "Добре дошли в gentoo.guide!",
         "mainSubTitle": "Тази страница ще ви разясни как този сайт и самия Gentoo линукс работят.",
         "Navigation": {
-          "mainTitle": "Навигация на сайта",
-          "mainSubTitle": "Gentoo.guide е доста различен от други wikiта, защото не е wiki в нормалния смисъл на думата",
+          "mainTitle": "Навигация в сайта",
+          "mainSubTitle": "Gentoo.guide е доста различен от други wiki-та, защото не е wiki в общоприетия смисъл на думата.",
           "sec1": {
-            "HTMLcontent": "Повечето навигация става чрез лявата странична лента. Елементарно е, просто кликнете върху информацията, от която се интересувате. <br /><br /> При кликване върху елемент от страничната лента, той се оголемява и под него се показват различни под-елементи. Кликването на основен елемент ще ви заведе до основна глава, а на под-елемент - към вторична.",
+            "HTMLcontent": "Навигацията към различните секции на сайта се намира в лявата странична лента, достъпна чрез кликане на бутона, позициониран в горния ляв ъгъл на страницата. Елементарно е. Кликнете върху информацията, от която се интересувате. <br /><br /> При кликване върху елемент от страничната лента, той се уголемява и под него се показват различни допълнителни елементи. Кликването на основен елемент ще ви заведе до основна тема в страницата. Кликването на под-елемент ви води към вторична тема.",
             "Warning": "The DOM will read this and dangerouslySetInnerHTML"
           },
-          "sec2": "Можете да смените езика си към друг, поддържан от сайта език, чрез глобус иконата, позиционирана в дясната част на горната лента.",
-          "AttentionBox1": "Елементът за смяна на език не показва текущо избрания език",
-          "sec3": "Ако информацията в дадена страниця не ви интересува, можете да пропуснете дадената страница, като кликнете върху бутона, позициониран долния десен ъгъл на страницата.",
-          "secondaryTitle1": "Какво е gentoo.guide и защо съществува?",
+          "sec2": "Можете да смените езика с друг, поддържан от сайта, чрез глобус иконата, която се намира в дясната част на горната лента.",
+          "AttentionBox1": "Елементът за смяна на езика не показва текущо избрания език.",
+          "sec3": "Ако информацията в дадена страница не ви интересува, можете да я пропуснете, като кликнете върху бутона в долния десен ъгъл.",
+          "secondaryTitle1": "Какво е gentoo.guide и защо е създаден?",
           "sec4": {
-            "HTMLcontent": "Gentoo.guide е опит да се събере най-важната според мен информация от официалното gentoo wiki и тяхния AMD64 handbook в един горе-долу добре написан справочник. <br /> <br /> То също така е учебно упражнение за мен, опитвайки се да науча React и NextJS, както и финалният ми проект за завършване на 12ти клас.",
+            "HTMLcontent": "Gentoo.guide е опит да се събере най-важната информация от официалното gentoo wiki и техния AMD64 handbook в един систематизиран справочник-сайт. <br /> <br /> Той също така е моя учебна разработка, докато се опитвам да науча React и NextJS. Това е моят финален проект за завършване на 12ти клас.",
             "Warning": "The DOM will read this and dangerouslySetInnerHTML"
           },
           "secondaryTitle2": "Намерих нещо грешно в сайта/искам да помогна с превеждането му към други езици... Как?",
           "sec5": {
-            "HTMLcontent": "За първото, може да добавите заявка за проблем в <b>GitHub</b>a или <b>Codeberg</b>a ми, или ако вече имате решение за проблема, изпратете <b>pull request</b> на едно от горепосочените две места.",
+            "HTMLcontent": "За първото, може да добавите заявка за проблем в <b>GitHub-</b>a или <b>Codeberg-</b>a ми. Ако вече имате решение за проблема, изпратете <b>pull request</b> на едно от горепосочените две места. ",
             "Warning": "The DOM will read this and dangerouslySetInnerHTML"
           }
         }
       },
       "HowGentooWork": {
         "mainTitle": "Как работи Gentoo линукс?",
-        "mainSubTitle": "Gentoo работи подобно на други линукс дистрибуции, но има няколко основни неща, които трябва да бъдат разбрани за може да се осмисли напълно начина му на работа.",
+        "mainSubTitle": "В начина на работа на Gentoo има много прилики с други линукс дистрибуции, но има някои основни разлики като факта, че е 'сорс базиран'.",
         "secondaryTitle1": "Какво значи 'Сорс базиран' ?",
         "sec1": {
-          "HTMLcontent": "'Сорс базиран' като се говори за Gentoo означава, операционната система предоставя само кода на програмите, нужни за нейната операция, а не самите програми*. <br /> <br />Това означава, че при инсталиране на повечето програми, те трябва да бъдат компилирани от инсталиращия ги компютър, преди да могат да бъдат използвани. <br /><br /> Самостоятелното компилиране на програми (пакети) има своите предимства като по-висока производителност, повече възможности за персонализиране на системата и възможност за използване на процесорни архитектури, неподдържани от други операционни системи. <br /> <br /> Има обаче един голям недостатък... Някои програми може да отнемат МНОГО дълго за инсталиране, в зависимист производителността на процесора ви.",
+          "HTMLcontent": "'Сорс базиран' като се говори за Gentoo означава, че операционната система предоставя само кода на програмите, нужни за нейната работа, а не самите програми*. <br /> <br />При инсталиране на повечето програми, те трябва да бъдат компилирани от инсталиращия ги компютър преди да могат да бъдат използвани. <br /><br /> Самостоятелното компилиране на програми (пакети) има своите предимства: <br /><br />По-висока производителност <br /><br /> Повече възможности за персонализиране на системата <br /><br /> Възможност за използване на процесорни архитектури, неподдържани от други операционни системи. <br /> <br /> Има обаче един голям недостатък... Някои програми може да отнемат МНОГО дълго време за инсталиране. Това зависи от производителността на процесора ви.",
           "Warning": "The DOM will read this and dangerouslySetInnerHTML"
         },
         "secondaryTitle2": "Какво е Portage?",
         "sec2": {
-          "HTMLcontent": "<b>Portage</b> е основата и пакетния мениджър на gentoo. <br/> <br/> <b>Portage</b> предоставя инструменти за инсталиране, деинсталиране и обновяване на пакети, както и цялостно управление на системата. <br /> <br /> <b>Emerge </b> е инструментът, който ще използвате най-често. Той е нещото, което управлява пакетите.<br /> <br /> Ето как се правят някои основни неща с <b>emerge</b>: <br /><br />Инсталация на пакет:",
+          "HTMLcontent": "<b>Portage</b> е и основата, и пакетният мениджър на gentoo. <br/> <br/> <b>Portage</b> предоставя инструменти за инсталиране, деинсталиране и обновяване на пакети, както и цялостно управление на системата. <br /> <br /> <b>Emerge </b> е инструментът, който ще използвате най-често. Той е инструментът, който управлява програмните пакети.<br /> <br /> Ето как се правят някои основни действия с <b>emerge</b>: <br /><br />Инсталация на пакет:",
           "Warning": "The DOM will read this and dangerouslySetInnerHTML"
         },
         "Label1": "Деинсталация на пакет:",
-        "Label2": "Проверка за актуалицации:",
+        "Label2": "Проверка за актуализации:",
         "Label3": "Актуализация на системата:",
         "Label4": "Премахване на ненужни пакети:",
         "sec3": {
-          "HTMLcontent": "Проблем, който със сигурност ще срещнете при използване на gentoo са <b>маскирани пакети</b>. <br /> <br />Пакетът може да е маскиран по много причини, като най-честите са: <div className='ml-5 mt-3'> - Тестването му <br />- Спряна поддръжка <br /> - Идва от място, различно от официалните сървъри (от <b>overlay</b>) </div> <br /> Има доста начини за отмаскиране на пакет, но най-лесният е през <b>emerge</b> чрез <b>autounmask</b>:",
+          "HTMLcontent": "Проблем, който със сигурност ще срещнете при използване на gentoo, са <b>маскирани пакети</b>. <br /> <br />Пакетът може да е маскиран по много причини. Най-честите са: <div className='ml-5 mt-5'> - Тестването му <br />- Спряна поддръжка <br /> - Идва от място, различно от официалните сървъри (от <b>overlay</b>). </div> <br /> Има доста начини за 'отмаскиране' на пакет. Най-лесният е през <b>emerge</b> чрез <b>autounmask</b>:",
           "Warning": "The DOM will read this and dangerouslySetInnerHTML"
         },
         "Label5": {
@@ -152,28 +153,28 @@
           "Warning": "The DOM will read this and dangerouslySetInnerHTML"
         },
         "Label6": {
-          "HTMLcontent": "(Избери <b>u</b> и натисни <b>Enter</b>)",
+          "HTMLcontent": "(Избери <b>'u'</b> и натисни <b>'Enter'</b>)",
           "Warning": "The DOM will read this and dangerouslySetInnerHTML"
         },
-        "AttentionBox2": "Обръщай внимание към файла, който dispatch-conf е на път да промени, защото има възможност работата на системата да бъде препречена, ако неправилния файл бъде променен.",
+        "AttentionBox2": "Обръщайте внимание на файла, който dispatch-conf е на път да промени, защото има опасност работата на системата да бъде възпрепядстваба, ако неправилният файл бъде променен.",
         "secondaryTitle3": "Make.conf, най-важният файл",
         "sec4": {
-          "HTMLcontent": "<b>Make.conf</b> или <b>/etc/portage/make.conf</b> е най-важният файл в gentoo линукс. Tой е основния конфигурационен файл на portage. В него е описано по какъв начин и с какви възможности ще бъдат компилирани пакетие, а също и кои пакети могат да бъдат инсталирани като цяло. <br /> <br /> Много може да бъде променено чрез <b>make.conf</b>, gentoo обаче не изисква пълно разбиране на всичките му опции, защото повечето настройки във файла са настроени добре по подразбиране. <br /> <br /> Има обаче и доста неща, които трябва да се настроят ръчно: <br /> <br /> ",
+          "HTMLcontent": "<b>Make.conf</b> или <b>/etc/portage/make.conf</b> е най-важният файл в Gentoo линукс. Tой е основния конфигурационен файл на Portage. В него е описано по какъв начин и с какви възможности ще бъдат компилирани програмите, а също и кои пакети могат да бъдат инсталирани. <br /> <br /> Много може да бъде променено чрез <b>make.conf</b>, Gentoo обаче не изисква пълно разбиране на всичките му опции, защото повечето настройки във файла са зададени добре по подразбиране. <br /> <br /> Има обаче и доста опции, които трябва да се настроят ръчно: <br /> <br /> ",
           "Warning": "The DOM will read this and dangerouslySetInnerHTML"
         },
 
         "TFBox1": {
-          "Label": "Начина, по който дадена програма трябва да е лицензирана, за да може да бъде инсталирана",
+          "Label": "Начинът, по който дадена програма трябва да е лицензирана, за да може да бъде инсталирана.",
           "Comment": "#Позволи инсталиране на програми, независимо от лиценза им"
         },
         "TFBox2": {
-          "Label": "Позволява използване на повече от 1 процесорно ядро при компилация на програми",
+          "Label": "Позволява използване на повече от 1 процесорно ядро при компилация на програми.",
           "Comment": "#Позволи използването на 8 процесорни ядра за компилация"
         },
         "AttentionBox3": "Като добра практика се счита рам паметта да е 2 пъти повече MAKEOPTS (в GB) (например, добре е да имате поне 16GB рам за MAKEOPTS='-j8 -l8')",
         "TFBox3": {
-          "Label": "USE, също познато като 'USE flags' дефинира какви характеристики и зависимости пакетите имат",
-          "Comment": "#Ще каже на системата да компилира пакети с поддръжка на wayland, vulkan и pipewire, където е приложимо"
+          "Label": "USE, също познато като 'USE flags' дефинира какви характеристики и зависимости имат програмите.",
+          "Comment": "#Ще каже на системата да компилира програми с поддръжка на wayland, vulkan и pipewire, където е приложимо"
         },
         "EndTitle": "Alright, with all that out of the way",
         "EndSubTitle": "Let's start with",
