@@ -72,7 +72,7 @@ export default function StarPage() {
 
                   <AttentionBox
                     variant="note"
-                    text={lmao.HowGentooWork.AttentionBox1}
+                    text={lmao.Welcome.Navigation.AttentionBox1}
                   ></AttentionBox>
                 </div>
                 <div className="mt-12">
@@ -136,7 +136,7 @@ export default function StarPage() {
           {/* Source based... */}
           <div className="ml-3">
             <div id={lmao.SideBar.Content.El2.e1}></div>
-            <Text variant="lg">{lmao.HowGentooWork.mainSubTitle}</Text>
+            <Text variant="lg">{lmao.HowGentooWork.secondaryTitle1}</Text>
             <Spacer variant="sm"></Spacer>
             <Text variant="md">
               <div
@@ -264,15 +264,15 @@ export default function StarPage() {
               ></div>
 
               <Text variant="sm">
+                <b>ACCEPT_LICENSE</b> <br />
                 {lmao.HowGentooWork.TFBox1.Label}
-                <b>ACCEPT_LICENSE</b>
               </Text>
             </Text>
             <div className="my-5">
               <TextFileBox>
                 <div className="flex flex-col gap-2">
                   <div className="text-zinc-700 ">
-                    {lmao.HowGentooWork.TFBox1.comment}
+                    {lmao.HowGentooWork.TFBox1.Comment}
                   </div>
                   <div>ACCEPT_LICENSE="*"</div>
                 </div>
@@ -289,7 +289,7 @@ export default function StarPage() {
                 <TextFileBox>
                   <div className="flex flex-col gap-2">
                     <div className="text-zinc-700">
-                      {lmao.HowGentooWork.TFBox2.comment}
+                      {lmao.HowGentooWork.TFBox2.Comment}
                     </div>
                     <div>MAKEOPTS="-j8 -l8"</div>
                   </div>
