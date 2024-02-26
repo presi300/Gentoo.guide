@@ -2,9 +2,10 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Text from "../Text/Text";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { IoClose } from "react-icons/io5";
 import { Children } from "react";
+
 export default function Modal({
   children,
   btn = (
@@ -12,8 +13,25 @@ export default function Modal({
       <Text>Lmao</Text>
     </div>
   ),
+  top = 3,
+  bottom = 3,
+  right = 3,
+  left = 3,
+  unit = "rem",
 }) {
   let [state, stateHandler] = useState(false);
+  const [matches, setMatches] = useState();
+
+  useEffect(() => {
+    async function match() {
+      setMatches(window.matchMedia("(min-width: 648px)"));
+      window
+        .matchMedia("(min-width: 648px)")
+        .addEventListener("change", (e) => setMatches(e.matches));
+    }
+    match();
+  }, []);
+
   return (
     <div>
       <button onClick={() => stateHandler(!state)}>{btn}</button>
@@ -23,7 +41,14 @@ export default function Modal({
             initial={{ scale: 0 }}
             animate={{ scale: "100%" }}
             exit={{ scale: 0 }}
-            className="fixed top-4 bottom-4 right-4 left-4 z-[60] rounded-[15px] bg-opacity-80 backdrop-blur-xl bg-[#201e22]  shadow-black"
+            className="fixed z-[120] rounded-[15px] bg-opacity-80 backdrop-blur-xl bg-[#201e22] shadow-black"
+            style={{
+              top: matches ? `${top}${unit}` : "0",
+              bottom: matches ? `${bottom}${unit}` : "0",
+              left: matches ? `${left}${unit}` : "0",
+              right: matches ? `${right}${unit}` : "0",
+              borderRadius: matches ? "15px" : "0px",
+            }}
           >
             <button
               onClick={() => stateHandler(!state)}

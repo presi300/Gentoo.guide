@@ -21,8 +21,6 @@ export default function LoadText(tl, langID) {
     tlL = tl;
     varLang = [tl.lang.enUS, tl.lang.bg, tl.lang.de];
     selLang = null;
-    console.log("Language data loaded successfully!");
-    console.log("selID", selID);
     return varLang[selID];
   }
   // Language is already loaded, just switching (tl = undefined, langID is set by LangSwitcher.jsx)
@@ -30,10 +28,7 @@ export default function LoadText(tl, langID) {
     localStorage.setItem("languageID", langID);
 
     selID = localStorage.getItem("languageID");
-    console.log(selID);
-    console.log(langID);
     selLang = varLang[langID];
-    console.log("Language changed to: ", selLang);
     return selLang;
   }
   // Language is already loaded and has been passed to a variable
@@ -43,17 +38,10 @@ export default function LoadText(tl, langID) {
     selID != (undefined || null)
   ) {
     selLang = varLang[selID];
-    console.log("Read data from cookie successfully!");
-    console.log("selID: ", selID);
     return selLang;
   }
   // Well, shit
   else {
-    console.log("Language data failed to load, uuuh... oops?");
-    console.log("tl: ", tl);
-    console.log("selID: ", selID);
-    console.log("langID: ", langID);
-    console.log("tlL: ", tlL);
     return null;
   }
 }

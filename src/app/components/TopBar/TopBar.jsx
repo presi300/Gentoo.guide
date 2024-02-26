@@ -5,6 +5,7 @@ import HamburgerBtn from "./HamburgerBtn";
 import Text from "../Text/Text";
 import "../Text/Text.css";
 import { useEffect, useState } from "react";
+import ChapterSelector from "../ChapterSelector/ChapterSelector";
 
 export const TopBar = ({ variant = "hamburger", children }) => {
   const [isAtTop, setIsAtTop] = useState(true);
@@ -31,14 +32,18 @@ export const TopBar = ({ variant = "hamburger", children }) => {
             top: isAtTop ? "0rem" : "0.5rem",
             left: isAtTop ? "0rem" : "0.5rem",
             right: isAtTop ? "0rem" : "0.5rem",
-            borderRadius: isAtTop ? "0px" : "10px",
             height: isAtTop ? "68px" : "72px",
+            borderRadius: isAtTop ? "0px" : "10px",
           }}
         >
           <div className="flex w-full h-full mx-4 items-center">
             {children}
-            <div className="justify-end flex w-full mr-9">
-              <Image src={"/logo.png"} width={120} height={42}></Image>
+            <div className="justify-end flex w-full mr-9 ">
+              <div className="pt-2">
+                <ChapterSelector>
+                  <Image src={"/logo.png"} width={120} height={42}></Image>
+                </ChapterSelector>
+              </div>
             </div>
           </div>
         </div>
