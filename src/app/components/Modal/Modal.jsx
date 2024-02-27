@@ -24,10 +24,10 @@ export default function Modal({
 
   useEffect(() => {
     async function match() {
-      setMatches(window.matchMedia("(min-width: 648px)"));
-      window
-        .matchMedia("(min-width: 648px)")
-        .addEventListener("change", (e) => setMatches(e.matches));
+      // prettier-ignore
+      window.matchMedia("(min-width: 768px)").addEventListener("change", (e) => setMatches(e.matches));
+      // prettier-ignore
+      window.matchMedia("(max-width: 768px)").addEventListener("load", (e) => setMatches(!e.matches));
     }
     match();
   }, []);
@@ -41,7 +41,7 @@ export default function Modal({
             initial={{ scale: 0 }}
             animate={{ scale: "100%" }}
             exit={{ scale: 0 }}
-            className="fixed z-[120] rounded-[15px] bg-opacity-80 backdrop-blur-xl bg-[#201e22] shadow-black"
+            className="fixed rounded-[15px] z-50  bg-opacity-80 backdrop-blur-xl bg-[#201e22] shadow-black"
             style={{
               top: matches ? `${top}${unit}` : "0",
               bottom: matches ? `${bottom}${unit}` : "0",
@@ -52,13 +52,13 @@ export default function Modal({
           >
             <button
               onClick={() => stateHandler(!state)}
-              className="absolute right-4 top-4"
+              className="absolute right-4 top-4 z-50"
             >
               <div className="text-white bg-white bg-opacity-5 p-1 rounded-[15px] hover:bg-opacity-10 transition-all">
                 <IoClose size={35} />
               </div>
             </button>
-            <div className="mt-10">{children}</div>
+            <div>{children}</div>
           </motion.div>
         )}
       </AnimatePresence>

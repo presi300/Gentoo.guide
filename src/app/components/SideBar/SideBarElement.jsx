@@ -5,8 +5,8 @@ import Link from "next/link";
 let SideBarElement = ({ text }) => {
   return (
     <Link href={`#${text}`}>
-      <div className="w-full h-[46px] px-2.5 bg-indigo-900 rounded-[15px]  hover:bg-indigo-800 transition-colors ">
-        <div className="text-violet-100text-lg w-full flex items-center h-full">
+      <div className="w-full h-[46px] px-2.5  rounded-t-xl  hover:scale-110 transition-transform">
+        <div className="text-violet-100   w-full flex items-center h-full justify-center">
           <Text>{text}</Text>
         </div>
       </div>

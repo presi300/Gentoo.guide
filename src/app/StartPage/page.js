@@ -8,7 +8,7 @@ import SideBarElementExtended from "../components/SideBar/SideBarElementExtended
 import Link from "next/link";
 import ShellBox from "../components/ShellBox/ShellBox";
 import ShellBoxOutput from "../components/ShellBox/ShellBoxOutput";
-import SkipToEnd from "../components/SkipToEnd/SkipToEnd";
+import { SkipToEnd } from "../components/SkipToEnd/SkipToEnd";
 import Spacer from "../components/Spacer/Spacer";
 import AttentionBox from "../components/AttentionBox/AttentionBox";
 import { Button } from "../components/Button/Button";
@@ -25,6 +25,7 @@ export default function StarPage() {
   });
   return (
     // FFS, vercel
+
     <div>
       {/* Welcome */}
       <div className="flex w-full justify-center">
@@ -338,8 +339,6 @@ export default function StarPage() {
               </div>
             </div>
           </div>
-
-          <div id="end"></div>
         </div>
       </div>
 
@@ -361,7 +360,6 @@ export default function StarPage() {
           ]}
         ></SideBarElementExtended>
       </Skeleton>
-      <SkipToEnd></SkipToEnd>
     </div>
   );
 }

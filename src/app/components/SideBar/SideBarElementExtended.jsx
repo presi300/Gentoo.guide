@@ -10,13 +10,13 @@ let SideBarElementExtended = ({ text = "XD", content }) => {
   const [state, stateHandler] = useState(false);
   let ContentElement = () => {
     return (
-      <div>
+      <div className="mx-[0.40rem]">
         {content.map((content) => {
           return (
             <Link key={content} href={`#${content}`}>
               <li
                 key={content}
-                className="px-6 py-2 my-1 mx-1 rounded-xl hover:bg-white hover:bg-opacity-5 transition-all"
+                className="px-4 py-2 my-1 mx-1 hover:pl-12 hover:scale-125 transition-all hover:bg-[#FFFFFF11]"
               >
                 <Text variant="xs">{content}</Text>
               </li>
@@ -28,8 +28,12 @@ let SideBarElementExtended = ({ text = "XD", content }) => {
   };
 
   return (
-    <div className="w-full h-auto flex flex-col  rounded-[15px]">
-      <div className="z-50 " onClick={() => stateHandler(!state)}>
+    <div
+      className="w-full h-auto flex flex-col border-b-[1px] border-[#FFFFFF44]"
+      onMouseOverCapture={() => stateHandler(true)}
+      onMouseLeave={() => stateHandler(false)}
+    >
+      <div className="z-50">
         <SideBarElement className="z-10" text={text}></SideBarElement>
       </div>
       <AnimatePresence>
@@ -38,15 +42,14 @@ let SideBarElementExtended = ({ text = "XD", content }) => {
             initial={{ opacity: 0, height: 0, y: -20 }}
             animate={{ opacity: 100, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.1 }}
-            className="bg-[#41366C44] bg-opacity-20 rounded-b-[15px] z-0"
+            transition={{ duration: 0.2 }}
           >
             {state && (
               <motion.ul
                 initial={{ opacity: 0, y: -100 }}
                 animate={{ opacity: 100, y: 0 }}
                 exit={{ opacity: 0, y: -100 }}
-                className=" mt-7"
+                className="mt-5"
               >
                 <ContentElement></ContentElement>
               </motion.ul>
