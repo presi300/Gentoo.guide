@@ -28,7 +28,9 @@ export default function Skeleton({
           <div>
             <div className="absolute right-5 ">
               <ChapterSelector>
-                <Image src={"/logo.png"} width={120} height={42}></Image>
+                <div className="hover:scale-110 transition-transform">
+                  <Image src={"/logo.png"} width={120} height={42}></Image>
+                </div>
               </ChapterSelector>
             </div>
             <div onClick={() => stateHandler((state) => !state)}>
@@ -42,12 +44,14 @@ export default function Skeleton({
 
         {topBarVariant === "noHamburger :(" && (
           <div>
-            <div className="absolute left-7 top-[0.8rem]">
+            <div className="absolute left-7 top-[0.8rem] ">
               <ChapterSelector>
-                <Image src={"/logo.png"} width={120} height={42}></Image>
+                <div className="hover:scale-110 transition-transform">
+                  <Image src={"/logo.png"} width={120} height={42}></Image>
+                </div>
               </ChapterSelector>
             </div>
-            <div className="absolute z-40 right-16 top-[25px] text-white">
+            <div className="absolute z-40 right-16 top-[25px] text-white ">
               <LangSwitcher langs={["English", "Български"]}></LangSwitcher>
             </div>
           </div>

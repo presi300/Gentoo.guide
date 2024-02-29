@@ -29,7 +29,7 @@ let SideBarElementExtended = ({ text = "XD", content }) => {
 
   return (
     <div
-      className="w-full h-auto flex flex-col border-b-[1px] border-[#FFFFFF44]"
+      className="w-full h-auto flex flex-col border-b-[1px]  border-[#201e22FF]"
       onMouseOverCapture={() => stateHandler(true)}
       onMouseLeave={() => stateHandler(false)}
     >
