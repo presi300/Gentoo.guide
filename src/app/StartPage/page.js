@@ -9,19 +9,20 @@ import Link from "next/link";
 import ShellBox from "../components/ShellBox/ShellBox";
 import ShellBoxOutput from "../components/ShellBox/ShellBoxOutput";
 import { SkipToEnd } from "../components/SkipToEnd/SkipToEnd";
-import Spacer from "../components/Spacer/Spacer";
+import Spacer from "../components/FormattedText/Spacer/Spacer";
 import AttentionBox from "../components/AttentionBox/AttentionBox";
 import { Button } from "../components/Button/Button";
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa6";
 import TextFileBox from "../components/TextFileBox/TextFileBox";
 import tl from "./translations.json";
+import { Content } from "next/font/google";
 
 export default function StarPage() {
-  let [lmao, lmaoHandler] = useState(tl.lang.enUS);
+  let [lmao, lmaoHandler] = useState(tl.lang.loading);
 
   useEffect(() => {
-    window.onload = lmaoHandler(LoadText(tl));
+    window.onload = LoadText(tl).then((Content) => lmaoHandler(Content));
   });
   return (
     // FFS, vercel
@@ -61,15 +62,7 @@ export default function StarPage() {
               <div className="my-6">
                 <Text variant="md">{lmao.Welcome.Navigation.sec2}</Text>
                 <div className="my-6">
-                  <div className="grid w-full place-items-center">
-                    <Image
-                      className="rounded-[15px] border-[1px] border-[#AAA1CC] my-3 mb-12"
-                      alt="You really should not be seeing this..."
-                      src={"/LanguageSw.png"}
-                      width={200}
-                      height={100}
-                    ></Image>
-                  </div>
+                  <div className="grid w-full place-items-center"></div>
 
                   <AttentionBox
                     variant="note"
@@ -327,7 +320,7 @@ export default function StarPage() {
             <div className="grid place-items-center">
               <div className="my-5 p-3 bg-[#41366C] transition-all rounded-full bg-opacity-35 hover:bg-opacity-50 max-w-[700px]">
                 <Link
-                  href="InstallEnvSetup"
+                  href="/DownloadAndSetupPage"
                   className="flex items-center gap-5"
                 >
                   <Text>{lmao.HowGentooWork.EndButtonTxt}</Text>

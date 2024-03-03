@@ -198,9 +198,100 @@
           }
         }
       }
+    },
+    "loading": {
+      "id": "loading",
+      "Welcome": {
+        "mainTitle": "loading...",
+        "mainSubTitle": "loading...",
+        "Navigation": {
+          "mainTitle": "loading...",
+          "mainSubTitle": "loading...",
+          "sec1": {
+            "HTMLcontent": "loading...",
+            "Warning": "The DOM will read this and dangerouslySetInnerHTML"
+          },
+          "sec2": "loading...",
+          "AttentionBox1": "loading...",
+          "secondaryTitle1": "loading...",
+          "sec4": {
+            "HTMLcontent": "loading...",
+            "Warning": "The DOM will read this and dangerouslySetInnerHTML"
+          },
+          "secondaryTitle2": "loading...",
+          "sec5": {
+            "HTMLcontent": "loading...",
+            "Warning": "The DOM will read this and dangerouslySetInnerHTML"
+          }
+        }
+      },
+      "HowGentooWork": {
+        "mainTitle": "loading...",
+        "mainSubTitle": "loading...",
+        "secondaryTitle1": "loading...",
+        "sec1": {
+          "HTMLcontent": "loading...",
+          "Warning": "loading..."
+        },
+        "secondaryTitle2": "loading...",
+        "sec2": {
+          "HTMLcontent": "loading...",
+          "Warning": "loading..."
+        },
+        "Label1": "loading...",
+        "Label2": "loading...",
+        "Label3": "loading...",
+        "Label4": "loading...",
+        "sec3": {
+          "HTMLcontent": "loading..."
+        },
+        "Label5": {
+          "HTMLcontent": "loading..."
+        },
+        "Label6": {
+          "HTMLcontent": "loading..."
+        },
+        "AttentionBox2": "loading...",
+        "secondaryTitle3": "loading...",
+        "sec4": {
+          "HTMLcontent": "loading..."
+        },
+
+        "TFBox1": {
+          "Label": "loading...",
+          "Comment": "loading..."
+        },
+        "TFBox2": {
+          "Label": "loading...",
+          "Comment": "loading..."
+        },
+        "AttentionBox3": "loading...",
+        "TFBox3": {
+          "Label": "loading...",
+          "Comment": "loading..."
+        },
+        "EndTitle": "loading...",
+        "EndSubTitle": "loading...",
+        "EndButtonTxt": "loading..."
+      },
+      "SideBar": {
+        "Text": {
+          "e1": "loading...",
+          "e2": "loading..."
+        },
+        "Content": {
+          "El1": {
+            "e1": "loading...",
+            "e2": "loading...",
+            "e3": "loading..."
+          },
+          "El2": {
+            "e1": "loading...",
+            "e2": "loading...",
+            "e3": "loading..."
+          }
+        }
+      }
     }
-  },
-  "loading": {
-    "id": "loading"
   }
 }

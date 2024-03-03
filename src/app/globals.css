@@ -29,3 +29,11 @@ body {
     rgba(10, 9, 14, 1) 100%
   );
 }
+
+a {
+  border-bottom: 1px #ffffff00 solid;
+  font-weight: bolder;
+}
+a:hover {
+  border-bottom: 1px #ffffffff solid;
+}

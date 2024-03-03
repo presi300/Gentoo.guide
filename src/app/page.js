@@ -21,12 +21,13 @@ import { useState } from "react";
 import Modal from "./components/Modal/Modal";
 import AnimaetedBackground from "./components/Background/Background";
 import { VscFoldDown } from "react-icons/vsc";
+import { Content } from "next/font/google";
 
 export default function Home() {
   let [lmao, lmaoHandler] = useState(tl.lang.loading);
 
   useEffect(() => {
-    window.onload = lmaoHandler(LoadText(tl));
+    window.onload = LoadText(tl).then((Content) => lmaoHandler(Content));
   });
 
   return (

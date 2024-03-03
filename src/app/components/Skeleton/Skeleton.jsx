@@ -9,6 +9,7 @@ import LangSwitcher from "../LangSwitcher/LangSwitcher";
 import { SkipToEnd } from "../SkipToEnd/SkipToEnd";
 import ChapterSelector from "../ChapterSelector/ChapterSelector";
 import Image from "next/image";
+import WIPBanner from "../WIPBanner/WIP";
 // This needs to be put at the BOTTOM of all pages, the name is kinda counter-intuitive, but it's basically the sidebar + topbar combined for less writing
 // This handles all of the logic for things that are always or conditionally visible in the same place.
 // Also 💀
@@ -24,6 +25,8 @@ export default function Skeleton({
       {topBarVariant === "hamburger" && <SkipToEnd></SkipToEnd>}
       {/* TobBar */}
       <TopBar variant={topBarVariant}>
+        <WIPBanner></WIPBanner>
+
         {topBarVariant === "hamburger" && (
           <div>
             <div className="absolute right-5 ">

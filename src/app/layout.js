@@ -4,7 +4,7 @@ import "./globals.css";
 
 const comfortaa = Comfortaa({ subsets: ["latin"] });
 
-export let metadata = {
+export const metadata = {
   title: "Gentoo.guide",
   description: "Gentoo Linux Simplified",
 };
