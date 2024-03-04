@@ -1,16 +1,16 @@
 // God fcking damn it, why is next like this
 import Image from "next/image";
 import React from "react";
-import Text from "../components/Text/Text";
-import { Button } from "../components/Button/Button";
-import { TopBar } from "../components/TopBar/TopBar";
-import SideBar from "../components/SideBar/SideBar";
-import SideBarElement from "../components/SideBar/SideBarElement";
-import SideBarElementExtended from "../components/SideBar/SideBarElementExtended";
-import ShellBox from "../components/ShellBox/ShellBox";
-import ShellBoxOutput from "../components/ShellBox/ShellBoxOutput";
-import AttentionBox from "../components/AttentionBox/AttentionBox";
-import Skeleton from "../components/Skeleton/Skeleton";
+import Text from "../../components/Text/Text";
+import { Button } from "../../components/Button/Button";
+import { TopBar } from "../../components/TopBar/TopBar";
+import SideBar from "../../components/SideBar/SideBar";
+import SideBarElement from "../../components/SideBar/SideBarElement";
+import SideBarElementExtended from "../../components/SideBar/SideBarElementExtended";
+import ShellBox from "../../components/ShellBox/ShellBox";
+import ShellBoxOutput from "../../components/ShellBox/ShellBoxOutput";
+import AttentionBox from "../../components/AttentionBox/AttentionBox";
+import Skeleton from "../../components/Skeleton/Skeleton";
 // Yeah, I'm leaving this page here for anyone who cares to find it
 
 export default function Home() {

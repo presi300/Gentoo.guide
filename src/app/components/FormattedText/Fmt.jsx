@@ -37,11 +37,11 @@ export function NonTextElement({
   );
 }
 
-export function TextBoxWithFormatting({ children, text }) {
+export function TextBoxWithFormatting({ text }) {
   // WARNING: this element uses dangerouslySetInnerHTML to get formatting from the JSON translations file, use with caution!!!!
   return (
     <Text variant="md">
-      <div dangerouslySetInnerHTML={{ __html: `${text}` }}>{children}</div>
+      <div dangerouslySetInnerHTML={{ __html: `${text}` }}></div>
     </Text>
   );
 }
