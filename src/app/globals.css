@@ -30,10 +30,11 @@ body {
   );
 }
 
-a {
+/* I am very good at naming things :) */
+.yej {
   border-bottom: 1px #ffffff00 solid;
   font-weight: bolder;
 }
-a:hover {
+.yej:hover {
   border-bottom: 1px #ffffffff solid;
 }

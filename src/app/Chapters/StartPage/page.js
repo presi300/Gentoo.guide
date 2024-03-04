@@ -1,20 +1,20 @@
 "use client";
-import LoadText from "../components/LangSwitcher/Loader.server";
+import LoadText from "../../components/LangSwitcher/Loader.server";
 import { useState, useEffect } from "react";
 import React from "react";
-import Text from "../components/Text/Text";
-import Skeleton from "../components/Skeleton/Skeleton";
-import SideBarElementExtended from "../components/SideBar/SideBarElementExtended";
+import Text from "../../components/Text/Text";
+import Skeleton from "../../components/Skeleton/Skeleton";
+import SideBarElementExtended from "../../components/SideBar/SideBarElementExtended";
 import Link from "next/link";
-import ShellBox from "../components/ShellBox/ShellBox";
-import ShellBoxOutput from "../components/ShellBox/ShellBoxOutput";
-import { SkipToEnd } from "../components/SkipToEnd/SkipToEnd";
-import Spacer from "../components/FormattedText/Spacer/Spacer";
-import AttentionBox from "../components/AttentionBox/AttentionBox";
-import { Button } from "../components/Button/Button";
+import ShellBox from "../../components/ShellBox/ShellBox";
+import ShellBoxOutput from "../../components/ShellBox/ShellBoxOutput";
+import { SkipToEnd } from "../../components/SkipToEnd/SkipToEnd";
+import Spacer from "../../components/FormattedText/Spacer/Spacer";
+import AttentionBox from "../../components/AttentionBox/AttentionBox";
+import { Button } from "../../components/Button/Button";
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa6";
-import TextFileBox from "../components/TextFileBox/TextFileBox";
+import TextFileBox from "../../components/TextFileBox/TextFileBox";
 import tl from "./translations.json";
 import { Content } from "next/font/google";
 
@@ -30,7 +30,7 @@ export default function StarPage() {
     <div>
       {/* Welcome */}
       <div className="flex w-full justify-center">
-        <div className="w-[1200px] mt-24 px-4">
+        <div className="w-[1200px]">
           <div className="flex flex-col ">
             <Text variant="bigHeading">
               <p className="text-center md:text-start">

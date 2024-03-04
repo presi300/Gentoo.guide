@@ -68,7 +68,7 @@ export default function ChapterSelector({ children }) {
           <Chapter
             title="Information"
             subtitle="More information about the site"
-            link="/InfoPage"
+            link="/Chapters/InfoPage"
           ></Chapter>
           <Chapter
             title="Gentoo Wiki"

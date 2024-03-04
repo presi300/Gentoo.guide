@@ -167,7 +167,7 @@ export default function Home() {
               </div>
             </motion.div>
             <div className="w-full flex justify-center mt-24">
-              <Link href="/StartPage" replace>
+              <Link href="/Chapters/StartPage" replace>
                 <Text variant="heading">Ready to begin?</Text>
               </Link>
             </div>
