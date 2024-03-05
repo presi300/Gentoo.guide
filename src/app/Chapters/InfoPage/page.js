@@ -1,8 +1,6 @@
 import React from "react";
 import * as fmt from "../../components/FormattedText/Fmt";
 import Skeleton from "../../components/Skeleton/Skeleton";
-import Link from "next/link";
-import Text from "../../components/Text/Text";
 import SideBarElementExtended from "../../components/SideBar/SideBarElementExtended";
 
 export default function infoPage({}) {

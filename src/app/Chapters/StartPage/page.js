@@ -320,7 +320,7 @@ export default function StarPage() {
             <div className="grid place-items-center">
               <div className="my-5 p-3 bg-[#41366C] transition-all rounded-full bg-opacity-35 hover:bg-opacity-50 max-w-[700px]">
                 <Link
-                  href="/DownloadAndSetupPage"
+                  href="/Chapters/DownloadAndSetupPage"
                   className="flex items-center gap-5"
                 >
                   <Text>{lmao.HowGentooWork.EndButtonTxt}</Text>
