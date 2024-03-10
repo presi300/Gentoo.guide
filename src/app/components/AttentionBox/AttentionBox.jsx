@@ -78,7 +78,7 @@ let AttentionBox = ({ text = "Warning: do not the", variant }) => {
   return (
     <div>
       {variant === "attention" && (
-        <div className="w-full py-3 px-6 bg-[#141510] bg-opacity-95 rounded-[15px] border-2 border-[#343C14] backdrop-blur-[10px] justify-start items-center gap-1 inline-flex">
+        <div className="w-full py-4 mb-6 px-6 bg-[#141510] bg-opacity-95 rounded-[15px] border-2 border-[#343C14] backdrop-blur-[10px] justify-start items-center gap-1 inline-flex">
           <div className="flex items-center justify-end w-full">
             <div className="w-full">
               <Text variant="sm">
@@ -97,7 +97,7 @@ let AttentionBox = ({ text = "Warning: do not the", variant }) => {
         </div>
       )}
       {variant === "warning" && (
-        <div className="w-full py-3 px-6 bg-[#160D10] bg-opacity-95 rounded-[15px] border-2 border-[#4E1718] backdrop-blur-[10px] justify-start items-center gap-1 inline-flex">
+        <div className="w-full py-4 mb-6 px-6 bg-[#160D10] bg-opacity-95 rounded-[15px] border-2 border-[#4E1718] backdrop-blur-[10px] justify-start items-center gap-1 inline-flex">
           <div className="flex items-center justify-end w-full">
             <div className="w-full">
               <Text variant="sm">
@@ -113,7 +113,7 @@ let AttentionBox = ({ text = "Warning: do not the", variant }) => {
         </div>
       )}
       {variant === "note" && (
-        <div className="w-full py-3 px-6 bg-[#0C101C] bg-opacity-95 rounded-[15px] border-2 border-[#1A3E75]  backdrop-blur-[10px] justify-start items-center gap-1 inline-flex">
+        <div className="w-full py-4 mb-6 px-6 bg-[#0C101C] bg-opacity-95 rounded-[15px] border-2 border-[#1A3E75]  backdrop-blur-[10px] justify-start items-center gap-1 inline-flex">
           <div className="flex items-center justify-end w-full">
             <div className="w-full">
               <Text variant="sm">

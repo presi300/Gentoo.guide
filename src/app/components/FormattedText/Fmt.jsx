@@ -37,6 +37,26 @@ export function NonTextElement({
   );
 }
 
+export function Label({}) {
+  return <div></div>;
+}
+
+export function List({ el }) {
+  return (
+    <div className="mb-8">
+      {el.map((el, key) => {
+        return (
+          <li key={key} className="px-5 py-2 my-2 mx-1 ">
+            <Text variant="md">
+              {key + 1}. {el}
+            </Text>
+          </li>
+        );
+      })}
+    </div>
+  );
+}
+
 export function TextBoxWithFormatting({ text }) {
   // WARNING: this element uses dangerouslySetInnerHTML to get formatting from the JSON translations file, use with caution!!!!
   return (

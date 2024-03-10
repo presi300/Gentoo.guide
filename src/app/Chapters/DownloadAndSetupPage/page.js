@@ -11,7 +11,7 @@ export default function DwAndSetup({}) {
   return (
     <div>
       <fmt.SectionMain
-        title="Setting up installation environment"
+        title="Getting started"
         subTitle="This page will let you know all about what an installation enviroment is, how to set it up and how to use it to get started."
       >
         <fmt.Section title="What is an installation environment?">
@@ -32,10 +32,10 @@ export default function DwAndSetup({}) {
 
       <fmt.SectionMain
         title="Getting the partitions ready"
-        subTitle="Yeah, this part is all about disks and partitions. However it is generally recommended to install any operating system on an SSD, instead of an HDD."
+        subTitle="Yeah, this part is all about disks and partitions. "
       >
         <fmt.Section title="Choosing a disk">
-          <fmt.TextBoxWithFormatting text="Before doing any partitioning, you firstly need to choose a disk to be partitioned.<br/><br/> To check the names of all disks, currently connected to your system, use: "></fmt.TextBoxWithFormatting>
+          <fmt.TextBoxWithFormatting text="Before doing any partitioning, you firstly need to choose a disk to be partitioned. There are no strict restrictions about what disk should be used, however it is generally recommended to install any operating system on an SSD, instead of an HDD.<br/><br/> To check the names of all disks, currently connected to your system, use: "></fmt.TextBoxWithFormatting>
           <ShellBoxOutput dir="~" command="fdisk -l"></ShellBoxOutput>
           <fmt.TextBoxWithFormatting text="SATA disks should appear as /dev/sd*, NVME disks should appear as /dev/nvme*n*.<br/><br/> "></fmt.TextBoxWithFormatting>
           <AttentionBox
@@ -229,7 +229,7 @@ export default function DwAndSetup({}) {
             dir="~"
             command="mount <Home partition> /mnt/gentoo/home"
           ></ShellBoxOutput>
-          <fmt.TextBoxWithFormatting text=" - Wait, aren't these 'mount points' just directories? <br/><br/> Yes, on linux, disk partitions are mounted as directories.<br/><br/>"></fmt.TextBoxWithFormatting>
+          <fmt.TextBoxWithFormatting text=" - Wait, aren't these 'mount points' just directories? <br/><br/> Yes! On linux, disk partitions are mounted as directories.<br/><br/>"></fmt.TextBoxWithFormatting>
           <AttentionBox
             variant="note"
             text="You should still create /mnt/gentoo/boot even if your system is not EFI."

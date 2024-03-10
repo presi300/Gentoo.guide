@@ -79,12 +79,21 @@ export default function ChapterSelector({ children }) {
             link="https://wiki.gentoo.org"
           ></Chapter>
           <Chapter
-            title="Home Page"
+            title="Landing Page"
             subtitle="Go back to Gentoo.guide's pretty homepage"
             img="/GentooGuide.png"
             padded={false}
             ImgRound={true}
             link="/"
+            target=""
+          ></Chapter>
+          <Chapter
+            title="Getting started"
+            subtitle="The first steps towards a full gentoo system"
+            img="/logo.png"
+            padded={true}
+            ImgRound={true}
+            link="/Chapters/DownloadAndSetupPage"
             target=""
           ></Chapter>
         </div>
