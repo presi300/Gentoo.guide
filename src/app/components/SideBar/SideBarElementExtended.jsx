@@ -10,7 +10,7 @@ let SideBarElementExtended = ({ text = "XD", content }) => {
   const [state, stateHandler] = useState(false);
   let ContentElement = () => {
     return (
-      <div className="mx-[0.40rem]">
+      <div className="mx-[0.40rem] ">
         {content.map((content) => {
           return (
             <Link key={content} href={`#${content}`}>
@@ -29,7 +29,7 @@ let SideBarElementExtended = ({ text = "XD", content }) => {
 
   return (
     <div
-      className="w-full h-auto flex flex-col border-b-[1px]  border-[#201e22FF]"
+      className="w-full h-auto flex flex-col border-b-[1px]  border-[#201e22FF] "
       onMouseOverCapture={() => stateHandler(true)}
       onMouseLeave={() => stateHandler(false)}
     >
@@ -43,13 +43,14 @@ let SideBarElementExtended = ({ text = "XD", content }) => {
             animate={{ opacity: 100, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
+            className="overflow-hidden"
           >
             {state && (
               <motion.ul
                 initial={{ opacity: 0, y: -100 }}
                 animate={{ opacity: 100, y: 0 }}
                 exit={{ opacity: 0, y: -100 }}
-                className="mt-5"
+                className="mt-5 "
               >
                 <ContentElement></ContentElement>
               </motion.ul>

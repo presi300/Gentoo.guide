@@ -37,8 +37,14 @@ export function NonTextElement({
   );
 }
 
-export function Label({}) {
-  return <div></div>;
+export function Label({ children }) {
+  return (
+    <div className="mr-4 my-6">
+      <Text variant="md">
+        <b>- {children}</b>
+      </Text>
+    </div>
+  );
 }
 
 export function List({ el }) {
@@ -68,11 +74,11 @@ export function TextBoxWithFormatting({ text }) {
 
 export function SectionMain({ children, title, subTitle }) {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col w-full">
       <Text variant="bigHeading">{title}</Text>
       <Spacer variant="sm"></Spacer>
       <Text variant="md">{subTitle}</Text>
-      <div className="mt-20 ml-3">{children}</div>
+      <div className="mt-20 ml-3 ">{children}</div>
     </div>
   );
 }
@@ -83,7 +89,7 @@ export function Section({ children, title, subTitle }) {
       <Text variant="lg">{title}</Text>
       <Spacer variant="sm"></Spacer>
       <Text variant="md">{subTitle}</Text>
-      <div className="mt-4 inline-block">{children}</div>
+      <div className="mt-4 ">{children}</div>
     </div>
   );
 }
@@ -91,7 +97,7 @@ export function Section({ children, title, subTitle }) {
 export function MainFmt({ children }) {
   return (
     <div className="flex w-full justify-center">
-      <div className="w-[1200px] mt-24 px-4">{children}</div>
+      <div className="px-4 w-[1200px] mt-24  ">{children}</div>
     </div>
   );
 }

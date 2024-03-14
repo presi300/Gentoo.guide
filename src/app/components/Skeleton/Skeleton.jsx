@@ -100,6 +100,7 @@ export default function Skeleton({
                 <motion.div
                   initial={{ x: -300, opacity: 0 }}
                   animate={{ x: 0, opacity: 100 }}
+                  exit={{ x: -300 }}
                   transition={{
                     x: { duration: 0.23 },
                     opacity: { duration: 0.2 },

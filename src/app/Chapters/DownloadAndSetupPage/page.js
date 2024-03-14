@@ -9,7 +9,7 @@ import AttentionBox from "@/app/components/AttentionBox/AttentionBox";
 
 export default function DwAndSetup({}) {
   return (
-    <div>
+    <div className="">
       <fmt.SectionMain
         title="Getting started"
         subTitle="This page will let you know all about what an installation enviroment is, how to set it up and how to use it to get started."
@@ -99,12 +99,13 @@ export default function DwAndSetup({}) {
             ]}
           ></fmt.List>
           <fmt.TextBoxWithFormatting text="Set the partition you created for using as root to bootable"></fmt.TextBoxWithFormatting>
-          <fmt.NonTextElement
-            variant="image"
-            img="/MBR.png"
-            imgW="800"
-            aImgW="1100"
-          ></fmt.NonTextElement>
+          {/* TODO: FIX THIS ELEMENT */}
+          {/* <fmt.NonTextElement */}
+          {/* variant="image" */}
+          {/* img="/MBR.png" */}
+          {/* imgW="800" */}
+          {/* aImgW="1100" */}
+          {/* ></fmt.NonTextElement> */}
           <fmt.TextBoxWithFormatting text="But what about swap?<br/><br/>Don't worry about it, we'll get there when we get there. (Check the setting up zram swap chapter for more info on that)<br/><br/>"></fmt.TextBoxWithFormatting>
           <fmt.TextBoxWithFormatting text="Alright, now that you've made your partitions, it's time to format them appropriately. <br/><br/> You have a choice to make with the file system you want to use, as each one has it's own unique advantages. Here are some of the more common file systems:<br/><br/>"></fmt.TextBoxWithFormatting>
           <fmt.List
@@ -162,8 +163,8 @@ export default function DwAndSetup({}) {
             command="fdisk -l"
             output={
               <div className="my-2">
-                {/*prettier-ignore*/}
-                <pre>
+                {/* prettier-ignore*/}
+                <pre className="sm:text-base text-xs">
                 Device        Start      End  Sectors  Size Type <br></br>
                 /dev/vda1      2048  1050623  1048576  512M EFI System <br></br>
                 /dev/vda2   1050624 22022143 20971520   10G Linux filesystem <br></br>
@@ -177,13 +178,13 @@ export default function DwAndSetup({}) {
             dir="~"
             command="fdisk -l"
             output={
-              <div className="my-2">
-                {/*prettier-ignore*/}
-                <pre>
-                Device     Boot    Start      End  Sectors Size Id Type <br></br>
-                /dev/vda1  *        2048 20973567 20971520  10G 83 Linux <br></br>
-                /dev/vda2       20973568 52428799 31455232  15G 83 Linux <br></br>
-                </pre>
+              <div className="my-2 ">
+                {/* prettier-ignore*/}
+                <pre className="sm:text-base text-xs ">
+                  Device     Boot    Start      End  Sectors Size Id Type <br></br>
+                  /dev/vda1  *        2048 20973567 20971520  10G 83 Linux <br></br>
+                  /dev/vda2       20973568 52428799 31455232  15G 83 Linux <br></br>
+                 </pre>
               </div>
             }
           ></ShellBoxOutput>
