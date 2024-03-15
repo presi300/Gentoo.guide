@@ -12,36 +12,70 @@ import Image from "next/image";
 import WIPBanner from "../WIPBanner/WIP";
 import Text from "../Text/Text";
 import { MdArrowBackIosNew } from "react-icons/md";
+import Link from "next/link";
 // This needs to be put at the BOTTOM of all pages, the name is kinda counter-intuitive, but it's basically the sidebar + topbar combined for less writing
 // This handles all of the logic for things that are always or conditionally visible in the same place.
 // Also 💀
 
 function TbNav() {
   const [ex, exHandler] = useState(false);
+  function TbNavElement({
+    children,
+    variant = "regular",
+    href = "#",
+    target = "_blank",
+  }) {
+    return (
+      <div>
+        {variant === "regular" && (
+          <Link href={href} target={target}>
+            <div className="w-[150px] hover:bg-[#23202e] sm:hover:bg-transparent text-center transition-all sm:hover:scale-110 sm:w-auto p-3 border-x-2 border-[#2A2738] border-opacity-30 sm:border-none sm:bg-opacity-0 bg-[#111114]">
+              <Text>{children}</Text>{" "}
+            </div>
+          </Link>
+        )}
+        {variant === "top" && (
+          <Link href={href} target={target}>
+            <div className="w-[150px] hover:bg-[#23202e] sm:hover:bg-transparent text-center transition-all sm:hover:scale-110 sm:w-auto border-x-2 border-t-2 border-[#2A2738] border-opacity-30  sm:border-none rounded-t-[15px] sm:bg-transparent bg-[#111114] p-3">
+              <Text>{children}</Text>
+            </div>
+          </Link>
+        )}
+        {variant === "bottom" && (
+          <Link href={href} target={target}>
+            <div className="w-[150px] hover:bg-[#23202e] sm:hover:bg-transparent transition-all sm:hover:scale-110 text-center sm:w-auto p-3 border-x-2  border-[#2A2738] border-opacity-30 border-b-2  sm:bg-opacity-0 sm:border-none rounded-b-[15px] bg-[#111114]">
+              <Text>{children}</Text>
+            </div>
+          </Link>
+        )}
+      </div>
+    );
+  }
   return (
-    
-    
-    <div className="absolute right-28 top-0 h-full  flex items-center overflow-hidden">
+    <div
+      onMouseLeave={() => exHandler(false)}
+      className="absolute right-24 top-0 h-full  flex items-center sm:overflow-hidden z-50"
+    >
       <AnimatePresence>
-      {ex && (
-        <motion.div initial={{x: 30, opacity: 0}} animate={{x:0, opacity: 1}} exit={{x: 30, opacity: 0}} className=" mr-3 flex gap-3 ">
-          <div className=" p-2 bg-opacity-75 rounded-[15px]">
-            <Text>Test</Text>
-          </div>
-          <div className=" p-2 bg-opacity-75 rounded-[15px]">
-            <Text>Test</Text>
-          </div>
-          <div className=" p-2 bg-opacity-75 rounded-[15px]">
-            <Text>Test</Text>
-          </div>
-          <div className=" p-2 bg-opacity-75 rounded-[15px]">
-            <Text>Test</Text>
-          </div>
-          <div className=" p-2 bg-opacity-75 rounded-[15px]">
-            <Text>Test</Text>
-          </div>
-        </motion.div>
-      )}
+        {ex && (
+          <motion.div
+            initial={{ x: 30, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: 30, opacity: 0 }}
+            transition={{ ease: "linear", duration: 0.15 }}
+            className=" sm:mt-0 mr-0 sm:mr-3 sm:flex-row flex-col h-full sm:justify-center  items-center flex mt-7"
+          >
+            <TbNavElement href="/Chapters/InfoPage" variant="top">
+              Information
+            </TbNavElement>
+
+            <TbNavElement href="/Chapters/StartPage">Get Started</TbNavElement>
+
+            <TbNavElement href="https://wiki.gentoo.org" variant="bottom">
+              Gentoo Wiki
+            </TbNavElement>
+          </motion.div>
+        )}
       </AnimatePresence>
 
       <button onClick={() => exHandler(!ex)} className="text-white  p-3  ">
@@ -97,7 +131,7 @@ export default function Skeleton({
                 </div>
               </ChapterSelector>
             </div>
-            <div className="absolute z-40 right-16 top-[25px] text-white ">
+            <div className="absolute z-40 right-16 top-[26px] text-white ">
               <LangSwitcher langs={["English", "Български"]}></LangSwitcher>
             </div>
           </div>
