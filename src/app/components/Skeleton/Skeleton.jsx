@@ -10,9 +10,51 @@ import { SkipToEnd } from "../SkipToEnd/SkipToEnd";
 import ChapterSelector from "../ChapterSelector/ChapterSelector";
 import Image from "next/image";
 import WIPBanner from "../WIPBanner/WIP";
+import Text from "../Text/Text";
+import { MdArrowBackIosNew } from "react-icons/md";
 // This needs to be put at the BOTTOM of all pages, the name is kinda counter-intuitive, but it's basically the sidebar + topbar combined for less writing
 // This handles all of the logic for things that are always or conditionally visible in the same place.
 // Also 💀
+
+function TbNav() {
+  const [ex, exHandler] = useState(false);
+  return (
+    
+    
+    <div className="absolute right-28 top-0 h-full  flex items-center overflow-hidden">
+      <AnimatePresence>
+      {ex && (
+        <motion.div initial={{x: 30, opacity: 0}} animate={{x:0, opacity: 1}} exit={{x: 30, opacity: 0}} className=" mr-3 flex gap-3 ">
+          <div className=" p-2 bg-opacity-75 rounded-[15px]">
+            <Text>Test</Text>
+          </div>
+          <div className=" p-2 bg-opacity-75 rounded-[15px]">
+            <Text>Test</Text>
+          </div>
+          <div className=" p-2 bg-opacity-75 rounded-[15px]">
+            <Text>Test</Text>
+          </div>
+          <div className=" p-2 bg-opacity-75 rounded-[15px]">
+            <Text>Test</Text>
+          </div>
+          <div className=" p-2 bg-opacity-75 rounded-[15px]">
+            <Text>Test</Text>
+          </div>
+        </motion.div>
+      )}
+      </AnimatePresence>
+
+      <button onClick={() => exHandler(!ex)} className="text-white  p-3  ">
+        <div
+          style={{ rotate: ex ? "180deg" : "0deg" }}
+          className=" transition-all hover:scale-110"
+        >
+          <MdArrowBackIosNew size={18} />
+        </div>
+      </button>
+    </div>
+  );
+}
 
 export default function Skeleton({
   children,
@@ -47,6 +89,7 @@ export default function Skeleton({
 
         {topBarVariant === "noHamburger :(" && (
           <div>
+            <TbNav></TbNav>
             <div className="absolute left-7 top-[0.8rem] ">
               <ChapterSelector>
                 <div className="hover:scale-110 transition-transform">
