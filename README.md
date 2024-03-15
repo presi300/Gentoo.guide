@@ -10,11 +10,11 @@
 
 ### An install and configuration guide for gentoo linux that is all form over function 😉
 
-### Written in NextJS with handcrafted UI, built with TailwindCSS and Framer motion 🌠
+### Written using NextJS with handcrafted UI, built with TailwindCSS and Framer motion 🌠
 
 <br/><br/>
 
-## Start your own, very form over function gentoo guide, by following these steps:
+## Start your own, very form over function gentoo guide by following these steps:
 
 <br/>
 
@@ -24,7 +24,7 @@
    cd Gentoo.guide
    ```
 3. ```bash
-   npm -i
+   npm i
    ```
 4. ```bash
    npm run build
