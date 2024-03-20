@@ -8,7 +8,7 @@ import Link from "next/link";
 export function ThatElementThatTheSideBarNavigatesTo({ Nid }) {
   // Invisible element that the sidebar uses for navigation
   // It's literally just an anchor with a funnier name
-  return <div className="relative bottom-24 " id={Nid}></div>;
+  return <div className="relative bottom-24" id={Nid}></div>;
 }
 
 export function NonTextElement({
