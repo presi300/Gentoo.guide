@@ -17,10 +17,7 @@ export default function infoPage({}) {
           <fmt.TextBoxWithFormatting text="<b>No</b>. <br/><br/> The only information Gentoo.guide stores and accesses on your computer is 'LanguageID' which is a single number, necessary for the translation system to work."></fmt.TextBoxWithFormatting>
         </fmt.Section>
         <fmt.Section title="Where is gentoo.guide hosted at?">
-          <div className="flex gap-2">
-            <fmt.TextBoxWithFormatting text="Gentoo.guide is hosted at "></fmt.TextBoxWithFormatting>
-            <fmt.Lnk href="https://vercel.com">Vercel</fmt.Lnk>
-          </div>
+          <fmt.TextBoxWithFormatting text="Gentoo.guide is hosted at <a href='https://vercel.com' class='yej'>Vercel</a>"></fmt.TextBoxWithFormatting>
         </fmt.Section>
         <fmt.Section title="I'm using an old browser and the site doesn't work, why?">
           <fmt.TextBoxWithFormatting
@@ -34,8 +31,7 @@ export default function infoPage({}) {
         </fmt.Section>
         <fmt.Section title="Who are you?">
           <div className="flex gap-2">
-            <fmt.TextBoxWithFormatting text="Hi, I'm presi300, you can learn more about me by visiting"></fmt.TextBoxWithFormatting>
-            <fmt.Lnk href="https://presi300.com/">My Website!</fmt.Lnk>
+            <fmt.TextBoxWithFormatting text="Hi, I'm presi300, you can learn more about me by visiting <a href='https://presi300.com' class='yej'>My Website!</a>"></fmt.TextBoxWithFormatting>
           </div>
         </fmt.Section>
       </fmt.SectionMain>

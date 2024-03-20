@@ -102,7 +102,9 @@ let AttentionBox = ({ text = "Warning: do not the", variant }) => {
             <div className="w-full">
               <Text variant="sm">
                 {/* This is a really stupid way to change the color of the text elemet, as passing props as tailwind classes is really fcking annoying*/}
-                <p className="text-[#B12F13]">{text}</p>
+                <p className="text-[#B12F13]">
+                  <b>Warning:</b> {text}
+                </p>
               </Text>
             </div>
 
@@ -118,7 +120,10 @@ let AttentionBox = ({ text = "Warning: do not the", variant }) => {
             <div className="w-full">
               <Text variant="sm">
                 {/* This is a really stupid way to change the color of the text elemet, as passing props as tailwind classes is really fcking annoying*/}
-                <p className="text-[#0870EB]">{text}</p>
+                <p className="text-[#0870EB]">
+                  <b>Note:</b>
+                  {text}
+                </p>
               </Text>
             </div>
 

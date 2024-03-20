@@ -7,7 +7,8 @@ import Link from "next/link";
 
 export function ThatElementThatTheSideBarNavigatesTo({ Nid }) {
   // Invisible element that the sidebar uses for navigation
-  return <div id={Nid}></div>;
+  // It's literally just an anchor with a funnier name
+  return <div className="relative bottom-24 " id={Nid}></div>;
 }
 
 export function NonTextElement({
@@ -16,6 +17,8 @@ export function NonTextElement({
   img = "/logo.png",
   imgW = 200,
   imgH = 100,
+  mImgW = "200px",
+  mImgH = "100px",
 }) {
   return (
     <div>
@@ -29,6 +32,11 @@ export function NonTextElement({
               src={img}
               width={imgW}
               height={imgH}
+              style={{
+                maxWidth: `${mImgW}`,
+                maxHeight: `${mImgH}`,
+                width: "80vw",
+              }}
             ></Image>
           </div>
         </div>

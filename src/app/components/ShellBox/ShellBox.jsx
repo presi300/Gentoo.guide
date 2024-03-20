@@ -15,7 +15,7 @@ let ShellBox = ({
   return (
     <div>
       {variant === "regular" && (
-        <div>
+        <div className="mb-6">
           <div className="bg-[#0A090E] gap-1 text-blue-400 px-5 py-2 rounded-t-[15px] border-t-[1px] border-[#2A2738] border-opacity-75 flex sm:hidden xd-sm ">
             {dir} <p className="text-[#529659]">$</p>
           </div>

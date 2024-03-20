@@ -6,17 +6,26 @@ import Skeleton from "../../components/Skeleton/Skeleton";
 import SideBarElementExtended from "../../components/SideBar/SideBarElementExtended";
 import ShellBoxOutput from "@/app/components/ShellBox/ShellBoxOutput";
 import AttentionBox from "@/app/components/AttentionBox/AttentionBox";
+import ShellBox from "@/app/components/ShellBox/ShellBox";
+import ChapterEnd from "@/app/components/ChapterEnd/ChapterEnd";
+import Image from "next/image";
 
 export default function DwAndSetup({}) {
   return (
     <div className="">
+      <fmt.ThatElementThatTheSideBarNavigatesTo Nid="Getting started"></fmt.ThatElementThatTheSideBarNavigatesTo>
       <fmt.SectionMain
         title="Getting started"
         subTitle="This page will let you know all about what an installation enviroment is, how to set it up and how to use it to get started."
       >
+        <fmt.ThatElementThatTheSideBarNavigatesTo Nid="Installation environment?"></fmt.ThatElementThatTheSideBarNavigatesTo>
+
         <fmt.Section title="What is an installation environment?">
           <fmt.TextBoxWithFormatting text="An <b>installation environment</b>, also known as a <b>live ISO</b> is exactly what the name suggests - an environment for installing a linux distribution, in this case - Gentoo. <br/><br/>Most linux distributions ship their own <b>installation environment</b> (LiveISO) and Gentoo is no different, however I'd advise against using the one, provided by Gentoo. It makes the installation process unnecessarily difficult by not having a desktop environment.<br><br/>Gentoo can be installed using any other linux distribution's <b>installation environment</b>, most of which have a nice pre-configured desktop that makes the whole installation process a lot less annoying by allowing you to copy-paste long commands and to do something else while waiting for it to finish. <br/><br/> For this guide, I'll be using a <a class='yej' href='https://linuxmint.com/'>Linux Mint</a> live ISO, however as mentioned previously, pretty much any other distribution's live ISO should also get the job done."></fmt.TextBoxWithFormatting>
         </fmt.Section>
+
+        <fmt.ThatElementThatTheSideBarNavigatesTo Nid="Setting up installation environment"></fmt.ThatElementThatTheSideBarNavigatesTo>
+
         <fmt.Section title="Downloading and setting up the installation environment">
           <fmt.TextBoxWithFormatting text="Before beginning, you are gonna need a few things: <br/><br/>"></fmt.TextBoxWithFormatting>
           <fmt.List
@@ -26,9 +35,12 @@ export default function DwAndSetup({}) {
               "A few spare hours.",
             ]}
           ></fmt.List>
+
           <fmt.TextBoxWithFormatting text="I'm gonna assume that anyone who's gotten to this point already knows how to flash an ISO to a flash drive and boot from it, however I am still gonna mention <a class='yej' href='https://www.ventoy.net/'>Ventoy</a>, because it's cool.<br/><br/>Now that you've booted off your chosen distro's live ISO, it's time to actually install Gentoo, starting with:"></fmt.TextBoxWithFormatting>
         </fmt.Section>
       </fmt.SectionMain>
+
+      <fmt.ThatElementThatTheSideBarNavigatesTo Nid="Getting the partitions ready"></fmt.ThatElementThatTheSideBarNavigatesTo>
 
       <fmt.SectionMain
         title="Getting the partitions ready"
@@ -43,6 +55,9 @@ export default function DwAndSetup({}) {
             text="A virtual disk (/dev/vda) will be used in all examples, make sure to replace that with your chosen disk, wherever necessary."
           ></AttentionBox>
         </fmt.Section>
+
+        <fmt.ThatElementThatTheSideBarNavigatesTo Nid="What partitions are needed?"></fmt.ThatElementThatTheSideBarNavigatesTo>
+
         <fmt.Section title="Figuring out what partitions are actually needed">
           <fmt.TextBoxWithFormatting text="There is a slight catch that needs to be taken care of, before proceeding with partitioning the disk. That being whether your system is <b>Legacy BIOS</b> or <b>UEFI</b>, as the following steps differ slightly for each one. If you are unsure about your system, you can type the following command:"></fmt.TextBoxWithFormatting>
           <ShellBoxOutput
@@ -52,6 +67,9 @@ export default function DwAndSetup({}) {
           ></ShellBoxOutput>
           <fmt.TextBoxWithFormatting text="If the command errors out, your system is <b>legacy BIOS</b> and if it doesn't, it's <b>UEFI</b>."></fmt.TextBoxWithFormatting>
         </fmt.Section>
+
+        <fmt.ThatElementThatTheSideBarNavigatesTo Nid="Setting up partitions"></fmt.ThatElementThatTheSideBarNavigatesTo>
+
         <fmt.Section title="Setting up partitions">
           <fmt.TextBoxWithFormatting text="For the following steps, you can use whichever disk management program you want (e.g. gparted, GNOME disks, etc), <b>cfdisk</b> will be used for the demonstration.<br/><br/> 1st, wipe the existing partition table on the chosen disk:"></fmt.TextBoxWithFormatting>
           <ShellBoxOutput
@@ -78,12 +96,12 @@ export default function DwAndSetup({}) {
               "If possible, least 50GB, type: Linux filesystem, (home) [optional]",
             ]}
           ></fmt.List>
-          <fmt.NonTextElement
+          {/* <fmt.NonTextElement
             variant="image"
             img="/GPT.png"
             imgW="800"
             aImgW="1100"
-          ></fmt.NonTextElement>
+          ></fmt.NonTextElement> */}
           <AttentionBox
             variant="note"
             text="I've used partitions that are smaller than recommended in the example, as it's just there for demonstration purposes."
@@ -190,6 +208,9 @@ export default function DwAndSetup({}) {
           ></ShellBoxOutput>
           <fmt.TextBoxWithFormatting text="Everything looks good? Now it's time to:"></fmt.TextBoxWithFormatting>
         </fmt.Section>
+
+        <fmt.ThatElementThatTheSideBarNavigatesTo Nid="Setting up stage3"></fmt.ThatElementThatTheSideBarNavigatesTo>
+
         <fmt.Section title="Mount partitions and setup 'stage 3'">
           <fmt.TextBoxWithFormatting text="Before going any further, you might wonder, what's a 'stage 3' ? <br/><br/> A 'stage 3' is simply an archived, basic gentoo system, which needs to be extracted on a disk partition in order for anything useful to be done with it. <br/><br/> Before any of that can be done, however, you need to mount your newly created partitions first. Here's how that's done:<br/><br/>"></fmt.TextBoxWithFormatting>
           <fmt.TextBoxWithFormatting text="1st, create a root mount point:"></fmt.TextBoxWithFormatting>
@@ -235,9 +256,74 @@ export default function DwAndSetup({}) {
             variant="note"
             text="You should still create /mnt/gentoo/boot even if your system is not EFI."
           ></AttentionBox>
+          <fmt.TextBoxWithFormatting text="With all of that done, you are now ready to <b>download the gentoo stage3<br/><br/>1st, go to the <a class='yej' href='https://www.gentoo.org/downloads/' target='_blank'>Gentoo downloads page</a>, then select which version of the gentoo base system you want. If the words 'systemd' and 'openrc' mean nothing to you or you can't choose between the two init systems, choose the 'openrc' option <br/></br>"></fmt.TextBoxWithFormatting>
+          <fmt.NonTextElement
+            variant="image"
+            img="/Downloads.png"
+            imgW={800}
+            imgH={740}
+            mImgH="740px"
+            mImgW="800px"
+          ></fmt.NonTextElement>
+          <fmt.TextBoxWithFormatting text="Right click it and copy the link:"></fmt.TextBoxWithFormatting>
+          <fmt.NonTextElement
+            variant="image"
+            imgW={800}
+            imgH={700}
+            mImgW="800px"
+            mImgH="700px"
+            img="/rightclick.png"
+          ></fmt.NonTextElement>
+          <fmt.TextBoxWithFormatting text="Then go to the <b>/mnt/gentoo</b> directory and download it there with <b>wget</b><br/><br/>"></fmt.TextBoxWithFormatting>
+          <ShellBox dir="/mnt/gentoo" command="wget <Copied URL>"></ShellBox>
+          <AttentionBox
+            variant="note"
+            text=" Depending on your chosen liveISO, you might need to download wget
+            manually"
+          ></AttentionBox>
+          <fmt.TextBoxWithFormatting text="After the archive has fiinished downloading, extract it with <b>tar</b><br/><br/>"></fmt.TextBoxWithFormatting>
+          <ShellBox
+            dir="/mnt/gentoo"
+            command="tar -xvf `ls | grep stage3`"
+          ></ShellBox>
+          <fmt.TextBoxWithFormatting text="The stage3 archive, as mentioned above contains a very basic gentoo system. You can check that for yourself by running <b>ls<b/>"></fmt.TextBoxWithFormatting>
+          <ShellBoxOutput
+            dir="/mnt/gentoo"
+            command="ls"
+            outputVariant="image"
+            output={
+              <Image
+                className="scale-100  max-w-[800px] w-full"
+                src="/ls1.png"
+                width={1900}
+                height={180}
+              ></Image>
+            }
+          ></ShellBoxOutput>
+          <ChapterEnd
+            EndTitle="With our partitions setup and our base system extracted"
+            EndSubTitle="We can now move to actually"
+            EndBtnText="Setting up Gentoo linux"
+          ></ChapterEnd>
         </fmt.Section>
       </fmt.SectionMain>
-      <Skeleton topBarVariant="hamburger"></Skeleton>
+      <Skeleton topBarVariant="hamburger">
+        <SideBarElementExtended
+          text="Getting started"
+          content={[
+            "Installaton environment?",
+            "Setting up installation environment",
+          ]}
+        ></SideBarElementExtended>
+        <SideBarElementExtended
+          text="Getting the partitions ready"
+          content={[
+            "What partitions are needed?",
+            "Setting up partitions",
+            "Setting up stage3",
+          ]}
+        ></SideBarElementExtended>
+      </Skeleton>
     </div>
   );
 }
