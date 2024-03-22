@@ -60,11 +60,11 @@ export default function DwAndSetup({}) {
 
         <fmt.Section title="Figuring out what partitions are actually needed">
           <fmt.TextBoxWithFormatting text="There is a slight catch that needs to be taken care of, before proceeding with partitioning the disk. That being whether your system is <b>Legacy BIOS</b> or <b>UEFI</b>, as the following steps differ slightly for each one. If you are unsure about your system, you can type the following command:"></fmt.TextBoxWithFormatting>
-          <ShellBoxOutput
+          <ShellBox
             variant="regular"
             command="ls /sys/firmware/efi"
             dir="~"
-          ></ShellBoxOutput>
+          ></ShellBox>
           <fmt.TextBoxWithFormatting text="If the command errors out, your system is <b>legacy BIOS</b> and if it doesn't, it's <b>UEFI</b>."></fmt.TextBoxWithFormatting>
         </fmt.Section>
 
@@ -72,11 +72,11 @@ export default function DwAndSetup({}) {
 
         <fmt.Section title="Setting up partitions">
           <fmt.TextBoxWithFormatting text="For the following steps, you can use whichever disk management program you want (e.g. gparted, GNOME disks, etc), <b>cfdisk</b> will be used for the demonstration.<br/><br/> 1st, wipe the existing partition table on the chosen disk:"></fmt.TextBoxWithFormatting>
-          <ShellBoxOutput
+          <ShellBox
             variant="root"
             dir="~"
             command="wipefs -a /dev/<disk>"
-          ></ShellBoxOutput>
+          ></ShellBox>
           <AttentionBox
             variant="attention"
             text="This action WILL delete *ALL* data on the selected disk and is NOT
@@ -195,6 +195,7 @@ export default function DwAndSetup({}) {
           <ShellBoxOutput
             dir="~"
             command="fdisk -l"
+            outputVariant="regular"
             output={
               <div className="my-2 ">
                 {/* prettier-ignore*/}
@@ -304,6 +305,7 @@ export default function DwAndSetup({}) {
             EndTitle="With our partitions setup and our base system extracted"
             EndSubTitle="We can now move to actually"
             EndBtnText="Setting up Gentoo linux"
+            NextChapter="InstallationPage"
           ></ChapterEnd>
         </fmt.Section>
       </fmt.SectionMain>
