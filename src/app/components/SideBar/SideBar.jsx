@@ -117,8 +117,11 @@ let SideBar = ({ children }) => {
               <b className="pr-3">3.</b>
               Initial setup
             </SbChapter>
-            <SbChapter key={3} href="/Chapters/InfoPage">
-              <b className="pr-3">4.</b>Information
+            <SbChapter key={4} href="/Chapters/InstallationPage">
+              <b className="pr-3">4.</b>Installing gentoo
+            </SbChapter>
+            <SbChapter key={11} href="/Chapters/InfoPage">
+              <b className="pr-3">11.</b>Information
             </SbChapter>
           </SbChapterSelector>
         </motion.div>
