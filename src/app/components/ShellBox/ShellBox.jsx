@@ -13,10 +13,10 @@ let ShellBox = ({
   };
 
   return (
-    <div>
+    <div className="mb-6">
       {variant === "regular" && (
         <div className="mb-6">
-          <div className="bg-[#0A090E] gap-1 text-blue-400 px-5 py-2 rounded-t-[15px] border-t-[1px] border-[#2A2738] border-opacity-75 flex sm:hidden xd-sm ">
+          <div className="bg-[#0A090E] gap-1 text-blue-400 px-5 py-2 rounded-t-[15px] border-t-[1px] border-[#2A2738] border-opacity-75 flex sm:hidden xd-sm">
             {dir} <p className="text-[#529659]">$</p>
           </div>
           <div className="w-full h-[60px] px-5 bg-[#0A090E] bg-opacity-70 rounded-b-[15px] sm:rounded-[15px] border border-[#2A2738] border-opacity-75 backdrop-blur-[10px] justify-start items-center gap-1 inline-flex">

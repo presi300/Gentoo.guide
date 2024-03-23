@@ -48,7 +48,7 @@ export default function DwAndSetup({}) {
       >
         <fmt.Section title="Choosing a disk">
           <fmt.TextBoxWithFormatting text="Before doing any partitioning, you firstly need to choose a disk to be partitioned. There are no strict restrictions about what disk should be used, however it is generally recommended to install any operating system on an SSD, instead of an HDD.<br/><br/> To check the names of all disks, currently connected to your system, use: "></fmt.TextBoxWithFormatting>
-          <ShellBoxOutput dir="~" command="fdisk -l"></ShellBoxOutput>
+          <ShellBox dir="~" command="fdisk -l"></ShellBox>
           <fmt.TextBoxWithFormatting text="SATA disks should appear as /dev/sd*, NVME disks should appear as /dev/nvme*n*.<br/><br/> "></fmt.TextBoxWithFormatting>
           <AttentionBox
             variant="attention"
@@ -71,7 +71,7 @@ export default function DwAndSetup({}) {
         <fmt.ThatElementThatTheSideBarNavigatesTo Nid="Setting up partitions"></fmt.ThatElementThatTheSideBarNavigatesTo>
 
         <fmt.Section title="Setting up partitions">
-          <fmt.TextBoxWithFormatting text="For the following steps, you can use whichever disk management program you want (e.g. gparted, GNOME disks, etc), <b>cfdisk</b> will be used for the demonstration.<br/><br/> 1st, wipe the existing partition table on the chosen disk:"></fmt.TextBoxWithFormatting>
+          <fmt.TextBoxWithFormatting text="For the following steps, you can use whichever disk management program you want (e.g. gparted, GNOME disks, etc), <b>cfdisk</b> will be used for the demonstration.<br/><br/> 1st, wipe the existing partition table on the chosen disk:<br/><br/>"></fmt.TextBoxWithFormatting>
           <ShellBox
             variant="root"
             dir="~"
@@ -144,36 +144,36 @@ export default function DwAndSetup({}) {
           ></AttentionBox>
           <fmt.TextBoxWithFormatting text="Now that you've chosen your file system, it's time to format your partitions with it. In the example case:<br/><br/>"></fmt.TextBoxWithFormatting>
           <fmt.Label> UEFI</fmt.Label>
-          <ShellBoxOutput
+          <ShellBox
             variant="root"
             dir="~"
             command="mkfs.fat -F32 /dev/vda1"
-          ></ShellBoxOutput>
-          <ShellBoxOutput
+          ></ShellBox>
+          <ShellBox
             variant="root"
             dir="~"
             command="mkfs.ext4 /dev/vda2"
-          ></ShellBoxOutput>
-          <ShellBoxOutput
+          ></ShellBox>
+          <ShellBox
             variant="root"
             dir="~"
             command="mkfs.ext4 /dev/vda3"
-          ></ShellBoxOutput>
+          ></ShellBox>
           <AttentionBox
             variant="attention"
             text="It is VERY important that your EFI System partition (/dev/vda1 in the example case) be formatted as FAT32!"
           ></AttentionBox>
           <fmt.Label>Legacy BIOS</fmt.Label>
-          <ShellBoxOutput
+          <ShellBox
             variant="root"
             dir="~"
             command="mkfs.ext4 /dev/vda1"
-          ></ShellBoxOutput>
-          <ShellBoxOutput
+          ></ShellBox>
+          <ShellBox
             variant="root"
             dir="~"
             command="mkfs.ext4 /dev/vda2"
-          ></ShellBoxOutput>
+          ></ShellBox>
           <fmt.TextBoxWithFormatting text="At this point, your disk's partition table should looks something like this: <br/><br/>"></fmt.TextBoxWithFormatting>
           <fmt.Label>UEFI</fmt.Label>
           <ShellBoxOutput
@@ -215,43 +215,43 @@ export default function DwAndSetup({}) {
         <fmt.Section title="Mount partitions and setup 'stage 3'">
           <fmt.TextBoxWithFormatting text="Before going any further, you might wonder, what's a 'stage 3' ? <br/><br/> A 'stage 3' is simply an archived, basic gentoo system, which needs to be extracted on a disk partition in order for anything useful to be done with it. <br/><br/> Before any of that can be done, however, you need to mount your newly created partitions first. Here's how that's done:<br/><br/>"></fmt.TextBoxWithFormatting>
           <fmt.TextBoxWithFormatting text="1st, create a root mount point:"></fmt.TextBoxWithFormatting>
-          <ShellBoxOutput
+          <ShellBox
             dir="~"
             variant="root"
             command="mkdir /mnt/gentoo"
-          ></ShellBoxOutput>
+          ></ShellBox>
 
           <fmt.TextBoxWithFormatting text="2nd, mount the root partition:"></fmt.TextBoxWithFormatting>
-          <ShellBoxOutput
+          <ShellBox
             dir="~"
             variant="root"
             command="mount <Root Partition> /mnt/gentoo "
-          ></ShellBoxOutput>
+          ></ShellBox>
           <fmt.TextBoxWithFormatting text="3rd, create the other mount points:"></fmt.TextBoxWithFormatting>
 
-          <ShellBoxOutput
+          <ShellBox
             variant="root"
             dir="~"
             command="mkdir /mnt/gentoo/boot"
-          ></ShellBoxOutput>
+          ></ShellBox>
           <fmt.Label>If you have created a separate /home partition:</fmt.Label>
-          <ShellBoxOutput
+          <ShellBox
             variant="root"
             dir="~"
             command="mkdir /mnt/gentoo/home"
-          ></ShellBoxOutput>
+          ></ShellBox>
           <fmt.TextBoxWithFormatting text="4th, mount the other partitions:"></fmt.TextBoxWithFormatting>
-          <ShellBoxOutput
+          <ShellBox
             variant="root"
             dir="~"
             command="mount <EFI partition> /mnt/gentoo/boot"
-          ></ShellBoxOutput>
+          ></ShellBox>
           <fmt.Label>If you have created a separate /home partition:</fmt.Label>
-          <ShellBoxOutput
+          <ShellBox
             variant="root"
             dir="~"
             command="mount <Home partition> /mnt/gentoo/home"
-          ></ShellBoxOutput>
+          ></ShellBox>
           <fmt.TextBoxWithFormatting text=" - Wait, aren't these 'mount points' just directories? <br/><br/> Yes! On linux, disk partitions are mounted as directories.<br/><br/>"></fmt.TextBoxWithFormatting>
           <AttentionBox
             variant="note"
