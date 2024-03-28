@@ -24,6 +24,16 @@ export default function InstallationPage({}) {
           <fmt.TextBoxWithFormatting text="Defines basic compiler flags. You can add '-march=native' if you want a bit of extra performance, otherwise leave at default, unless you know what you're doing.<br/><br/>"></fmt.TextBoxWithFormatting>
           <fmt.Label>CFLAGS, CXXFLAGS, FCFLAGS, FFLAGS</fmt.Label>
           <fmt.TextBoxWithFormatting text="Tells the different compilers how to use your <b>COMMON_FLAGS</b>. Leave at default, unless you know what you're doing.<br/><br/>"></fmt.TextBoxWithFormatting>
+          <fmt.Label>USE</fmt.Label>
+          <fmt.TextBoxWithFormatting text="Already mentioned on the 1st page, however there is more to it than what was explained there. USE can dictate both which features you want and which ones you don't. For example:<br/><br/>"></fmt.TextBoxWithFormatting>
+          <TextFileBox fileName="/etc/portage/make.conf">
+            USE="wayland bluetooth"
+          </TextFileBox>
+          <fmt.TextBoxWithFormatting text="Will tell portage to compile programs with bletooth and wayland support, wherever applicable. However, some packages might have default features that you don't want or they might have several optional dependencies listed for automatic install, unless told otherwise. You can prevent this by putting a - in front of the features you do not want: <br/><br/>"></fmt.TextBoxWithFormatting>
+          <TextFileBox fileName="/etc/portage/make.conf">
+            USE="wayland -bluetooth"
+          </TextFileBox>
+          <fmt.TextBoxWithFormatting text="This will tell portage to install the packages who ask about wayland support, with wayland support and the ones who ask about bluetooth support, without it."></fmt.TextBoxWithFormatting>
           <fmt.Label>MAKEOPTS</fmt.Label>
           <fmt.TextBoxWithFormatting text="Already explained on the 1st page, set to '-j{number of CPU cores}'<br/><br/>"></fmt.TextBoxWithFormatting>
           <fmt.Label>ACCEPT_LICENSE</fmt.Label>
@@ -94,7 +104,12 @@ export default function InstallationPage({}) {
           <TextFileBox fileName="/etc/portage/make.conf">
             FEATURES="getbinpkg"
           </TextFileBox>
-          <fmt.TextBoxWithFormatting text="Into your make.conf. Do note that not every package has a binary at this point of time and this feature simply tells portage to pull from the binary repository, <b>whenever possible.</b><br/><br/><b>Got all that? Now let's begin the actual installation by:</b><br/><br/>"></fmt.TextBoxWithFormatting>
+          <fmt.TextBoxWithFormatting text="Into your make.conf. Do note that not every package has a binary at this point of time and this feature simply tells portage to pull from the binary repository, <b>whenever possible.</b><br/><br/>"></fmt.TextBoxWithFormatting>
+          <AttentionBox
+            variant="note"
+            text="You might get keyring issues when attempting to install binary packages, you can fix them by running 'getuto' and installing (reinstalling) 'sec-keys/openpgp-keys-gentoo-release'"
+          ></AttentionBox>
+          <fmt.TextBoxWithFormatting text="<b>Got all that? Now let's begin the actual installation by:</b><br/><br/>"></fmt.TextBoxWithFormatting>
         </fmt.Section>
 
         <fmt.Section title="Chrooting in...">
@@ -202,6 +217,165 @@ export default function InstallationPage({}) {
               ></Image>
             }
           ></ShellBoxOutput>
+          <fmt.TextBoxWithFormatting text="Now that portage is working, it's time to go back to <b>CPU_FLAGS_X86</b> again. As mentioned before, it lets the various compilers which X86_64 features your particular CPU supports. <br/><br/> Explaining said features is outside the scope of this guide, but the TL;DR for this usecase is that letting the compilers know which features your CPU supports equals more performance.<br/><br/> To see which features are supported by your particular cpu, you can use a tool called <b>cpuid2cpuflags</b>, which can be installed by running:<br/><br/>"></fmt.TextBoxWithFormatting>
+          <ShellBox
+            dir="~"
+            variant="root"
+            command="emerge -a cpuid2cpuflags"
+          ></ShellBox>
+          <fmt.TextBoxWithFormatting text="After it's installed, run:<br/><br/>"></fmt.TextBoxWithFormatting>
+          <ShellBox
+            dir="~"
+            variant="root"
+            command="cpuid2cpuflags >> /etc/portage/make.conf"
+          ></ShellBox>
+          <fmt.TextBoxWithFormatting text="After that, open /etc/portage/make.conf with <b>nano</b> and at the bottom of the file you should see something like this: <br/><br/>"></fmt.TextBoxWithFormatting>
+          <TextFileBox fileName="/etc/portage/make.conf">
+            CPU_FLAGS_X86: aes avx f16c fma3 fma4 mmx mmxext polmul popent sse
+            ssez sse3 sse4_1 sse4_2 sse4a ssse3 xop
+          </TextFileBox>
+          <fmt.TextBoxWithFormatting text="Change it to: (replace the colon with an equals and add quotes around the flags)<br/><br/>"></fmt.TextBoxWithFormatting>
+          <TextFileBox fileName="/etc/portage/make.conf">
+            CPU_FLAGS_X86="aes avx f16c fma3 fma4 mmx mmxext polmul popent sse
+            ssez sse3 sse4_1 sse4_2 sse4a ssse3 xop"
+          </TextFileBox>
+          <fmt.TextBoxWithFormatting text="Now, let's actually start installing some of the base packages.<br/><br/>"></fmt.TextBoxWithFormatting>
+        </fmt.Section>
+        <fmt.Section title="Networking stack">
+          <fmt.TextBoxWithFormatting text="There are a few choices when it comes to a networking stack, however this guide is written with <b>Network Manager</b> in mind, as it's the most widely supported and feature rich one.<br/><br/>You can check out some of the other options by clicking <a href='https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Networking' class='yej' target='_blank'>Here</a> <br/><br/><b>- But why do I need a 'networking stack', wasn't the copying resolv.conf thing supposed to take care of networking?</b><br/><br/>Copying resolv.conf simply copies the network configuration from the LiveISO, which does not carry over once the system is installed and you've booted from it. <br/><br/> TL;DR without it, networking will work until the next reboot.<br/><br/>It can be installed by typing:"></fmt.TextBoxWithFormatting>
+          <ShellBox
+            variant="root"
+            dir="~"
+            command="emerge -a networkmanager"
+          ></ShellBox>
+          <fmt.TextBoxWithFormatting text="NetworkManager will pull a couple of dependencies, and yeah, that's it, network setup is complete."></fmt.TextBoxWithFormatting>
+        </fmt.Section>
+        <fmt.Section title="Linux Kernel">
+          <fmt.TextBoxWithFormatting text="As you've probably heard or seen at this point, the operating system, usually referred to as 'linux', is actually GNU/Linux or in this case: 'KDE Plasma/Wayland/OpenRC/Gentoo/GNU/Linux'.<br/><br/>With that in mind, it's time to install the '<b>linux</b>' part of this entire thing.<br/><br/>-But what is a kernel?<br/><br/>A kernel is kind of like a glue that connects the hardware with the sowftware. The linux kernel in particular, however is a bit more complicated than that, as it's what's called a 'macro' kernel, meaning that it handles more than just the basic communication between the software and the hardware it also handles device drivers.<br/><br/>Configuring the linux kernel simply means choosing which drivers and features you need from it and which ones you don't.<br/><br/>Unfortunately, choosing said drivers is a complicated and extremely personalized task, which is simply impossible to fully explain in a guide like this, as every piece of hardware needs it's own specific driver or in some cases set of drivers... <br/><br/><b>Fortunately, it's completely optional!</b><br/><br/>Gentoo provides a fully configured kernel that should work flawlessly on 90% of devices. To install it, simply type:<br/><br/>"></fmt.TextBoxWithFormatting>
+          <ShellBox
+            variant="root"
+            dir="~"
+            command="emerge -a gentoo-kernel-bin"
+          ></ShellBox>
+          <fmt.TextBoxWithFormatting text="After it's installed, make sure it's selected as active:"></fmt.TextBoxWithFormatting>
+          <ShellBoxOutput
+            variant="root"
+            dir="~"
+            command="eselect kernel list"
+            output={
+              <Image
+                src="/KernelList.png"
+                width={800}
+                height={100}
+                className="w-full max-w-[300px] mb-5"
+              ></Image>
+            }
+          ></ShellBoxOutput>
+          <fmt.TextBoxWithFormatting text="Make sure there is a * next to the linux-(something)-gentoo-dist<br/><br/>Then, install linux-firmware.<br/></br>"></fmt.TextBoxWithFormatting>
+          <ShellBox
+            dir="~"
+            variant="root"
+            command="emerge -a linux-firmware"
+          ></ShellBox>
+          {/* TODO: add an anchor to skip to the next section */}
+          <fmt.TextBoxWithFormatting text="<br/>Linux-firmware contains a bunch of extra drivers that for one reason or another could not be built directly into the kernel. TL;DR wifi is probably not gonna work without it... <br/><br/>And that's pretty much it for installing the dist-kernel, if you do not wanna bother configuring your own kernel, you are fully free to click <a href='#' class='yej'>here to skip to the next section.</a><br/><br/>For the people who want to configure their own kernel, again, it's impossible to put all of the information necessary for doing that in one guide, however with that being said, here are the basics of to do it:"></fmt.TextBoxWithFormatting>
+          <fmt.Label>Choosing kernel sources</fmt.Label>
+          <fmt.TextBoxWithFormatting text="Gentoo gives you the option to choose your <b>kernel sources</b>, which are gonna be the foundation for your kernel. The difference between the different sources is mainly that some of them have extra features and optimizations that may not be present in others. You can see all of the available <b>kernel sources</b> by typing:<br/><br/>"></fmt.TextBoxWithFormatting>
+          <ShellBox
+            dir="~"
+            variant="root"
+            command="emerge --search sources"
+          ></ShellBox>
+          <fmt.TextBoxWithFormatting text="This will list quite a lot of things, however the main ones you should pay attention to are:"></fmt.TextBoxWithFormatting>
+          <fmt.List
+            el={[
+              "gentoo-sources - the sources that the preconfigured kernel is based on",
+              "zen-sources - sources for building a slightly more optimized 'zen' kernel",
+              "vanilla-sources - the regular linux sources with no modifications or optimizations",
+            ]}
+          ></fmt.List>
+          <fmt.TextBoxWithFormatting text="All of the other 'sources' are meant for specialized uses, like the <b>asahi sources</b>, used to build linux kernels that run on apple silicon macs. Or the <b>rt-sources</b>, used to make 'realtime' linux kernels that provide certain, very complicated to explain benefits to large scale servers.<br/><br/>After you've installed your sources of choice, make sure that they are selected as the 'active' kernel."></fmt.TextBoxWithFormatting>
+          <ShellBoxOutput
+            dir="~"
+            variant="root"
+            command="eselect kernel list"
+            output={
+              <Image
+                src="/EKList1.png"
+                width={500}
+                height={100}
+                className="w-full mb-5 max-w-[300px]"
+              ></Image>
+            }
+          ></ShellBoxOutput>
+          <fmt.TextBoxWithFormatting text="In this case, [1] is the sources and [2] is a dist-kernel. To select the sources, in this case you'd run:<br/><br/>"></fmt.TextBoxWithFormatting>
+          <ShellBox
+            variant="root"
+            dir="~"
+            command="eselect kernel set 1"
+          ></ShellBox>
+          <ShellBoxOutput
+            variant="root"
+            dir="~"
+            command="eselect kernel list"
+            output={
+              <Image
+                src="/EKL2.png"
+                width={500}
+                height={100}
+                className="w-full max-w-[300px] mb-5"
+              ></Image>
+            }
+          ></ShellBoxOutput>
+          <fmt.TextBoxWithFormatting text="With the sources selected and downloaded, it's time to actually configure them and build your kernel... and this is where the whole <b>very complicated</b> part comes in.<br/><br/>To properly configure a kernel, you need to know the exact model of things like your: CPU, GPU, Motherboard chipset, SATA controllers, USB2 controllers, USB3 controllers, Thunderbolt controllers, display controllers and every other little thing in your PC.<br/><br/>It's a huge trial and error process, which is why it is usually recommended to use a premade kernel for the initial setup and configure your own at a later point.<br/><br/>With all mind, let's begin by:"></fmt.TextBoxWithFormatting>
+          <fmt.Label>Installing genkernel</fmt.Label>
+          <fmt.TextBoxWithFormatting text="<b>Genkernel</b> is a tool, provided by gentoo that makes building and installing custom kernels much easier than doing it manually by doing things like generating <b>initramfs</b> automatically.<br/><br/>"></fmt.TextBoxWithFormatting>
+          <ShellBox
+            variant="root"
+            dir="~"
+            command="emerge -a genkernel"
+          ></ShellBox>
+          <fmt.TextBoxWithFormatting text="With <b>genkernel</b> installed, it's time to actually start:"></fmt.TextBoxWithFormatting>
+          <fmt.Label>Configuring the kernel</fmt.Label>
+          <fmt.TextBoxWithFormatting text="Kernel sources are stored at /usr/src, cd there and into the folder with the name of your chosen kernel sources.<br/><br/>After that, type:<br/><br/>"></fmt.TextBoxWithFormatting>
+          <ShellBox
+            dir="/usr/src/linux-6.6.21-gentoo"
+            variant="root"
+            command="make nconfig"
+          ></ShellBox>
+          <fmt.TextBoxWithFormatting text="After a bit of loading, a menu like this should appear."></fmt.TextBoxWithFormatting>
+          <fmt.NonTextElement
+            img="/nconfig.png"
+            variant="image"
+            imgW={1200}
+            imgH={800}
+            mImgW="900px"
+            mImgH="700px"
+          ></fmt.NonTextElement>
+          <fmt.TextBoxWithFormatting text="At this point, figuring out how to configure the kernel should go something like this:"></fmt.TextBoxWithFormatting>
+          <fmt.NonTextElement
+            variant="image"
+            img="/EcosiaIt.png"
+            imgW={1000}
+            imgH={300}
+            mImgW="700px"
+            mImgH="200px"
+          ></fmt.NonTextElement>
+          <fmt.TextBoxWithFormatting text="Looking up which options need to be changed for your specific hardware is the best way of going around configuring the kernel.<br/><br/>There are a couple of useful commands that will help you find the exact hardware you need to look up the configuration for:<br/><br/>"></fmt.TextBoxWithFormatting>
+          <fmt.Label>lspci</fmt.Label>
+          <fmt.TextBoxWithFormatting text="Lists all PCI devices. Devices like graphics cards, NVME controllers, USB controllers and everything else connected through a PCI/PCIE interface.<br/><br/>To use it on gentoo, install the <b>pciutils</b> package and type:<br/><br/>"></fmt.TextBoxWithFormatting>
+          <ShellBox dir="~" variant="root" command="lspci"></ShellBox>
+          <fmt.TextBoxWithFormatting text="You can combine <b>lspci</b> with <b>grep</b> to only get certain types of PCI devices, for example:<br/><br/>"></fmt.TextBoxWithFormatting>
+          <ShellBox
+            variant="root"
+            dir="~"
+            command="lspci | grep VGA"
+          ></ShellBox>
+          <fmt.TextBoxWithFormatting text="To list only graphic cards."></fmt.TextBoxWithFormatting>
+          <fmt.Label>lsusb</fmt.Label>
+          <fmt.TextBoxWithFormatting text="Lists USB devices/hubs/controllers. However, it's not <b>all</b> USB things. Some PCs and laptops have internal USB  hubs/controllers wired through PCIE and will show in <b>lspci</b>.<br/><br/>To use it, install the <b>usbutils</b> package and type:<br/><br/>"></fmt.TextBoxWithFormatting>
+          <ShellBox variant="root" dir="~" command="lsusb"></ShellBox>
+          <fmt.TextBoxWithFormatting text="After the kernel has been configured, you can use the previously mentioned <b>genkernel</b> command to build and install it"></fmt.TextBoxWithFormatting>
         </fmt.Section>
       </fmt.SectionMain>
       <Skeleton topBarVariant="hamburger"></Skeleton>

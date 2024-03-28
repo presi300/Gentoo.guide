@@ -17,6 +17,7 @@ module.exports = {
       screens: {
         "3xl": "1920px", //A breakpoint for 1080p
         tall: { raw: "(min-height: 1200px)" }, //For weird-lookin small screens
+        tallIsh: { raw: "(min-height: 900px)" }, //For weird-lookin smaller screens
       },
     },
   },

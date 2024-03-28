@@ -60,23 +60,51 @@ function Chapter({
 export default function ChapterSelector({ children }) {
   return (
     <Modal btn={children}>
-      <div className="sm:h-[80vh] max-h-[1500px] max-w-[2300px] w-screen h-[80vh] sm:w-[80vw] overflow-scroll">
+      <div className="sm:h-[80vh] max-h-[1500px] max-w-[2300px] w-screen h-[80vh] sm:w-[80vw] overflow-scroll noscroll">
         <div className="flex absolute top-0 right-0 left-0 items-center justify-center p-[0.8rem] bg-[#2a272c] rounded-t-[15px] shadow-sm z-40">
           <Text variant="lg">Select chapter</Text>
         </div>
         <div className="mt-24">
+          <Text variant="lg">
+            <div className="opacity-70 text-center pt-2">Guide chapters</div>
+          </Text>
+          <Chapter
+            title="Welcome!"
+            subtitle="Take a quick a look around, before diving in!"
+            img="/logo.png"
+            padded={true}
+            ImgRound={true}
+            link="/Chapters/DownloadAndSetupPage"
+            target=""
+          ></Chapter>
+          <Chapter
+            title="Getting started"
+            subtitle="The first steps towards a full gentoo system!"
+            img="/logo.png"
+            padded={true}
+            ImgRound={true}
+            link="/Chapters/DownloadAndSetupPage"
+            target=""
+          ></Chapter>
+          <Chapter
+            title="Installing Gentoo"
+            subtitle="It's in the title, get all the way to a functional gentoo system"
+            img="/logo.png"
+            padded={true}
+            ImgRound={true}
+            link="/Chapters/DownloadAndSetupPage"
+            target=""
+          ></Chapter>
+
+          <Text variant="lg">
+            <div className="opacity-70 text-center pt-2">
+              Other pretty pages
+            </div>
+          </Text>
           <Chapter
             title="Information"
             subtitle="More information about the site"
             link="/Chapters/InfoPage"
-          ></Chapter>
-          <Chapter
-            title="Gentoo Wiki"
-            subtitle="A quick link, leading to the official gentoo wiki"
-            img="/GentooWiki.png"
-            padded={false}
-            bgc="#DDDAEC"
-            link="https://wiki.gentoo.org"
           ></Chapter>
           <Chapter
             title="Landing Page"
@@ -87,14 +115,17 @@ export default function ChapterSelector({ children }) {
             link="/"
             target=""
           ></Chapter>
+          <Text variant="lg">
+            <div className="opacity-70 text-center pt-2">Gentoo wiki</div>
+          </Text>
+
           <Chapter
-            title="Getting started"
-            subtitle="The first steps towards a full gentoo system"
-            img="/logo.png"
-            padded={true}
-            ImgRound={true}
-            link="/Chapters/DownloadAndSetupPage"
-            target=""
+            title="Gentoo Wiki"
+            subtitle="A quick link, leading to the official gentoo wiki"
+            img="/GentooWiki.png"
+            padded={false}
+            bgc="#DDDAEC"
+            link="https://wiki.gentoo.org"
           ></Chapter>
         </div>
       </div>

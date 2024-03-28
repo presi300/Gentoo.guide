@@ -107,21 +107,35 @@ let SideBar = ({ children }) => {
           className="w-[85%] h-full absolute top-0 "
         >
           <SbChapterSelector>
-            <SbChapter key={1} href="/">
-              <b className="pr-3">1.</b>Landing
-            </SbChapter>
-            <SbChapter key={2} href="/Chapters/StartPage">
-              <b className="pr-3">2.</b>Welcome
+            <Text variant="sm">
+              {" "}
+              <div className="text-center opacity-70">Guide Chapters</div>
+            </Text>
+
+            <SbChapter key={1} href="/Chapters/StartPage">
+              <b className="pr-3">1.</b>Welcome
             </SbChapter>
             <SbChapter key={2} href="/Chapters/DownloadAndSetupPage">
-              <b className="pr-3">3.</b>
+              <b className="pr-3">2.</b>
               Initial setup
             </SbChapter>
-            <SbChapter key={4} href="/Chapters/InstallationPage">
-              <b className="pr-3">4.</b>Installing gentoo
+            <SbChapter key={3} href="/Chapters/InstallationPage">
+              <b className="pr-3">3.</b>Installing gentoo
             </SbChapter>
-            <SbChapter key={11} href="/Chapters/InfoPage">
-              <b className="pr-3">11.</b>Information
+            <Text variant="sm">
+              <div className="text-center opacity-70">Other pages</div>
+            </Text>
+            <SbChapter key={11} href="/">
+              <b className="pr-3"></b>Landing page
+            </SbChapter>
+            <SbChapter key={12} href="/Chapters/InfoPage">
+              <b className="pr-3"></b>About gentoo.guide
+            </SbChapter>
+            <Text variant="sm">
+              <div className="text-center opacity-70">Useful resources</div>
+            </Text>
+            <SbChapter key={12} href="https://www.gentoo.org">
+              <b className="pr-3"></b>Gentoo wiki
             </SbChapter>
           </SbChapterSelector>
         </motion.div>

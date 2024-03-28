@@ -38,3 +38,11 @@ body {
 .yej:hover {
   border-bottom: 1px #ffffffff solid;
 }
+
+.noscroll {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.noscroll::-webkit-scrollbar {
+  display: none;
+}

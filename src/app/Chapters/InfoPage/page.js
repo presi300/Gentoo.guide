@@ -8,10 +8,10 @@ export default function infoPage({}) {
     <div>
       <fmt.SectionMain
         title="Information page"
-        subTitle="On this page, I'll include a bit more information about myself and the technical specifics of gentoo.guide"
+        subTitle="A page that gives a bit more information about gentoo.guide."
       >
         <fmt.Section title="What frameworks does gentoo.guide use?">
-          <fmt.TextBoxWithFormatting text="Gentoo.guide, as stated in the StartPage is written using the <b>NextJS</b> framework, using <b>TailwindCSS</b> for it's UI and <b>Framer-Motion</b> for most of the animations. <br/><br/> As for why I chose said frameworks... Because they are the most popular, yeah, that's it."></fmt.TextBoxWithFormatting>
+          <fmt.TextBoxWithFormatting text="Gentoo.guide, as stated in the StartPage is written with the <b>NextJS</b> framework, using <b>TailwindCSS</b> for it's UI and <b>Framer-Motion</b> for most of the animations. <br/><br/> As for why I chose said frameworks... Because they are the most popular, yeah, that's it."></fmt.TextBoxWithFormatting>
         </fmt.Section>
         <fmt.Section title="Does gentoo.guide collect any data?">
           <fmt.TextBoxWithFormatting text="<b>No</b>. <br/><br/> The only information Gentoo.guide stores and accesses on your computer is 'LanguageID' which is a single number, necessary for the translation system to work."></fmt.TextBoxWithFormatting>
@@ -29,10 +29,11 @@ export default function infoPage({}) {
 
           <fmt.Lnk href="https://codeberg.org/presi300/Gentoo.guide"></fmt.Lnk>
         </fmt.Section>
+        <fmt.Section title="Why are there two ways of navigating the site?">
+          <fmt.TextBoxWithFormatting text="Why not? It's never hurt anyone! <br/><br/>In all seriousness, the initial idea was to just have the one modal-style navigation pane, however after many people I showed the website to couldn't find it, I relented and added a 2nd way of navigating through the chapters in the sidebar..."></fmt.TextBoxWithFormatting>
+        </fmt.Section>
         <fmt.Section title="Who are you?">
-          <div className="flex gap-2">
-            <fmt.TextBoxWithFormatting text="Hi, I'm presi300, you can learn more about me by visiting <a href='https://presi300.com' class='yej'>My Website!</a>"></fmt.TextBoxWithFormatting>
-          </div>
+          <fmt.TextBoxWithFormatting text="Hi, I'm presi300, you can learn more about me by visiting <a href='https://presi300.com' class='yej'>My Website!</a>"></fmt.TextBoxWithFormatting>
         </fmt.Section>
       </fmt.SectionMain>
       <Skeleton topBarVariant="hamburger">
