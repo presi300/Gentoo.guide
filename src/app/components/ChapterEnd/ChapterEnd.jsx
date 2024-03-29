@@ -16,19 +16,16 @@ export default function ChapterEnd({
       {/* Next page */}
       <Text variant="lg">{EndTitle}</Text>
       <Text variant="md">{EndSubTitle}</Text>
-      <div className="grid place-items-center">
-        <div className="my-5 p-3 bg-[#41366C] transition-all rounded-full bg-opacity-35 hover:bg-opacity-50 max-w-[700px]">
-          <Link
-            href={"/Chapters/" + NextChapter}
-            className="flex items-center gap-5"
-          >
+      <div className="grid place-items-center mt-12">
+        <Link href={"/Chapters/" + NextChapter} className="   ">
+          <div className="flex items-center my-5 p-3 bg-[#41366C] transition-all rounded-full bg-opacity-35 hover:bg-opacity-50 hover:scale-110 max-w-[700px]">
             <Text>{EndBtnText}</Text>
             <Text>
               {" "}
               <FaArrowRight />
             </Text>
-          </Link>
-        </div>
+          </div>
+        </Link>
       </div>
     </div>
   );

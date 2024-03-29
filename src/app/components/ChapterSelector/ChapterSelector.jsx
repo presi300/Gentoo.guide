@@ -1,12 +1,11 @@
 "use client";
-import ch from "./Chapters.json";
 import React from "react";
 import Modal from "../Modal/Modal";
 import { Children } from "react";
 import Text from "../Text/Text";
-import Spacer from "../FormattedText/Spacer/Spacer";
 import Image from "next/image";
 import Link from "next/link";
+import { UITextTl } from "../universalLoader";
 
 // Fck me, that's a lot of variables
 function Chapter({
@@ -58,19 +57,20 @@ function Chapter({
 }
 
 export default function ChapterSelector({ children }) {
+  const Txt = UITextTl().components.ChapterSelector;
   return (
     <Modal btn={children}>
       <div className="sm:h-[80vh] max-h-[1500px] max-w-[2300px] w-screen h-[80vh] sm:w-[80vw] overflow-scroll noscroll">
         <div className="flex absolute top-0 right-0 left-0 items-center justify-center p-[0.8rem] bg-[#2a272c] rounded-t-[15px] shadow-sm z-40">
-          <Text variant="lg">Select chapter</Text>
+          <Text variant="lg">{Txt.Title}</Text>
         </div>
         <div className="mt-24">
           <Text variant="lg">
-            <div className="opacity-70 text-center pt-2">Guide chapters</div>
+            <div className="opacity-70 text-center pt-2">{Txt.L1}</div>
           </Text>
           <Chapter
-            title="Welcome!"
-            subtitle="Take a quick a look around, before diving in!"
+            title={Txt.C1.T}
+            subtitle={Txt.C1.ST}
             img="/logo.png"
             padded={true}
             ImgRound={true}
@@ -78,8 +78,8 @@ export default function ChapterSelector({ children }) {
             target=""
           ></Chapter>
           <Chapter
-            title="Getting started"
-            subtitle="The first steps towards a full gentoo system!"
+            title={Txt.C2.T}
+            subtitle={Txt.C2.ST}
             img="/logo.png"
             padded={true}
             ImgRound={true}
@@ -87,8 +87,8 @@ export default function ChapterSelector({ children }) {
             target=""
           ></Chapter>
           <Chapter
-            title="Installing Gentoo"
-            subtitle="It's in the title, get all the way to a functional gentoo system"
+            title={Txt.C3.T}
+            subtitle={Txt.C3.ST}
             img="/logo.png"
             padded={true}
             ImgRound={true}
@@ -97,18 +97,16 @@ export default function ChapterSelector({ children }) {
           ></Chapter>
 
           <Text variant="lg">
-            <div className="opacity-70 text-center pt-2">
-              Other pretty pages
-            </div>
+            <div className="opacity-70 text-center pt-2">{Txt.L2}</div>
           </Text>
           <Chapter
-            title="Information"
-            subtitle="More information about the site"
+            title={Txt.P1.T}
+            subtitle={Txt.P1.ST}
             link="/Chapters/InfoPage"
           ></Chapter>
           <Chapter
-            title="Landing Page"
-            subtitle="Go back to Gentoo.guide's pretty homepage"
+            title={Txt.P2.T}
+            subtitle={Txt.P2.ST}
             img="/GentooGuide.png"
             padded={false}
             ImgRound={true}
@@ -116,12 +114,12 @@ export default function ChapterSelector({ children }) {
             target=""
           ></Chapter>
           <Text variant="lg">
-            <div className="opacity-70 text-center pt-2">Gentoo wiki</div>
+            <div className="opacity-70 text-center pt-2">{Txt.L3}</div>
           </Text>
 
           <Chapter
-            title="Gentoo Wiki"
-            subtitle="A quick link, leading to the official gentoo wiki"
+            title={Txt.P3.T}
+            subtitle={Txt.P3.ST}
             img="/GentooWiki.png"
             padded={false}
             bgc="#DDDAEC"

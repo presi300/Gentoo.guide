@@ -7,6 +7,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
+import { UITextTl } from "../universalLoader";
 
 function Chip({ children, active }) {
   return (
@@ -43,7 +44,7 @@ function SbChapter({ children, href = "#" }) {
       <AnimatePresence>
         {xd && (
           <motion.div
-            className="absolute  right-0 rounded-r-[15px] bg-[#FFFFFF11] h-[50px] pt-4 overflow-hidden z-10"
+            className="absolute  right-0 rounded-r-[15px] bg-[#FFFFFF] bg-opacity-[3%] backdrop-blur-md h-[50px] pt-4 overflow-hidden z-10"
             initial={{ opacity: 0, width: 0 }}
             animate={{ opacity: 1, width: 72 }}
             exit={{ opacity: 0, width: 0 }}
@@ -80,15 +81,16 @@ let SideBar = ({ children }) => {
     },
   };
   const [sw, swHandler] = useState(true);
+  const Txt = UITextTl().components.SbNav;
   return (
     <div className="w-[345px] fixed left-0 top-0 bottom-0 bg-[#18171b] backdrop-blur-xl bg-opacity-80 rounded-tr-[10px] rounded-br-[10px] shadow flex-col justify-start items-center gap-2.5 inline-flex z-50">
       <div className="w-full h-[60px] justify-center gap-5 pr-8 sm:pr-0 items-center inline-flex  bg-[#1e1c20]  shadow-xl rounded-[10px]">
         {/* An extremely high intelligence way of figuring out which chip to highlight */}
         <div onClick={() => swHandler(false)}>
-          <Chip active={sw}>Chapters</Chip>
+          <Chip active={sw}>{Txt.T1}</Chip>
         </div>
         <div onClick={() => swHandler(true)}>
-          <Chip active={!sw}>Sections</Chip>
+          <Chip active={!sw}>{Txt.T2}</Chip>
         </div>
       </div>
 
@@ -109,33 +111,38 @@ let SideBar = ({ children }) => {
           <SbChapterSelector>
             <Text variant="sm">
               {" "}
-              <div className="text-center opacity-70">Guide Chapters</div>
+              <div className="text-center opacity-70">{Txt.L1}</div>
             </Text>
 
             <SbChapter key={1} href="/Chapters/StartPage">
-              <b className="pr-3">1.</b>Welcome
+              <b className="pr-3">1.</b>
+              {Txt.C1}
             </SbChapter>
             <SbChapter key={2} href="/Chapters/DownloadAndSetupPage">
               <b className="pr-3">2.</b>
-              Initial setup
+              {Txt.C2}{" "}
             </SbChapter>
             <SbChapter key={3} href="/Chapters/InstallationPage">
-              <b className="pr-3">3.</b>Installing gentoo
+              <b className="pr-3">3.</b>
+              {Txt.C3}
             </SbChapter>
             <Text variant="sm">
-              <div className="text-center opacity-70">Other pages</div>
+              <div className="text-center opacity-70">{Txt.L2}</div>
             </Text>
             <SbChapter key={11} href="/">
-              <b className="pr-3"></b>Landing page
+              <b className="pr-3"></b>
+              {Txt.P1}
             </SbChapter>
             <SbChapter key={12} href="/Chapters/InfoPage">
-              <b className="pr-3"></b>About gentoo.guide
+              <b className="pr-3"></b>
+              {Txt.P2}
             </SbChapter>
             <Text variant="sm">
-              <div className="text-center opacity-70">Useful resources</div>
+              <div className="text-center opacity-70">{Txt.L3}</div>
             </Text>
-            <SbChapter key={12} href="https://www.gentoo.org">
-              <b className="pr-3"></b>Gentoo wiki
+            <SbChapter key={13} href="https://www.gentoo.org">
+              <b className="pr-3"></b>
+              {Txt.P3}
             </SbChapter>
           </SbChapterSelector>
         </motion.div>

@@ -1,20 +1,100 @@
 {
-    "lang": {
-        "enUS": {
-            "id": "0",
-            "components": {
-                "button": "Test",
-                "content": "Test"
-            }
+  "lang": {
+    "enUS": {
+      "id": "0",
+      "components": {
+        "SbNav": {
+          "L1": "Guide Chapters",
+          "L2": "Other Pages",
+          "L3": "Useful Resources",
+          "C1": "Welcome",
+          "C2": "Initial setup",
+          "C3": "Installing gentoo",
+          "P1": "Landing page",
+          "P2": "About gentoo.guide",
+          "P3": "Gentoo wiki",
+          "T1": "Chapters",
+          "T2": "Sections"
         },
-        "bg": {
-            "id": "1",
-            "sec1": {
-                "title": "Тест",
-                "content": "Тест",
-                "FILE": "PLACEHOLDER"
-            }
+        "ChapterSelector": {
+          "L1": "Guide Chapters",
+          "L2": "Other Pages",
+          "L3": "Useful Resources",
+          "Title": "Select a chapter",
+          "C1": {
+            "T": "Welcome!",
+            "ST": "Take a quick a look around, before diving in!"
+          },
+          "C2": {
+            "T": "Getting started",
+            "ST": "The first steps towards a full gentoo system"
+          },
+          "C3": {
+            "T": "Installing Gentoo",
+            "ST": "It's in the title, get all the way to a functional gentoo system"
+          },
+          "P1": {
+            "T": "Information",
+            "ST": "A bit more information about gentoo.guide"
+          },
+          "P2": {
+            "T": "landing Page",
+            "ST": "Go back to Gentoo.guide's pretty homepage"
+          },
+          "P3": {
+            "T": "Gentoo wiki",
+            "ST": "A quick link, leading to the official gentoo wiki"
+          }
         }
+      }
+    },
+    "bg": {
+      "id": "1",
+      "components": {
+        "SbNav": {
+          "L1": "Основни Глави",
+          "L2": "Други страници",
+          "L3": "Полезна литература",
+          "C1": "Добре дошли",
+          "C2": "Начално настройване",
+          "C3": "Gentoo инсталация",
+          "P1": "Начална страница",
+          "P2": "За gentoo.guide",
+          "P3": "Gentoo wiki",
+          "T1": "Глави",
+          "T2": "Секции"
+        },
+        "ChapterSelector": {
+          "L1": "Основни Глави",
+          "L2": "Други страници",
+          "L3": "Полезна литература",
+          "Title": "Изберете глава",
+          "C1": {
+            "T": "Добре дошли!",
+            "ST": "Поразгледайте наоколо, преди да започнете!"
+          },
+          "C2": {
+            "T": "Начални стъпки",
+            "ST": "Направете вашите първи стъпки към работеща gentoo система!"
+          },
+          "C3": {
+            "T": "Инсталиране на Gentoo.",
+            "ST": "В името на страницата е, инсталирайте gentoo!"
+          },
+          "P1": {
+            "T": "Информация",
+            "ST": "Малко повече информация за gentoo.guide"
+          },
+          "P2": {
+            "T": "Начална страница",
+            "ST": "Връщане към началната страница"
+          },
+          "P3": {
+            "T": "Gentoo wiki",
+            "ST": "Бърз линк към официалната документация на gentoo"
+          }
+        }
+      }
     }
-
+  }
 }

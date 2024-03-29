@@ -11,7 +11,6 @@ import { useState } from "react";
 import AnimaetedBackground from "./components/Background/Background";
 import { VscFoldDown } from "react-icons/vsc";
 import Skeleton from "./components/Skeleton/Skeleton";
-import ChapterEnd from "./components/ChapterEnd/ChapterEnd";
 
 export default function Home() {
   let [lmao, lmaoHandler] = useState(tl.lang.loading);
