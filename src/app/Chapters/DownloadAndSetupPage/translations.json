@@ -1,8 +1,8 @@
 {
   "lang": {
     "enUS": {
-      "id": "0",
       "Anchors": {
+        "A0": "Getting started",
         "A1": "Installation environment?",
         "A2": "Setting up installation environment",
         "A3": "Getting the partitions ready",
@@ -133,6 +133,11 @@
 
           "TB10": "The stage3 archive, as mentioned above contains a very basic gentoo system. You can check that for yourself by running <b>ls<b/>"
         }
+      },
+      "ChEnd": {
+        "Title": "With our partitions setup and our base system extracted",
+        "STitle": "We can now move to actually",
+        "Btn": "Setting up Gentoo linux"
       }
     },
     "bg": {

@@ -8,15 +8,12 @@ import SideBarElementExtended from "../../components/SideBar/SideBarElementExten
 import Link from "next/link";
 import ShellBox from "../../components/ShellBox/ShellBox";
 import ShellBoxOutput from "../../components/ShellBox/ShellBoxOutput";
-import { SkipToEnd } from "../../components/SkipToEnd/SkipToEnd";
 import Spacer from "../../components/FormattedText/Spacer/Spacer";
 import AttentionBox from "../../components/AttentionBox/AttentionBox";
-import { Button } from "../../components/Button/Button";
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa6";
 import TextFileBox from "../../components/TextFileBox/TextFileBox";
 import tl from "./translations.json";
-import { Content } from "next/font/google";
 
 export default function StarPage() {
   let [lmao, lmaoHandler] = useState(tl.lang.loading);

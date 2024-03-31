@@ -139,20 +139,20 @@ export default function Home() {
               </div>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, x: -300 }}
+              initial={{ opacity: 0, x: 300 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className=" mt-24 h-[25rem] lg:h-[20rem] 3xl:h-[12rem] rounded-[15px] border-white border-[1px] border-opacity-5 md:mx-12 grid md:grid-rows-none grid-rows-2 md:grid-cols-2 place-items-center bg-[#0c0c0e] "
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="mt-24 h-[35rem] lg:h-[20rem] 3xl:h-[32rem] rounded-[15px] border-white border-[1px] border-opacity-5 md:mx-12 grid md:grid-rows-none grid-rows-2 md:grid-cols-2 place-items-center bg-[#0c0c0e]"
             >
               <div className="flex px-3 sm:px-0 items-center justify-start w-full h-full">
                 <Image
-                  src="/lmao-min.gif" //BG3 peak
+                  src="/lmao-min.gif" //Taken from https://www.youtube.com/@WindowsG, I don't have an iBook G4 (God, I want one)... or any old, low-end hardware, unfortunately
                   width={1920}
                   height={1080}
-                  className="w-auto max-h-[28rem] 3xl:max-h-[32rem] rounded-[15px]"
+                  className="w-auto max-h-[20rem] 3xl:max-h-[32rem] rounded-[15px]"
                 ></Image>
               </div>
-              <div className="flex w-full flex-col text-center pr-12 pl-12">
+              <div className="flex w-full text-center flex-col pl-12 pr-12">
                 <Text variant="md">{lmao.Card3.Title}</Text>
                 <Text variant="sm">{lmao.Card3.SubTitle}</Text>
               </div>
