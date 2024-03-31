@@ -1,0 +1,142 @@
+{
+  "lang": {
+    "enUS": {
+      "id": "0",
+      "Anchors": {
+        "A1": "Installation environment?",
+        "A2": "Setting up installation environment",
+        "A3": "Getting the partitions ready",
+        "A4": "What partitions are needed?",
+        "A5": "Setting up partitions",
+        "A6": "Setting up stage3"
+      },
+
+      "SectionMain1": {
+        "Title": "Getting started",
+        "STitle": "This page will let you know all about what an installation enviroment is, how to set it up and how to use it to get started.",
+
+        "Section1": {
+          "Title": "What is an installation environment?",
+          "TB1": "An <b>installation environment</b>, also known as a <b>live ISO</b> is exactly what the name suggests - an environment for installing a linux distribution, in this case - Gentoo. <br/><br/>Most linux distributions ship their own <b>installation environment</b> (LiveISO) and Gentoo is no different, however I'd advise against using the one, provided by Gentoo. It makes the installation process unnecessarily difficult by not having a desktop environment.<br><br/>Gentoo can be installed using any other linux distribution's <b>installation environment</b>, most of which have a nice pre-configured desktop that makes the whole installation process a lot less annoying by allowing you to copy-paste long commands and to do something else while waiting for it to finish. <br/><br/> For this guide, I'll be using a <a class='yej' href='https://linuxmint.com/'>Linux Mint</a> live ISO, however as mentioned previously, pretty much any other distribution's live ISO should also get the job done."
+        },
+
+        "Section2": {
+          "Title": "Downloading and setting up the installation environment",
+          "TB1": "Before beginning, you are gonna need a few things: <br/><br/>",
+          "List1": {
+            "E1": "USB drive with a capacity of 4GB or more.",
+            "E2": "Access to the internet.",
+            "E3": "A few spare hours."
+          },
+          "TB2": "I'm gonna assume that anyone who's gotten to this point already knows how to flash an ISO to a flash drive and boot from it, however I am still gonna mention <a class='yej' href='https://www.ventoy.net/'>Ventoy</a>, because it's cool.<br/><br/>Now that you've booted off your chosen distro's live ISO, it's time to actually install Gentoo, starting with:"
+        }
+      },
+      "SectionMain2": {
+        "Title": "Getting the partitions ready",
+        "STitle": "Yeah, this part is all about disks and partitions.",
+        "Section1": {
+          "Title": "Choosing a disk",
+
+          "TB1": "Before doing any partitioning, you firstly need to choose a disk to be partitioned. There are no strict restrictions about what disk should be used, however it is generally recommended to install any operating system on an SSD, instead of an HDD.<br/><br/> To check the names of all disks, currently connected to your system, use: ",
+
+          "TB2": "SATA disks should appear as /dev/sd*, NVME disks should appear as /dev/nvme*n*.<br/><br/>",
+
+          "AB1": "A virtual disk (/dev/vda) will be used in all examples, make sure to replace that with your chosen disk, wherever necessary."
+        },
+        "Section2": {
+          "Title": "Figuring out what partitions are actually needed",
+
+          "TB1": "There is a slight catch that needs to be taken care of, before proceeding with partitioning the disk. That being whether your system is <b>Legacy BIOS</b> or <b>UEFI</b>, as the following steps differ slightly for each one. If you are unsure about your system, you can type the following command:",
+
+          "TB2": "If the command errors out, your system is <b>legacy BIOS</b> and if it doesn't, it's <b>UEFI</b>."
+        },
+        "Section3": {
+          "Title": "Setting up partitions",
+
+          "TB1": "For the following steps, you can use whichever disk management program you want (e.g. gparted, GNOME disks, etc), <b>cfdisk</b> will be used for the demonstration.<br/><br/> 1st, wipe the existing partition table on the chosen disk:<br/><br/>",
+
+          "AB1": "This action WILL delete *ALL* data on the selected disk and is NOT reversible! Proceed with caution!",
+
+          "AB2": "These steps aren't *strictly* necessary, as it is possible to resize an existing partition and do the following steps alongside it, however resizing a partition is a notoriously janky process and could result in lost data. Proceed with caution either way!",
+
+          "TB2": "After that, depending on whether your computer is <b>legacy BIOS</b> or <b>UEFI</b>, you're gonna have to set the disks up a little bit differently: <br/><br/>",
+
+          "TB3": "Set the partition table to GPT<br/>Create 3 partitions:<br/><br/>",
+
+          "List1": {
+            "E1": "512MB type: EFI system",
+            "E2": "If possible, at least 30GB, type: Linux filesystem, (root)",
+            "E3": "If possible, least 50GB, type: Linux filesystem, (home) [optional]"
+          },
+
+          "AB3": "I've used partitions that are smaller than recommended in the example, as it's just there for demonstration purposes.",
+
+          "TB4": "Set the partition table to MBR/DOS<br/>Create 2 partitions:<br/><br/>",
+
+          "List2": {
+            "E1": "If possible, at least 30GB, primary, type: Linux, (root)",
+            "E2": "If possible, at least 50GB, primary, type: Linux, (home) [optional]"
+          },
+
+          "TB5": "Set the partition you created for using as root to bootable",
+
+          "TB6": "But what about swap?<br/><br/>Don't worry about it, we'll get there when we get there. (Check the setting up zram swap chapter for more info on that)<br/><br/>Alright, now that you've made your partitions, it's time to format them appropriately. <br/><br/> You have a choice to make with the file system you want to use, as each one has it's own unique advantages. Here are some of the more common file systems:<br/><br/>",
+
+          "List3": {
+            "E1": "ext4 - the default, use it if you just want your system to work.",
+            "E2": "btrfs - a more modern option, offers file system level snapshots, in case something goes wrong.",
+            "E3": "xfs - an alternative file system, sorta similar to ext4.",
+            "E4": "bcachefs - an alternative, experimental file system, which offers similar advantages to btrfs. While it provides similar advantages, it operates completely differently from btrfs and any other file system."
+          },
+
+          "AB4": "This guide is written with *ext4* in mind, though the steps should be mostly the same for all the other file systems, additional reading might be a good idea if you decide to use them, ESPECIALLY for *bcachefs*. ",
+
+          "AB5": "Bcachefs requires at least Linux 6.7 to work.",
+
+          "TB7": "Now that you've chosen your file system, it's time to format your partitions with it. In the example case:<br/><br/>",
+
+          "AB6": "It is VERY important that your EFI System partition (/dev/vda1 in the example case) be formatted as FAT32!",
+
+          "TB8": "At this point, your disk's partition table should looks something like this: <br/><br/>",
+
+          "TB9": "Everything looks good? Now it's time to:"
+        },
+
+        "Section4": {
+          "Title": "Mount partitions and setup 'stage 3'",
+
+          "TB1": "Before going any further, you might wonder, what's a 'stage 3' ? <br/><br/> A 'stage 3' is simply an archived, basic gentoo system, which needs to be extracted on a disk partition in order for anything useful to be done with it. <br/><br/> Before any of that can be done, however, you need to mount your newly created partitions first. Here's how that's done:<br/><br/>1st, create a root mount point:",
+
+          "TB2": "2nd, mount the root partition:",
+
+          "TB3": "3rd, create the other mount points:",
+
+          "LBL1": "If you have created a separate /home partition:",
+
+          "TB4": "4th, mount the other partitions:",
+
+          "LBL2": "If you have created a separate /home partition:",
+
+          "TB5": " - Wait, aren't these 'mount points' just directories? <br/><br/> Yes! On linux, disk partitions are mounted as directories.<br/><br/>",
+
+          "AB1": "You should still create /mnt/gentoo/boot even if your system is not EFI.",
+
+          "TB6": "With all of that done, you are now ready to <b>download the gentoo stage3<br/><br/>1st, go to the <a class='yej' href='https://www.gentoo.org/downloads/' target='_blank'>Gentoo downloads page</a>, then select which version of the gentoo base system you want. If the words 'systemd' and 'openrc' mean nothing to you or you can't choose between the two init systems, choose the 'openrc' option <br/></br>",
+
+          "TB7": "Right click it and copy the link:",
+
+          "TB8": "Then go to the <b>/mnt/gentoo</b> directory and download it there with <b>wget</b><br/><br/>",
+
+          "AB2": "Depending on your chosen Live ISO, you might need to download wget manually",
+
+          "TB9": "After the archive has finished downloading, extract it with <b>tar</b><br/><br/>",
+
+          "TB10": "The stage3 archive, as mentioned above contains a very basic gentoo system. You can check that for yourself by running <b>ls<b/>"
+        }
+      }
+    },
+    "bg": {
+      "id": "1"
+    }
+  }
+}

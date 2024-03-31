@@ -84,7 +84,7 @@ export default function DwAndSetup({}) {
           ></AttentionBox>
           <AttentionBox
             variant="note"
-            text="These steps aren't *strictly* necessary, as it is possible to resize an existing partition and do the following steps along side it, however resizing partition is a notoriously janky process and could result in lost data. Proceed with caution either way! "
+            text="These steps aren't *strictly* necessary, as it is possible to resize an existing partition and do the following steps alongside it, however resizing a partition is a notoriously janky process and could result in lost data. Proceed with caution either way! "
           ></AttentionBox>
           <fmt.TextBoxWithFormatting text="After that, depending on whether your computer is <b>legacy BIOS</b> or <b>UEFI</b>, you're gonna have to set the disks up a little bit differently: <br/><br/>"></fmt.TextBoxWithFormatting>
           <fmt.Label>UEFI</fmt.Label>
@@ -124,8 +124,7 @@ export default function DwAndSetup({}) {
           {/* imgW="800" */}
           {/* aImgW="1100" */}
           {/* ></fmt.NonTextElement> */}
-          <fmt.TextBoxWithFormatting text="But what about swap?<br/><br/>Don't worry about it, we'll get there when we get there. (Check the setting up zram swap chapter for more info on that)<br/><br/>"></fmt.TextBoxWithFormatting>
-          <fmt.TextBoxWithFormatting text="Alright, now that you've made your partitions, it's time to format them appropriately. <br/><br/> You have a choice to make with the file system you want to use, as each one has it's own unique advantages. Here are some of the more common file systems:<br/><br/>"></fmt.TextBoxWithFormatting>
+          <fmt.TextBoxWithFormatting text="But what about swap?<br/><br/>Don't worry about it, we'll get there when we get there. (Check the setting up zram swap chapter for more info on that)<br/><br/>Alright, now that you've made your partitions, it's time to format them appropriately. <br/><br/> You have a choice to make with the file system you want to use, as each one has it's own unique advantages. Here are some of the more common file systems:<br/><br/>"></fmt.TextBoxWithFormatting>
           <fmt.List
             el={[
               "ext4 - the default, use it if you just want your system to work.",
@@ -147,17 +146,17 @@ export default function DwAndSetup({}) {
           <ShellBox
             variant="root"
             dir="~"
-            command="mkfs.fat -F32 /dev/vda1"
+            command="mkfs.fat -F32 /dev/<EFI partition>"
           ></ShellBox>
           <ShellBox
             variant="root"
             dir="~"
-            command="mkfs.ext4 /dev/vda2"
+            command="mkfs.ext4 /dev/<ROOT partition>"
           ></ShellBox>
           <ShellBox
             variant="root"
             dir="~"
-            command="mkfs.ext4 /dev/vda3"
+            command="mkfs.ext4 /dev/<HOME partition>"
           ></ShellBox>
           <AttentionBox
             variant="attention"
@@ -167,12 +166,12 @@ export default function DwAndSetup({}) {
           <ShellBox
             variant="root"
             dir="~"
-            command="mkfs.ext4 /dev/vda1"
+            command="mkfs.ext4 /dev/<ROOT partition>"
           ></ShellBox>
           <ShellBox
             variant="root"
             dir="~"
-            command="mkfs.ext4 /dev/vda2"
+            command="mkfs.ext4 /dev/<HOME partition>"
           ></ShellBox>
           <fmt.TextBoxWithFormatting text="At this point, your disk's partition table should looks something like this: <br/><br/>"></fmt.TextBoxWithFormatting>
           <fmt.Label>UEFI</fmt.Label>
@@ -279,10 +278,10 @@ export default function DwAndSetup({}) {
           <ShellBox dir="/mnt/gentoo" command="wget <Copied URL>"></ShellBox>
           <AttentionBox
             variant="note"
-            text=" Depending on your chosen liveISO, you might need to download wget
+            text=" Depending on your chosen Live ISO, you might need to download wget
             manually"
           ></AttentionBox>
-          <fmt.TextBoxWithFormatting text="After the archive has fiinished downloading, extract it with <b>tar</b><br/><br/>"></fmt.TextBoxWithFormatting>
+          <fmt.TextBoxWithFormatting text="After the archive has finished downloading, extract it with <b>tar</b><br/><br/>"></fmt.TextBoxWithFormatting>
           <ShellBox
             dir="/mnt/gentoo"
             command="tar -xvf `ls | grep stage3`"
