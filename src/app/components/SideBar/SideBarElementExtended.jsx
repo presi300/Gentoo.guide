@@ -13,7 +13,7 @@ let SideBarElementExtended = ({ text = "XD", content }) => {
       <div className="mx-[0.40rem] ">
         {content.map((content) => {
           return (
-            <Link key={content} href={`#${content}`}>
+            <Link key={content} href={`#${content}`} replace>
               <li
                 key={content}
                 className="px-4 py-2 my-1 mx-1 hover:pl-12 hover:scale-125 transition-all hover:bg-[#FFFFFF11]"

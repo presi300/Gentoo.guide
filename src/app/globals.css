@@ -46,3 +46,18 @@ body {
 .noscroll::-webkit-scrollbar {
   display: none;
 }
+
+::-webkit-scrollbar {
+  width: 4px;
+  background-color: #ffffff05;
+  z-index: 50;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #8880aa40;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #8880aa;
+}

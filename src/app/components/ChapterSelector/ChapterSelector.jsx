@@ -43,6 +43,7 @@ function Chapter({
                 src={img}
                 width={700}
                 height={500}
+                loading="eager"
                 style={{
                   width: padded ? "200px" : "220px",
                   borderRadius: ImgRound ? "10px" : "0px",

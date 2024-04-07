@@ -1,8 +1,10 @@
 import React, { Children } from "react";
 import Text from "../Text/Text";
+import { UITextTl } from "../universalLoader";
 // I call it "AttentionBox", because AttentionWarningNoteBox is too long :P
 let AttentionBox = ({ text = "Warning: do not the", variant }) => {
   //The 3 SVGs... Blame figma
+  const Txt = UITextTl().components.AttentionBox;
   let Icon = () => {
     return (
       <div>
@@ -84,7 +86,7 @@ let AttentionBox = ({ text = "Warning: do not the", variant }) => {
               <Text variant="sm">
                 {/* This is a really stupid way to change the color of the text elemet, as passing props as tailwind classes is really fcking annoying*/}
                 <p className="text-[#9CA43C]">
-                  <b>Attention:</b> {text}
+                  <b>{Txt.Attention}:</b> {text}
                 </p>
               </Text>
             </div>
@@ -103,7 +105,7 @@ let AttentionBox = ({ text = "Warning: do not the", variant }) => {
               <Text variant="sm">
                 {/* This is a really stupid way to change the color of the text elemet, as passing props as tailwind classes is really fcking annoying*/}
                 <p className="text-[#B12F13]">
-                  <b>Warning:</b> {text}
+                  <b>{Txt.Warning}:</b> {text}
                 </p>
               </Text>
             </div>
@@ -121,7 +123,7 @@ let AttentionBox = ({ text = "Warning: do not the", variant }) => {
               <Text variant="sm">
                 {/* This is a really stupid way to change the color of the text elemet, as passing props as tailwind classes is really fcking annoying*/}
                 <p className="text-[#0870EB]">
-                  <b>Note:</b> {text}
+                  <b>{Txt.Note}:</b> {text}
                 </p>
               </Text>
             </div>

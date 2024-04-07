@@ -20,8 +20,8 @@ export default function Home() {
   });
 
   return (
-    <div>
-      <div className="overflow-x-hidden">
+    <div className="noscroll">
+      <div className="overflow-x-hidden noscroll">
         <div className="absolute top-0 right-0 left-0 bottom-0 z-0 overflow-hidden ">
           <AnimaetedBackground></AnimaetedBackground>
         </div>
@@ -146,7 +146,8 @@ export default function Home() {
             >
               <div className="flex px-3 sm:px-0 items-center justify-start w-full h-full">
                 <Image
-                  src="/lmao-min.gif" //Taken from https://www.youtube.com/@WindowsG, I don't have an iBook G4 (God, I want one)... or any old, low-end hardware, unfortunately
+                  src="/lmao-min.gif"
+                  loading="eager"
                   width={1920}
                   height={1080}
                   className="w-auto max-h-[20rem] 3xl:max-h-[32rem] rounded-[15px]"
@@ -161,6 +162,7 @@ export default function Home() {
               <Link
                 href="/Chapters/StartPage"
                 className="bg-[#41366C] bg-opacity-35 p-3 px-12 rounded-full hover:bg-opacity-50 transition-all hover:scale-110"
+                prefetch={true}
               >
                 <Text variant="lg">Ready to begin?</Text>
               </Link>

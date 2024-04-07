@@ -47,8 +47,15 @@ export default function StarPage() {
           </Text>
         </div>
 
-        <div className="bg-red-300 bg-opacity-20">
-          <Text>TODO: Add an image showcasing that</Text>
+        <div className="flex w-full justify-center ">
+          <video
+            src="/triangus4.mp4"
+            className="w-full max-w-[800px] border-[1px] rounded-[15px] border-[#AAA1CC]"
+            autoPlay
+            loop
+            muted
+            playsInline
+          ></video>
         </div>
 
         <div className="my-6">
@@ -66,7 +73,7 @@ export default function StarPage() {
             <div className="grid place-items-center my-12  ">
               <Image
                 src="/SkipBtn.png"
-                alt="You really should not be seeing this..."
+                alt="An image of the skip button"
                 width={100}
                 height={100}
                 className="border-[#AAA1CC] border-[1px] rounded-[15px]"
@@ -309,6 +316,7 @@ export default function StarPage() {
             <Link
               href="/Chapters/DownloadAndSetupPage"
               className="flex items-center gap-5"
+              prefetch={true}
             >
               <Text>{lmao.HowGentooWork.EndButtonTxt}</Text>
               <Text>

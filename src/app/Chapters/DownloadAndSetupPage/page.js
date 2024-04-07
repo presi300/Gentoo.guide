@@ -230,31 +230,27 @@ export default function DwAndSetup({}) {
             dir="~"
             command="fdisk -l"
             output={
-              <div className="my-2">
-                {/* prettier-ignore*/}
-                <pre className="sm:text-base text-xs">
-                Device        Start      End  Sectors  Size Type <br></br>
-                /dev/vda1      2048  1050623  1048576  512M EFI System <br></br>
-                /dev/vda2   1050624 22022143 20971520   10G Linux filesystem <br></br>
-                /dev/vda3  22022144 52428766 30406623 14.5G Linux filesystem <br></br>
-                </pre>
-              </div>
+              <Image
+                src="/fdiskGpt.png"
+                alt="An image, showing the output of the fdisk command for UEFI devices"
+                width={1000}
+                height={200}
+                className="w-full max-w-[500px] mb-7"
+              ></Image>
             }
           ></ShellBoxOutput>
           <fmt.Label>Legacy BIOS</fmt.Label>
           <ShellBoxOutput
             dir="~"
             command="fdisk -l"
-            outputVariant="regular"
             output={
-              <div className="my-2 ">
-                {/* prettier-ignore*/}
-                <pre className="sm:text-base text-xs ">
-                  Device     Boot    Start      End  Sectors Size Id Type <br></br>
-                  /dev/vda1  *        2048 20973567 20971520  10G 83 Linux <br></br>
-                  /dev/vda2       20973568 52428799 31455232  15G 83 Linux <br></br>
-                 </pre>
-              </div>
+              <Image
+                src="/fdiskDos.png"
+                alt="An image, showing the output of the fdisk command for DOS devices"
+                width={1000}
+                height={200}
+                className="w-[95%] max-w-[500px] mb-7"
+              ></Image>
             }
           ></ShellBoxOutput>
           <fmt.TextBoxWithFormatting
@@ -326,6 +322,7 @@ export default function DwAndSetup({}) {
           <fmt.NonTextElement
             variant="image"
             img="/Downloads.png"
+            alt="An image, showing how to download gentoo linux"
             imgW={800}
             imgH={740}
             mImgH="740px"
@@ -336,6 +333,7 @@ export default function DwAndSetup({}) {
           ></fmt.TextBoxWithFormatting>
           <fmt.NonTextElement
             variant="image"
+            alt="An image, showing how to download gentoo linux"
             imgW={800}
             imgH={700}
             mImgW="800px"
@@ -367,6 +365,7 @@ export default function DwAndSetup({}) {
             output={
               <Image
                 className="scale-100  max-w-[800px] w-full"
+                alt="An image showing the output of the ls command in the /mnt/gentoo directory"
                 src="/ls1.png"
                 width={1900}
                 height={180}

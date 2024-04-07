@@ -17,7 +17,7 @@ export default function ChapterEnd({
       <Text variant="lg">{EndTitle}</Text>
       <Text variant="md">{EndSubTitle}</Text>
       <div className="grid place-items-center mt-12">
-        <Link href={"/Chapters/" + NextChapter} className="   ">
+        <Link href={"/Chapters/" + NextChapter} prefetch={true}>
           <div className="flex items-center my-5 p-3 bg-[#41366C] transition-all rounded-full bg-opacity-35 hover:bg-opacity-50 hover:scale-110 max-w-[700px]">
             <Text>{EndBtnText}</Text>
             <Text>

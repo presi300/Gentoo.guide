@@ -19,6 +19,7 @@ export function NonTextElement({
   imgH = 100,
   mImgW = "200px",
   mImgH = "100px",
+  Alt = "Something that isn't text",
 }) {
   return (
     <div>
@@ -28,7 +29,7 @@ export function NonTextElement({
           <div className="grid w-full place-items-center">
             <Image
               className="rounded-[15px] border-[1px] border-[#AAA1CC] my-3 mb-12"
-              alt="You really should not be seeing this..."
+              alt={Alt}
               src={img}
               width={imgW}
               height={imgH}

@@ -45,6 +45,11 @@
             "T": "Gentoo wiki",
             "ST": "A quick link, leading to the official gentoo wiki"
           }
+        },
+        "AttentionBox": {
+          "Warning": "Warning",
+          "Attention": "Attention",
+          "Note": "Note"
         }
       }
     },
@@ -93,6 +98,11 @@
             "T": "Gentoo wiki",
             "ST": "Бърз линк към официалната документация на gentoo"
           }
+        },
+        "AttentionBox": {
+          "Warning": "Предупреждение",
+          "Attention": "Внимание",
+          "Note": "Важно"
         }
       }
     }

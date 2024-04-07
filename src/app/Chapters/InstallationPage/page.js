@@ -211,6 +211,7 @@ export default function InstallationPage({}) {
             output={
               <Image
                 src="/Neofetch.png"
+                alt="Image that shows off the gentoo neofetch"
                 width={1000}
                 height={500}
                 className="max-w-[800px] w-full"
@@ -250,8 +251,9 @@ export default function InstallationPage({}) {
           ></ShellBox>
           <fmt.TextBoxWithFormatting text="NetworkManager will pull a couple of dependencies, and yeah, that's it, network setup is complete."></fmt.TextBoxWithFormatting>
         </fmt.Section>
+
         <fmt.Section title="Linux Kernel">
-          <fmt.TextBoxWithFormatting text="As you've probably heard or seen at this point, the operating system, usually referred to as 'linux', is actually GNU/Linux or in this case: 'KDE Plasma/Wayland/OpenRC/Gentoo/GNU/Linux'.<br/><br/>With that in mind, it's time to install the '<b>linux</b>' part of this entire thing.<br/><br/>-But what is a kernel?<br/><br/>A kernel is kind of like a glue that connects the hardware with the sowftware. The linux kernel in particular, however is a bit more complicated than that, as it's what's called a 'macro' kernel, meaning that it handles more than just the basic communication between the software and the hardware it also handles device drivers.<br/><br/>Configuring the linux kernel simply means choosing which drivers and features you need from it and which ones you don't.<br/><br/>Unfortunately, choosing said drivers is a complicated and extremely personalized task, which is simply impossible to fully explain in a guide like this, as every piece of hardware needs it's own specific driver or in some cases set of drivers... <br/><br/><b>Fortunately, it's completely optional!</b><br/><br/>Gentoo provides a fully configured kernel that should work flawlessly on 90% of devices. To install it, simply type:<br/><br/>"></fmt.TextBoxWithFormatting>
+          <fmt.TextBoxWithFormatting text="As you've probably heard or seen at this point, the operating system, usually referred to as 'linux', is actually GNU/Linux or in this case: 'KDE Plasma / Wayland / OpenRC / Gentoo / GNU / Linux'.<br/><br/>With that in mind, it's time to install the '<b>linux</b>' part of this entire thing.<br/><br/>-But what is a kernel?<br/><br/>A kernel is kind of like a glue that connects the hardware with the sowftware. The linux kernel in particular, however is a bit more complicated than that, as it's what's called a 'macro' kernel, meaning that it handles more than just the basic communication between the software and the hardware it also handles device drivers.<br/><br/>Configuring the linux kernel simply means choosing which drivers and features you need from it and which ones you don't.<br/><br/>Unfortunately, choosing said drivers is a complicated and extremely personalized task, which is simply impossible to fully explain in a guide like this, as every piece of hardware needs it's own specific driver or in some cases set of drivers... <br/><br/><b>Fortunately, it's completely optional!</b><br/><br/>Gentoo provides a fully configured kernel that should work flawlessly on 90% of devices. To install it, simply type:<br/><br/>"></fmt.TextBoxWithFormatting>
           <ShellBox
             variant="root"
             dir="~"
@@ -265,6 +267,7 @@ export default function InstallationPage({}) {
             output={
               <Image
                 src="/KernelList.png"
+                alt="And image that lists all available kernels"
                 width={800}
                 height={100}
                 className="w-full max-w-[300px] mb-5"
@@ -301,6 +304,7 @@ export default function InstallationPage({}) {
             command="eselect kernel list"
             output={
               <Image
+                alt="An image that lists all kernel sources"
                 src="/EKList1.png"
                 width={500}
                 height={100}
@@ -320,6 +324,7 @@ export default function InstallationPage({}) {
             command="eselect kernel list"
             output={
               <Image
+                alt="An image that lists all kernel sources"
                 src="/EKL2.png"
                 width={500}
                 height={100}
@@ -347,6 +352,7 @@ export default function InstallationPage({}) {
           <fmt.NonTextElement
             img="/nconfig.png"
             variant="image"
+            Alt="An image, showing the nconfig menu"
             imgW={1200}
             imgH={800}
             mImgW="900px"
@@ -356,6 +362,7 @@ export default function InstallationPage({}) {
           <fmt.NonTextElement
             variant="image"
             img="/EcosiaIt.png"
+            Alt="An image showing how to use google to help with kernel configuration"
             imgW={1000}
             imgH={300}
             mImgW="700px"
