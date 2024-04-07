@@ -1,3 +1,4 @@
+"use client";
 import tl from "./universalTranslations.json";
 import LoadText from "./LangSwitcher/Loader.server";
 import { useState, useEffect } from "react";
