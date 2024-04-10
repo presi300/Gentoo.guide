@@ -362,7 +362,7 @@ export default function InstallationPage({}) {
           <fmt.NonTextElement
             variant="image"
             img="/EcosiaIt.png"
-            Alt="An image showing how to use google to help with kernel configuration"
+            Alt="An image showing how to use google to help with kernel"
             imgW={1000}
             imgH={300}
             mImgW="700px"

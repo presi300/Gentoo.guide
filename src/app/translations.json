@@ -22,6 +22,9 @@
       "Card3": {
         "Title": "Makes you feel like a hacker",
         "SubTitle": "Nothing more to it, sometimes it's just cool to sit back and watch the text scroll"
+      },
+      "EndBTN": {
+        "Text": "Ready to begin?"
       }
     },
     "bg": {
@@ -47,6 +50,9 @@
       "Card3": {
         "Title": "Чустваш като хакер.",
         "SubTitle": "Понякога е готино да се облегнеш на стола и да гледаш как текста се прехвърля."
+      },
+      "EndBTN": {
+        "Text": "Готови да започнете?"
       }
     },
     "loading": {
@@ -71,6 +77,9 @@
       "Card3": {
         "Title": "Loading...",
         "SubTitle": "Loading..."
+      },
+      "EndBTN": {
+        "Text": "Loading..."
       }
     }
   }

@@ -176,9 +176,9 @@
           "Label": "USE, също познато като 'USE flags' дефинира какви характеристики и зависимости имат програмите.",
           "Comment": "#Ще каже на системата да компилира програми с поддръжка на wayland, vulkan и pipewire, където е приложимо"
         },
-        "EndTitle": "Alright, with all that out of the way",
-        "EndSubTitle": "Let's start with",
-        "EndButtonTxt": "Downloading and setting up the installation environment"
+        "EndTitle": "Добре, след всичко това, най-после е време",
+        "EndSubTitle": "Да стартираме с",
+        "EndButtonTxt": "Сваляне и настройване на инсталационна среда"
       },
       "SideBar": {
         "Text": {

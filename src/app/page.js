@@ -20,7 +20,7 @@ export default function Home() {
   });
 
   return (
-    <div className="noscroll">
+    <div className="">
       <div className="overflow-x-hidden noscroll">
         <div className="absolute top-0 right-0 left-0 bottom-0 z-0 overflow-hidden ">
           <AnimaetedBackground></AnimaetedBackground>
@@ -164,7 +164,7 @@ export default function Home() {
                 className="bg-[#41366C] bg-opacity-35 p-3 px-12 rounded-full hover:bg-opacity-50 transition-all hover:scale-110"
                 prefetch={true}
               >
-                <Text variant="lg">Ready to begin?</Text>
+                <Text variant="lg">{lmao.EndBTN.Text}</Text>
               </Link>
             </div>
           </div>

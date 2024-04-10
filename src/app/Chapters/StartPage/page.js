@@ -79,9 +79,6 @@ export default function StarPage() {
                 className="border-[#AAA1CC] border-[1px] rounded-[15px]"
               ></Image>
             </div>
-            <div className="bg-red-300 bg-opacity-20">
-              <Text>TODO: Add a chapter selector</Text>
-            </div>
             <div className="mt-24">
               {/* What is Gentoo.guide */}
               <div id={lmao.SideBar.Content.El1.e2}></div>
