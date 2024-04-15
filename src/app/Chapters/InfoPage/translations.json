@@ -1,1 +1,14 @@
-{}
+{
+  "lang": {
+    "enUS": {
+      "id": "0",
+      "SectionMain1":{
+        "title": "Information page",
+        "STitle": "A page that gives a bit more information about gentoo.guide."
+      }
+    },
+    "bg": {
+      "id": "1"
+    }
+  }
+}

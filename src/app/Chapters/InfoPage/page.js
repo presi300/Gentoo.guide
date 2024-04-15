@@ -2,6 +2,7 @@ import React from "react";
 import * as fmt from "../../components/FormattedText/Fmt";
 import Skeleton from "../../components/Skeleton/Skeleton";
 import SideBarElementExtended from "../../components/SideBar/SideBarElementExtended";
+import tl from "./translations.json";
 
 export default function infoPage({}) {
   return (

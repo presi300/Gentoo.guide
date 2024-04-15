@@ -6,8 +6,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 export function ThatElementThatTheSideBarNavigatesTo({ Nid }) {
-  // Invisible element that the sidebar uses for navigation
-  // It's literally just an anchor with a funnier name
   return <div className="relative bottom-24" id={Nid}></div>;
 }
 
@@ -73,7 +71,6 @@ export function List({ el }) {
 }
 
 export function TextBoxWithFormatting({ text }) {
-  // WARNING: this element uses dangerouslySetInnerHTML to get formatting from the JSON translations file, use with caution!!!!
   return (
     <Text variant="md">
       <div dangerouslySetInnerHTML={{ __html: `${text}` }}></div>

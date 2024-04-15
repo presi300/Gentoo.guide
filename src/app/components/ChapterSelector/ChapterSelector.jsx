@@ -26,7 +26,7 @@ function Chapter({
         <div className="grid h-full sm:grid-cols-2 ">
           <div className="flex flex-col text-center sm:text-start justify-center">
             <div className="sm:ml-4 ">
-              <Text variant="lg">{title}</Text>
+              <Text variant="md">{title}</Text>
               <Text variant="xs">{subtitle}</Text>
             </div>
           </div>
